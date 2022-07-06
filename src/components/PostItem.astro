@@ -1,0 +1,112 @@
+---
+import { Img } from 'astro-imagetools/components';
+import Label from '@components/Label.astro';
+import dayjs from "dayjs";
+import { Icon } from 'astro-icon';
+
+export interface Props {
+	url: string;
+	title: string;
+	image?: string;
+	alt: string;
+	label: string;
+	datePublished: string;
+	description: string;
+}
+
+const { url, title, image, alt, label, datePublished, description } =
+	Astro.props;
+---
+
+<li class={image ? 'post post-has-img' : 'post'}>
+	<figure class='post-thumb'>
+		<Img
+			src={image}
+			layout='fill'
+			alt={alt ? `${alt}` : ` `}
+			width={300}
+			height={300}
+		/>
+	</figure>
+	<div class='post-content flow' style='--flow: var(--space-lg)'>
+		<div class='post-header'>
+  
+
+			<h2 class='post-title font-size-lg'>
+				<a href={url} class='post-link'>{title}</a>
+			</h2>
+			
+
+        <dl class="post-meta">
+          <dt class="post-meta-key">
+            <!-- <Icon name="ri:calendar-line" width={18} /> -->
+            <span class="sr-only">Date Published</span>
+          </dt>
+          <dd class="post-meta-value">
+            {dayjs(datePublished).format("DD MMMM YYYY")}
+          </dd>
+        </dl>
+      
+
+		
+      
+		</div>
+		<p class="post-description" set:html={description}></p>
+
+		<Label className='label-default' name={label} />
+	</div>
+</li>
+
+<style>
+	.post {
+		display: flex;
+		gap: var(--gutter);
+		background: var(--color-gloss);
+  padding: var(--gutter);
+  border-radius: var(--border-radius-rounded);
+	}
+
+
+  .post-meta {
+    display: flex;
+    font-size: var(--font-size-smaller);
+    font-family: var(--font-family-mono);
+    /* gap: 1ch; */
+    align-items: center;
+    /* color: var(--color-muted); */
+  }
+
+	.post-meta-key {
+	&	svg {
+		width: 1em;
+		}
+	}
+
+	.post-thumb {
+		flex: 0 1 25%;
+		max-width: 150px;
+		align-self: start;
+		overflow: hidden;
+		/* border-radius: var(--border-radius-rounded); */
+	}
+	.post-content {
+		flex: 1;
+		position: relative;
+	}
+
+  .post-description {
+    max-width: var(--line-length-md);
+  }
+
+  .label {
+    @media (--viewport-sm) {
+      margin-top: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    }
+  }
+
+
+	
+</style>

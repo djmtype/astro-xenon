@@ -1,0 +1,159 @@
+html {
+  font-size: clamp(1rem, 0.25vw + 0.9rem, 1.2rem);
+  min-height: 100%; /* Look, it's not fixed anymore! */
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* @media (prefers-color-scheme: light) {
+	html:not([color-scheme]) {
+		color-scheme: light;
+	}
+} */
+
+body {
+  flex-grow: 1;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body);
+}
+
+::selection {
+  color: var(--color-gloss);
+  background-color: var(--color-primary);
+  -webkit-text-fill-color: var(--color-gloss);
+}
+
+a {
+  color: var(--color-primary);
+  text-underline-offset: 0.1em;
+}
+:where(h1 a, h2 a, h3 a, h4 a, h5 a){
+  text-decoration: none;
+}
+
+a::after {
+  text-decoration: none;
+  margin-inline-start: 0.25ch;
+}
+
+/* a:visited {
+  opacity: 0.7;
+} */
+
+a:hover,
+a:focus-within {
+  text-decoration: none;
+  opacity: 1;
+  color: var(--color-foreground);
+}
+
+button:focus-within,
+a:focus-within {
+  outline: var(--color-primary) solid var(--border-width-1);
+  outline-offset: 0.125rem;
+}
+
+h1 {
+ 
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-heading);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-heading);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-heading);
+}
+
+h4 {
+  font-size: var(--font-size-md);
+}
+
+h5 {
+  font-size: var(--font-size-sm);
+}
+h6 {
+  font-size: var(--font-size-xs);
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+}
+
+a[href*="//"]::after
+{
+  font-weight: inherit;
+  font-size: var(--font-size-smaller);
+  content: "\2197";
+  color: currentColor;
+  opacity: 0.7;
+
+  display: inline-block;
+}
+
+pre {
+  padding: var(--gutter);
+  border-radius: var(--border-radius-rounded);
+}
+
+hr {
+  width: 100%;
+  border: 0;
+  height: var(--hr-height, var(--border-width-1));
+  background-color: var(--hr-color, var(--color-separator));
+}
+
+table {
+	border: var(--border-width-1) solid var(--color-separator);
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: var(--space-xs) var(--space-md);
+	&:not(:last-child) {
+	border-right: var(--border-width-1) solid var(--color-separator);
+	}
+}
+
+tr:nth-child(even) {
+	background-color: var(--color-gloss);
+}
+
+thead {
+	border-bottom: var(--border-width-1) solid var(--color-separator);
+	text-transform: var(--text-uppercase);
+  font-size: var(--font-size-xs);
+  letter-spacing: var(--letter-spacing-loose);
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-600);
+  color: var(--color-secondary);
+}
+
+mark {
+  background-color: var(--color-secondary);
+  color: var(--color-gloss);
+  padding: .15em;
+}
+
+code {
+  background-color: var(--color-gloss);
+  border-radius: var(--border-radius-rounded);
+  padding: .3em;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-smaller);
+}
+
+del {
+  text-decoration-color: var(--color-red);
+}

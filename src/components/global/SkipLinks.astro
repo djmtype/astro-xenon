@@ -1,0 +1,62 @@
+<nav class="skip-links" aria-label="Skiplinks">
+  <ul role="list">
+    <li>
+      <a href="#main-navigation"> Skip to main menu </a>
+    </li>
+    <li>
+      <a href="#main-content"> Skip to main content </a>
+    </li>
+  </ul>
+</nav>
+
+<script type="module">
+  // variables
+  const skipLinks = [...document.querySelectorAll(".skip-links a")];
+
+  // execution
+  if (skipLinks.length > 0) {
+    skipLinks.forEach((link) => {
+      link.addEventListener("keydown", (event) => {
+        if (!event.target.closest("a")) return;
+        const key = event.key;
+
+        if (key !== "Enter") return;
+        event.preventDefault();
+        const target = event.target.getAttribute("href");
+
+        if (target === "#main-navigation") {
+          const navigation = document.querySelector("#main-navigation");
+          navigation.querySelector("a").focus();
+        }
+
+        if (target === "#main-content") {
+          const h1 = document.querySelector("h1");
+          h1.setAttribute("tabindex", "-1");
+          h1.focus();
+        }
+      });
+    });
+  }
+</script>
+
+<style is:global>
+  .skip-links {
+    & a {
+      color: var(--color-primary);
+      background-color: var(--color-background);
+      border-bottom-right-radius: 6px;
+      padding: 1rem 3.25rem;
+      position: absolute;
+      display: block;
+      z-index: 10;
+      top: -100vh;
+      left: 0;
+
+      &:hover,
+      &:focus {
+        top: 0;
+        outline-offset: 2px;
+      }
+    }
+  }
+</style>

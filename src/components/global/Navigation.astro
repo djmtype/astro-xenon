@@ -1,0 +1,103 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+
+
+---
+
+<nav class="site-nav" id="main-navigation">
+  <ul class="nav-list" role="list">
+    <li>
+      <a
+        class="nav-link"
+        href="/"
+        aria-current={pathname === "/" ? "page" : undefined}>Home</a
+      >
+    </li>
+
+    <li>
+      <a
+        class="nav-link"
+        href="/blog"
+        aria-current={pathname === "/blog" ? "page" : undefined}>Blog</a
+      >
+    </li>
+
+  </ul>
+</nav>
+
+<script>
+  // variables
+  const mainNav = document.querySelector("#main-navigation");
+  const mainMenu = mainNav.querySelector("ul");
+
+  // execution
+  mainMenu &&
+    mainMenu.addEventListener("keydown", (event) => {
+      const currentMenuItem = event.target.closest("li");
+      const menuItems = [...mainMenu.querySelectorAll("li")];
+      const index = menuItems.findIndex((item) => item === currentMenuItem);
+
+      const key = event.key;
+      let targetItem;
+
+      // move right on arrow right
+      if (key === "ArrowRight") {
+        // if it's the last item, go the first, else go to next
+        if (menuItems.indexOf(currentMenuItem) === menuItems.length - 1) {
+          targetItem = menuItems[0];
+        } else {
+          targetItem = menuItems[index + 1];
+        }
+      }
+
+      // move left on arrow left
+      if (key === "ArrowLeft") {
+        // if it's the first item, go the last, else go to next
+        if (menuItems.indexOf(currentMenuItem) === 0) {
+          targetItem = menuItems[menuItems.length - 1];
+        } else {
+          targetItem = menuItems[index - 1];
+        }
+      }
+
+      // escape to go back to first item
+      if (key === "Escape") {
+        targetItem = menuItems[0];
+      }
+
+      // set focus on target item
+      if (targetItem) {
+        targetItem.querySelector("a, button, input").focus();
+      }
+    });
+</script>
+
+<style>
+  .nav-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--base-amount), 1fr));
+    /* gap: var(--space-xs); */
+
+    font-family: var(--font-family-heading);
+  }
+
+  .nav-link {
+    text-decoration: none;
+    display: block;
+    padding: var(--space-xs) var(--space-md);
+    color: var(--color-muted);
+    border-radius: var(--border-radius-rounded);
+    &:link {
+      color: var(--color-muted);
+    }
+    &:hover,
+    &:focus-visible {
+      color: var(--color-foreground);
+    }
+    &[aria-current="page"] {
+      background-color: var(--color-gloss);
+      color: var(--color-foreground);
+      font-weight: var(--font-weight-bold);
+    }
+  }
+</style>

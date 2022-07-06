@@ -1,0 +1,38 @@
+---
+import site from "@data/site.json";
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer section-lg" role="contentinfo">
+  <div class="container" style="--spread: var(--breakpoint-lg)">
+    <p>
+      Copyright &copy; {currentYear}
+      <strong>{site.name}</strong>. Most rights reserved.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+
+    /* position: sticky;
+    bottom: 0; */
+    border-top: var(--border-width-1) solid var(--color-separator);
+    background-color: var(--color-gloss);
+    color: var(--color-muted);
+  }
+
+  .site-footer p {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-xs);
+  }
+
+  .site-footer > div {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+  }
+
+  .site-footer > div {
+    text-align: right;
+  }
+</style>

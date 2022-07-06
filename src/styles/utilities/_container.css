@@ -1,0 +1,6 @@
+.container {
+  /* width: min(100% - var(--gutter, var(--space-xl)) * 2, var(--spread, var(--breakpoint-md))); */
+  width: 100%;
+  max-width: var(--breakpoint-lg);
+  margin-inline: auto;
+}

@@ -1,0 +1,122 @@
+---
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+import Pagination from "@components/Pagination.astro"
+import PostItem from "@components/PostItem.astro"
+
+export async function getStaticPaths({ paginate, rss }) {
+	const allPosts = await Astro.glob("./*.md")
+	const sortedPosts = allPosts.sort(
+		(a, b) =>
+			new Date(b.frontmatter.date.published).valueOf() -
+			new Date(a.frontmatter.date.published).valueOf()
+	)
+
+	// Generate an RSS feed from this collection of posts.
+	// NOTE: This is disabled by default, since it requires `site` to be set in your "astro.config.mjs" file.
+	//   rss({
+	//     title: 'Don’s Blog',
+	//     description: 'An example blog on Astro',
+	//     customData: `<language>en-us</language>`,
+	//     items: sortedPosts.map(item => ({
+	//       title: item.title,
+	//       description: item.description,
+	//       link: item.url,
+	//       pubDate: item.date,
+	//     })),
+	//   });
+
+	// Return a paginated collection of paths for all posts
+	return paginate(sortedPosts, { pageSize: 3 })
+}
+
+let title = "Blog"
+let description = "Posts for Xenon"
+
+let permalink = "https://xenon.mtype.com/posts"
+
+let layoutCss = "blog"
+
+const { page } = Astro.props
+---
+
+<DefaultLayout
+	{title}
+	{description}
+	{permalink}
+	{layoutCss}
+	canonicalUrl={Astro.canonicalURL.href}
+>
+	<div class="main-content">
+		<div class="main-header">
+			<h1 class="main-title font-size-display">{title}</h1>
+		</div>
+
+		<div class="main-body section-3xl">
+			<ul class="post-list" role="list">
+				{page.data.map((post) => (
+					<PostItem
+						url={post.url}
+						title={post.frontmatter.title}
+						datePublished={post.frontmatter.date.published}
+						image={post.frontmatter.image.path}
+						alt={post.frontmatter.image.alt}
+						label={post.frontmatter.category}
+						description={post.frontmatter.description}
+					/>
+				))}
+			</ul>
+		</div>
+		<footer class="main-footer">
+			<Pagination
+				prevUrl={page.url.prev}
+				nextUrl={page.url.next}
+				currentPage={page.currentPage}
+				totalPages={page.lastPage}
+			/>
+		</footer>
+	</div>
+</DefaultLayout>
+
+<style>
+	/* :global(.post-list > *) {
+		border-bottom: var(--border-width-1) solid var(--color-separator);
+		padding-bottom: var(--gutter);
+	} */
+
+	.main-header {
+		/* background-image: linear-gradient(0deg, var(--color-background) 10%, var(--color-gloss)); */
+		background: var(--color-gloss);
+		padding: var(--gutter);
+		aspect-ratio: 3/1;
+		display: flex;
+		flex-direction: column;
+		& > * {
+			margin-top: auto;
+			margin-bottom: 0;
+			align-self: start;
+		}
+		& > *:last-child {
+			padding-bottom: 0.1ch;
+		}
+	}
+
+	.main-title {
+		background-image: linear-gradient(
+			45deg,
+			var(--color-primary),
+			var(--color-secondary)
+		);
+
+		background-size: 100%;
+		background-repeat: repeat;
+
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.post-list {
+		display: flex;
+		flex-direction: column;
+		row-gap: var(--gutter);
+	}
+</style>

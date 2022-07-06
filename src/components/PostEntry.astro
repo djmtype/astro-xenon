@@ -1,0 +1,102 @@
+---
+import "@styles/layouts/entry.css"
+import { Img } from "astro-imagetools/components"
+
+import dayjs from "dayjs"
+
+export interface Props {
+	url: string
+	title: string
+	image?: any
+	imageCredit?: any
+	imageOrigin?: any
+	label: string
+	datePublished: string
+	dateUpdated?: string
+	tags?: any
+	category?: string
+}
+
+function commaList(array) {
+	return array.join(", ").replace(/, ((?:.(?!, ))+)$/, " and $1")
+}
+
+const {
+	url,
+	title,
+	image,
+	imageCredit,
+	imageOrigin,
+	alt,
+	label,
+	datePublished,
+	dateUpdated,
+	category,
+	tags,
+} = Astro.props
+---
+
+<article class="entry">
+	<div class="entry-heading">
+		<div class="entry-header">
+			<h1 class="entry-title">{title}</h1>
+			<div class="entry-meta margin-top-xs">
+				<dl class="entry-date entry-meta-list">
+					<dt class="entry-meta-key">Date Published</dt>
+					<dd class="entry-meta-value">
+						{dayjs(datePublished).format("DD MMMM YYYY")}
+					</dd>
+				</dl>
+
+				<dl class="entry-category entry-meta-list">
+					<dt class="entry-meta-key">Category</dt>
+					<dd class="entry-meta-value">{category}</dd>
+				</dl>
+
+				<dl class="entry-tags entry-meta-list">
+					<dt class="entry-meta-key">Tags</dt>
+					<dd class="entry-meta-value">
+						{tags.map((tag) => <span>#{tag} </span>)}
+					</dd>
+				</dl>
+			</div>
+		</div>
+
+		<figure class="entry-thumb">
+			<Img src={image} quality={50} width={1200}  layout="fill" alt={alt ? `${alt}` : ` `} />
+		</figure>
+	</div>
+
+	<div class="entry-body section-xl">
+		<div class="entry-content flow">
+			<slot></slot>
+
+			{imageCredit ? (
+				<footer class='entry-footer font-size-smaller'>
+					<div class='image-credit'>
+						<Img
+							src={image}
+							width={100}
+							height={100}
+							alt={alt ? `${alt}` : ` `}
+						/>
+
+					
+							<div>
+								<h2 class="sr-only" id="image-credit">Image Credit</h2>
+								<p set:html={imageCredit} />
+							</div>
+					
+					</div>
+				</footer>
+			) : (
+				""
+			)}
+		</div>
+	</div>
+</article>
+<style>
+	/* :global(img) {
+		image-rendering: pixelated;
+	} */
+</style>

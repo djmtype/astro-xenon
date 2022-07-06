@@ -1,0 +1,116 @@
+---
+export interface Props {
+	className: string;
+	href?: string;
+	externalTarget?: boolean;
+	id?: string;
+}
+
+const { id, className, href, externalTarget } = Astro.props;
+---
+
+{(() => {
+	if (href && externalTarget)
+		return (
+			<a id={id} target='_blank' rel='noopener' href={href} class={className}>
+				<slot />
+			</a>
+		)
+	if (href)
+		return (
+			<a id={id} href={href} class={className}>
+				<slot />
+			</a>
+		)
+	else
+		return (
+			<button id={id} class={className}>
+				<slot />
+			</button>
+		)
+})()}
+
+<style>
+	.btn {
+		display: inline-flex;
+		padding: var(--space-xs) var(--space-xl);
+		font-family: var(--font-family-heading);
+		border: var(--border-width-1) solid transparent;
+		border-radius: var(--border-radius-rounded);
+		text-decoration: none;
+		cursor: pointer;
+		font-weight: var(--font-weight-bold);
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		transition: 250ms ease-in-out filter;
+	}
+
+	.btn:not(.btn-default) {
+		&:hover,
+		&:focus-within {
+			filter: brightness(1.2);
+		}
+		&:active {
+			filter: brightness(0.9);
+			transform: scale(0.95);
+		}
+	}
+
+
+	/* .btn-default {
+		background-color: var(--color-muted);
+		color: var(--color-background);
+		border-color: var(--color-muted);
+	} */
+
+	.btn-default {
+		background-color: var(--color-surface-1);
+		color: var(--color-foreground);
+		border-color: var(--color-surface-1);
+	}
+
+	.btn-primary {
+		background: var(--color-primary);
+		color: var(--color-background);
+		border-color: var(--color-primary);
+	}
+
+	.btn-primary:hover,
+	.btn-primary:focus-within {
+		background: var(--color-primary);
+		color: var(--color-background);
+		border-color: var(--color-primary);
+	}
+
+	.btn-primary:active {
+		background: var(--color-primary);
+		color: var(--color-background);
+		border-color: var(--color-primary);
+	}
+
+
+  .btn-secondary {
+		background: var(--color-secondary);
+		color: var(--color-background);
+		border-color: var(--color-secondary);
+	}
+
+	.btn-secondary:hover,
+	.btn-secondary:focus-within {
+		background: var(--color-secondary);
+		color: var(--color-background);
+		border-color: var(--color-secondary);
+	}
+
+	.btn-secondary:active {
+		background: var(--color-secondary);
+		color: var(--color-background);
+		border-color: var(--color-secondary);
+	}
+
+	.btn-disabled {
+		opacity: .7;
+		cursor: not-allowed;
+	}
+</style>

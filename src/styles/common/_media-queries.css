@@ -1,0 +1,15 @@
+@custom-media --viewport-3xs (width >= 18rem);
+@custom-media --viewport-2xs (width >= 24rem);
+@custom-media --viewport-xs (width >= 36rem);
+@custom-media --viewport-sm (width >= 48rem);
+@custom-media --viewport-md (width >= 62rem);
+@custom-media --viewport-lg (width >= 75rem);
+@custom-media --viewport-xl (width >= 90rem);
+@custom-media --viewport-2xl (width >= 100rem);
+
+@custom-media --night (prefers-color-scheme: dark);
+@custom-media --day (prefers-color-scheme: light);
+
+@custom-media --motion (prefers-reduced-motion: no-preference);
+
+@custom-media --no-motion (prefers-reduced-motion: reduce);

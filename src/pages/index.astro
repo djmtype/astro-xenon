@@ -1,0 +1,55 @@
+---
+import '@styles/layouts/dashboard.css';
+import DefaultLayout from '@layouts/DefaultLayout.astro';
+import PostTile from "@components/PostTile.astro";
+
+
+
+let title = 'Home';
+let description = 'Official website for mtype';
+
+let permalink = 'https://mtype.com';
+
+let layoutCss = 'dashboard';
+
+
+let posts = await Astro.glob("../pages/blog/*.md");
+posts = posts.filter((date) => date.frontmatter.status === "published");
+// posts = posts.filter((category) => category.frontmatter.category !== 'Bookmarks');
+
+posts = posts
+  .sort(
+    (a, b) =>
+      new Date(b.frontmatter.datePublished).valueOf() -
+      new Date(a.frontmatter.datePublished).valueOf()
+  )
+  .slice(0, 6);
+
+const image = posts[0].frontmatter.image.path;
+
+const { content } = Astro.props;
+---
+
+<DefaultLayout
+	{title}
+	{description}
+	{permalink}
+	{layoutCss}  
+	canonicalUrl={Astro.canonicalURL.href}
+>
+
+{posts.map((post) => (
+	<PostTile
+		url={post.url}
+		title={post.frontmatter.title}
+		image={post.frontmatter.image.path}
+		alt={post.frontmatter.image.alt}
+		label={post.frontmatter.category}
+	></PostTile>
+))}
+	
+</DefaultLayout>
+
+<style>
+
+</style>

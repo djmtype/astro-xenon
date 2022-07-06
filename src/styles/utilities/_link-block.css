@@ -1,0 +1,14 @@
+/* needs parent to be position: relative all interactive and text elements of the link-block parent should also have a greater z-index for accessibility */
+
+.link-block {
+  position: static;
+}
+.link-block::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

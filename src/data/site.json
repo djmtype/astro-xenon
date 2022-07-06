@@ -1,0 +1,32 @@
+{
+	"title": "Astro Xenon",
+	"description": "Music. Code. Tech.",
+	"url": "https://xenon.mtype.com",
+	"profiles": [
+		{
+		"twitterId": "djmtype",
+		"spotifyId": "djmtype",
+		"emailUrl": "mailto:xenon@mtype.com",
+		"raindrop": "djmtype"
+		}
+	],
+	"nav": [
+		{
+			"link": "/",
+			"name": "Home"
+		},
+		{
+			"link": "/blog",
+			"name": "Blog"
+		},
+		{
+			"link": "/about",
+			"name": "About"
+		},
+		{
+			"link": "https://xe.mtype.com",
+			"name": "More Info",
+			"target": "_blank"
+		}
+	]
+}

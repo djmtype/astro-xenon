@@ -1,0 +1,86 @@
+---
+import { Icon } from 'astro-icon';
+export interface Props {
+	prevUrl: string;
+	nextUrl: string;
+	currentPage: string;
+	totalPages: string;
+}
+
+const { prevUrl, nextUrl, currentPage, totalPages } = Astro.props;
+---
+
+<nav class='pagination' aria-label='Pagination'>
+	<ul class="pagination-list" role="list">
+		{prevUrl ? (
+			<li class='prev'><a aria-label='Previous Page' href={prevUrl}>
+				<Icon name='ri:arrow-left-s-line' width={32} />
+			</a></li>
+		) : null}
+		<li class="pagination-info">
+			Page <span class='current-page'>{currentPage}</span>
+			of
+			<span class='total-pages'>{totalPages}</span>
+		</li>
+
+		{nextUrl ? (
+			<li class='next'>
+				<a aria-label='Next Page' href={nextUrl}>
+				<Icon name='ri:arrow-right-s-line' width={32} />
+				</a>
+			</li>
+		) : null}
+	</ul>
+</nav>
+
+
+
+<style>
+
+	.pagination-list {
+		display: flex;
+		gap: 1em;
+		justify-content: center;
+		align-items: center;
+	}
+
+
+
+
+	.prev a,
+	.next a {
+		/* min-width: 10ch;
+		padding: var(--space-2xs) var(--space-xs); */
+		display: inline-flex;
+		/* font-size: var(--font-size-smaller);
+		font-weight: var(--font-weight-bold); */
+		text-decoration: none;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--color-gloss);
+		border-radius: var(--border-radius-rounded);
+		/* height: var(--space-2xl); */
+		width: var(--space-2xl);
+		 aspect-ratio: 1/1;
+		/* font-size: var(--font-size-lg); */
+	}
+
+	.prev a,
+	.next a {
+		& svg {
+			width: 75%;
+		}
+	}
+
+	.prev a[href='#'],
+	.next a[href='#'] {
+		display: none;
+	}
+
+	/* .pagination-info {
+		
+		font-family: var(--font-family-mono);
+		font-size: var(--font-size-smaller);
+	} */
+
+</style>

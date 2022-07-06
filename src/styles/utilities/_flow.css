@@ -1,0 +1,38 @@
+.flow > * + * {
+  margin-block-start: var(--flow, var(--space-xl));
+}
+
+.margin-top-0 {
+  margin-block-start: var(--flow-top, 0);
+}
+
+.margin-top-2xs {
+  margin-block-start: var(--flow-top, var(--space-2xs));
+}
+
+.margin-top-xs {
+  margin-block-start: var(--flow-top, var(--space-xs));
+}
+
+.margin-top-sm {
+  margin-block-start: var(--flow-top, var(--space-sm));
+}
+
+.margin-top-md {
+  margin-block-start: var(--flow-top, var(--space-md));
+}
+
+.margin-top-lg {
+  margin-block-start: var(--flow-top, var(--space-lg));
+}
+.margin-top-xl {
+  margin-block-start: var(--flow-top, var(--space-xl));
+}
+
+.margin-top-2xl {
+  margin-block-start: var(--flow-top, var(--space-2xl));
+}
+
+.margin-top-3xl {
+  margin-block-start: var(--flow-top, var(--space-3xl));
+}

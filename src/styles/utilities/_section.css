@@ -1,0 +1,38 @@
+.section-sm {
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+}
+
+.section-md {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+}
+
+.section-lg {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+.section-xl {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.section-2xl {
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
+}
+
+.section-3xl {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+.section-4xl {
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-4xl);
+}
+
+.section-5xl {
+  padding-top: var(--space-5xl);
+  padding-bottom: var(--space-5xl);
+}

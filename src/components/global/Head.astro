@@ -1,0 +1,96 @@
+---
+import site from "@data/site.json";
+import '@styles/main.css';
+
+export interface Props {
+	title: string;
+	subtitle?: string;
+	description?: string;
+	permalink: string;
+	featuredImage?: string;
+	publishDate: string;
+	ogImageUrl: string;
+	canonicalUrl?: string;
+	path?: string;
+	articleSchema?: boolean;
+}
+
+const {
+	title,
+	subtitle,
+	description,
+	permalink,
+	publishDate,
+	ogImageUrl,
+	canonicalUrl,
+	path,
+	articleSchema,
+	featuredImage,
+} = Astro.props as Props;
+
+
+
+const siteOrigin = new URL(Astro.request.url).origin;
+
+// siteUrl and canonicalUrl return the same result
+const siteUrl = new URL(Astro.request.url);
+---
+
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+<meta http-equiv='X-UA-Compatible' content='ie=edge' />
+<meta name="theme-color" content="Canvas">
+<meta name="color-scheme" content="dark light">
+<!-- favicon -->
+<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+<link rel='icon' type='image/x-icon' href='/favicon.ico' />
+
+<!-- page title -->
+<title>{title ? `${title} / ${site.title}` : site.title}</title>
+
+<meta name='title' content={title ? `${title} / ${site.title}` : site.title} />
+
+<meta name='description' content={description || site.description} />
+<!-- Sitemap -->
+<link rel='sitemap' href='/sitemap.xml' />
+<!-- RSS -->
+<link
+	rel='alternate'
+	type='application/rss+xml'
+	title={`${site.title} Blog`}
+	href={`${siteOrigin}/feed/blog.xml`}
+/>
+
+<link rel='canonical' href={canonicalUrl} />
+
+<!-- open graph -->
+<meta property='og:title' content={title || site.title} />
+
+<meta property='og:description' content={description || site.description} />
+
+<meta property='og:type' content='website' />
+<meta property='og:url' content={canonicalUrl || site.url} />
+<meta
+	property='og:image'
+	content={ogImageUrl
+		? `${canonicalUrl}${ogImageUrl}`
+		: `${siteOrigin}/public/images/social.jpg`}
+/>
+
+<meta name='color-scheme' content='dark light' />
+
+<!-- Twitter -->
+<meta property='twitter:card' content='summary_large_image' />
+<meta property='twitter:url' content={canonicalUrl || site.url} />
+<meta
+	property='twitter:title'
+	content={title ? `${title} / ${site.title}` : site.title}
+/>
+<meta property='twitter:description' content={description || site.description}
+/>
+<meta
+	property='twitter:image'
+	content={ogImageUrl
+		? `${canonicalUrl}${ogImageUrl}`
+		: `${siteOrigin}/public/images/social.jpg`}
+/>
