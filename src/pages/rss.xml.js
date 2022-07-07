@@ -4,8 +4,8 @@ const postImportResult = import.meta.globEager('./blog/*.md');
 const posts = Object.values(postImportResult);
 
 export const get = () => rss({
-    title: 'Blog Title',
-    description: 'Blog description',
+    title: 'Xenon',
+    description: 'Read the latest posts on code and tech',
     site: import.meta.env.SITE,
 		items: posts.map((post) => ({
       title: post.frontmatter.title,

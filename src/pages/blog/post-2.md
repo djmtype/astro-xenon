@@ -1,10 +1,9 @@
 ---
 title: Post Two
 description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: 2022-05-18
 date: 
-  published: 2022-05-18
-  updated: 2022-06-25
+  published: 2022-06-12
+  updated: 2022-07-06
 image:
   path: "/images/scott-webb-ApYVKHHTLqE-unsplash.jpeg"
   alt: "blue and white abstract painting"

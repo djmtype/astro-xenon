@@ -1,9 +1,8 @@
 ---
 title: Post Five
 description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: 2022-05-18
 date: 
-  published: 2022-05-18
+  published: 2022-07-04
   updated:
 image:
   path: "/images/scott-webb-dnBYmV_gdhk-unsplash.jpeg"
