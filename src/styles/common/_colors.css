@@ -1,0 +1,17 @@
+/* grayscale */
+@import "../schemes/_grayscale.css";
+
+/* night */
+@import "../schemes/_night.css";
+
+/* day */
+@import "../schemes/_day.css";
+
+/* syntax code (shiki) */
+@import "../schemes/_syntax.css";
+
+
+:root {
+	accent-color: var(--color-primary);
+}
+

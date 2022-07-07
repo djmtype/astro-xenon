@@ -1,3 +1,5 @@
+/* For color variables, see _schemes.css */
+
 :root {
   --breakpoint-3xs: 18rem;
   --breakpoint-2xs: 24rem;
@@ -126,7 +128,6 @@
 
 :root {
   --gutter: var(--space-xl);
-  /* --base-amount: calc(0.5vw + 0.5vh + 15rem); */
-  --base-amount: 250px;
+  --base-amount: calc(0.5vw + 0.5vh + 15rem);
   --gradient-primary: linear-gradient(45deg, var(--color-blue), var(--color-purple));
 }

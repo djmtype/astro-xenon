@@ -7,13 +7,6 @@ html {
 }
 
 
-
-/* @media (prefers-color-scheme: light) {
-	html:not([color-scheme]) {
-		color-scheme: light;
-	}
-} */
-
 body {
   flex-grow: 1;
   background-color: var(--color-background);
@@ -157,3 +150,4 @@ code {
 del {
   text-decoration-color: var(--color-red);
 }
+

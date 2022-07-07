@@ -1,0 +1,13 @@
+:root {
+	--astro-code-color-text: var(--color-foreground);
+	--astro-code-color-background: var(--color-gloss);
+	--astro-code-token-constant: var(--color-foreground);
+	--astro-code-token-string: var(--color-green);
+	--astro-code-token-comment: var(--color-muted);
+	--astro-code-token-keyword: var(--color-red);
+	--astro-code-token-parameter: var(--color-green);
+	--astro-code-token-function: var(--color-secondary);
+	--astro-code-token-string-expression: var(--color-primary);
+	--astro-code-token-punctuation: var(--color-foreground);
+	--astro-code-token-link: var(--color-green);
+}

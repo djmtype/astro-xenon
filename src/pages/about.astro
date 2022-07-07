@@ -2,10 +2,12 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro';
 import Button from "@components/Button.astro";
 
-let title = 'About';
-let description = 'Official website for mtype';
+import * as About from '../demo/about.md';
 
-let permalink = 'https://mtype.com/about';
+let title = 'About';
+let description = 'About page';
+
+let permalink = 'https://astro-xenon.netlify.app/about';
 
 
 
@@ -22,11 +24,8 @@ const { content } = Astro.props;
 >
 	<div class="flow">
 	
-		<h1>{title}</h1>
-		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a <a href="#0">type specimen</a> book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-		<p><Button className="btn btn-default" href="#0">My Button</Button></p>
-		<p><Button className="btn btn-primary" href="#0">My Button</Button></p>
-		<p><Button className="btn btn-secondary" href="#0">My Button</Button></p>
+	<About.Content />
+
 	</div>
 </DefaultLayout>
 

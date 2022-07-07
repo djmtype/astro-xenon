@@ -4,9 +4,11 @@ export interface Props {
 	href?: string;
 	externalTarget?: boolean;
 	id?: string;
+	type?: string;
+	name?: string;
 }
 
-const { id, className, href, externalTarget } = Astro.props;
+const { id, className, href, externalTarget, type, name } = Astro.props;
 ---
 
 {(() => {
@@ -24,7 +26,7 @@ const { id, className, href, externalTarget } = Astro.props;
 		)
 	else
 		return (
-			<button id={id} class={className}>
+			<button id={id} class={className} type={type} name={name}>
 				<slot />
 			</button>
 		)

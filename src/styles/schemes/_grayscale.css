@@ -1,0 +1,27 @@
+/* Grayscale setup – No need to change anything here */
+
+:root {
+	/* grayscale calculations */
+	--gray-10-l: var(--gray-l);
+	--gray-20-l: calc(var(--gray-l) - var(--gray-increment) * 1);
+	--gray-30-l: calc(var(--gray-l) - var(--gray-increment) * 2);
+	--gray-40-l: calc(var(--gray-l) - var(--gray-increment) * 3);
+	--gray-50-l: calc(var(--gray-l) - var(--gray-increment) * 4);
+	--gray-60-l: calc(var(--gray-l) - var(--gray-increment) * 5);
+	--gray-70-l: calc(var(--gray-l) - var(--gray-increment) * 6);
+	--gray-80-l: calc(var(--gray-l) - var(--gray-increment) * 7);
+	--gray-90-l: calc(var(--gray-l) - var(--gray-increment) * 8);
+
+  /* grayscale composites */
+  --color-gray-0: hsl(var(--gray-h) var(--gray-s) 100%);
+	--color-gray-10: hsl(var(--gray-h) var(--gray-s) var(--gray-10-l));
+	--color-gray-20: hsl(var(--gray-h) var(--gray-s) var(--gray-20-l));
+	--color-gray-30: hsl(var(--gray-h) var(--gray-s) var(--gray-30-l));
+	--color-gray-40: hsl(var(--gray-h) var(--gray-s) var(--gray-40-l));
+	--color-gray-50: hsl(var(--gray-h) var(--gray-s) var(--gray-50-l));
+	--color-gray-60: hsl(var(--gray-h) var(--gray-s) var(--gray-60-l));
+	--color-gray-70: hsl(var(--gray-h) var(--gray-s) var(--gray-70-l));
+	--color-gray-80: hsl(var(--gray-h) var(--gray-s) var(--gray-80-l));
+	--color-gray-90: hsl(var(--gray-h) var(--gray-s) var(--gray-90-l));
+  --color-gray-100: hsl(var(--gray-h) var(--gray-s) 0%);
+}

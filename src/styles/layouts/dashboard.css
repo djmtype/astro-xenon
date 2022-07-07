@@ -1,5 +1,3 @@
-/* @import "../common/_media.css"; */
-
 main {
   display: grid;
   gap: var(--gutter);

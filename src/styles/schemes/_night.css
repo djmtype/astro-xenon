@@ -1,0 +1,36 @@
+:root {
+	color-scheme: dark;
+
+	--color-yellow: hsl(35 86% 67%);
+	--color-orange: hsl(26 79% 62%);
+	--color-red: hsl(358 64% 62%);
+	--color-purple: hsl(292 25% 66%);
+	--color-blue: hsl(205 37% 62%);
+	--color-green: hsl(67 43% 54%);
+
+	/* Grayscale HSL Controls - Primary Hue is based on --color-blue for a cooler palette */
+	--color-primary-h: 205;
+	--gray-h: var(--color-primary-h);
+	--gray-s: 5%;
+	--gray-l: 90%;
+	--gray-increment: 10%;
+
+	--color-surface-1: var(--color-gray-80);
+	--color-foreground: var(--color-gray-10);
+	--color-background: var(--color-gray-90);
+	--color-background-trans: hsl(
+		var(--gray-h) var(--gray-s) var(--gray-90-l) / 0.7
+	);
+
+	--color-primary: var(--color-yellow);
+	--color-secondary: var(--color-blue);
+	--color-muted: var(--color-gray-40);
+
+	--color-gloss: var(--color-gray-100);
+
+	--color-separator: var(--color-gray-60);
+
+	--box-shadow-color: hsl(var(--gray-h) var(--gray-s) 0% / 0.5);
+
+	--blend-mode: multiply;
+}

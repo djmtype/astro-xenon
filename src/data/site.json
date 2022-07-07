@@ -24,9 +24,8 @@
 			"name": "About"
 		},
 		{
-			"link": "https://xe.mtype.com",
-			"name": "More Info",
-			"target": "_blank"
+			"link": "/contact",
+			"name": "Contact"
 		}
 	]
 }
