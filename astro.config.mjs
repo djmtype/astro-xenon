@@ -8,7 +8,7 @@ import { astroImageTools } from "astro-imagetools";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://xenon.mtype.com",
+	site: "https://astro-xenon.netlify.app/",
 	
 	vite: {
     plugins: [
