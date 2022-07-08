@@ -12,7 +12,6 @@ export default defineConfig({
 	
 	vite: {
     plugins: [
-      ViteYaml()
     ],
     ssr: {
       external: ["svgo"],
