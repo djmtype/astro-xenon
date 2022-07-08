@@ -76,12 +76,6 @@ These values can be adjusted separately for both night (dark) and day (light) sc
 > Question: What does *adaptive* grayscale even mean?  
 > Answer: Basically, you can tint your grays. (Be aware of accessibility!)
 
-![Xenon Default Grayscale](../../public/images/xenon-default.png)
-
-Default versus Very Blue
-
-![Xenon Blue Grayscale](../../public/images/xenon-blue.png)
-
 
 ### Common Astro Jargon 
 
