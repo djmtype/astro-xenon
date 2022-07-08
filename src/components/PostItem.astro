@@ -33,7 +33,7 @@ const { url, title, image, alt, label, datePublished, description } =
   
 
 			<h2 class='post-title font-size-lg'>
-				<a href={url} class='post-link'>{title}</a>
+				<a href={url} class='post-link link-block'>{title}</a>
 			</h2>
 			
 
@@ -52,6 +52,7 @@ const { url, title, image, alt, label, datePublished, description } =
       
 		</div>
 		<p class="post-description" set:html={description}></p>
+	
 
 		<Label className='label-default' name={label} />
 	</div>
@@ -64,6 +65,7 @@ const { url, title, image, alt, label, datePublished, description } =
 		background: var(--color-gloss);
   padding: var(--gutter);
   border-radius: var(--border-radius-rounded);
+	position: relative;
 	}
 
 

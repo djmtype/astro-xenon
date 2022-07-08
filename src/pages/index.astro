@@ -18,12 +18,12 @@ posts = posts.filter((date) => date.frontmatter.status === "published");
 // posts = posts.filter((category) => category.frontmatter.category !== 'Bookmarks');
 
 posts = posts
-  .sort(
+.sort(
     (a, b) =>
-      new Date(b.frontmatter.datePublished).valueOf() -
-      new Date(a.frontmatter.datePublished).valueOf()
+      new Date(b.frontmatter.date.published).valueOf() -
+      new Date(a.frontmatter.date.published).valueOf()
   )
-  .slice(0, 6);
+	.slice(0, 6);
 
 const image = posts[0].frontmatter.image.path;
 
@@ -47,9 +47,8 @@ const { content } = Astro.props;
 		label={post.frontmatter.category}
 	></PostTile>
 ))}
+
+
 	
 </DefaultLayout>
 
-<style>
-
-</style>

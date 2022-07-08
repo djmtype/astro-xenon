@@ -8,6 +8,7 @@ html {
 
 
 body {
+  transition: background 250ms ease-in-out, color 250ms ease;
   flex-grow: 1;
   background-color: var(--color-background);
   color: var(--color-foreground);

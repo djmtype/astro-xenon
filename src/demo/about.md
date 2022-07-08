@@ -46,7 +46,9 @@ Xenon contains a few other plugins from the community like [astro-imagetools](ht
 General site info and main navigation items can be managed via `src/data/site.json`
 
 ### RSS Feed
-RSS has been pre-configured based on any markdown file placed within `src/pages/blog`. Just be sure to configure your own site's feed information in `src/pages/feed.xml.js`. Postscript, don't forget to adjust the `site` property value found in `astro.config.mjs` 
+RSS has been pre-configured based on any markdown file placed within `src/pages/blog`. Be sure to configure your site's feed information in `src/pages/feed.xml.js`. 
+
+Postscript, adjust the `site` property value found in `astro.config.mjs` 
 
 ### Styling 
 Sorry, no Tailwinds. 😞 
@@ -72,7 +74,7 @@ These values can be adjusted separately for both night (dark) and day (light) sc
 
 > **Hold on!**  
 > Question: What does *adaptive* grayscale even mean?  
-> Answer: Basically, you can tint your grays.
+> Answer: Basically, you can tint your grays. (Be aware of accessibility!)
 
 ![Xenon Default Grayscale](../../public/images/xenon-default.png)
 

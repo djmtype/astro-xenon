@@ -48,7 +48,7 @@ const { id, className, href, externalTarget, type, name } = Astro.props;
 		transition: 250ms ease-in-out filter;
 	}
 
-	.btn:not(.btn-default) {
+	.btn {
 		&:hover,
 		&:focus-within {
 			filter: brightness(1.2);
@@ -115,4 +115,11 @@ const { id, className, href, externalTarget, type, name } = Astro.props;
 		opacity: .7;
 		cursor: not-allowed;
 	}
+
+	.btn-block {
+		display: flex;
+		width: 100%;
+	}
+
+
 </style>
