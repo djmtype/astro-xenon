@@ -1,5 +1,3 @@
-import ViteYaml from '@modyfi/vite-plugin-yaml';
-
 import { defineConfig } from 'astro/config';
 
 import sitemap from "@astrojs/sitemap";
