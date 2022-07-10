@@ -4,6 +4,7 @@ import Button from "@components/Button.astro"
 
 let title = "Contact"
 let description = "Contact page"
+let canonicalURL = Astro.canonicalURL;
 
 const { content } = Astro.props
 ---
@@ -11,8 +12,7 @@ const { content } = Astro.props
 <DefaultLayout
 	{title}
 	{description}
-	path={Astro.canonicalURL.pathname}
-	canonicalUrl={Astro.canonicalURL.href}
+	{canonicalURL}
 >
 	<form id="contact-form" name="contact" method="POST" class="flow">
 		<div class="form-control">

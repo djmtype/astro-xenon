@@ -9,6 +9,7 @@ posts = posts.filter((date) => date.frontmatter.status === "published");
 let title = "Home";
 let description = "Welcome to Xenon for Astro";
 let layoutCss = "dashboard";
+let canonicalURL = Astro.canonicalURL;
 
 // Leave out a specific category
 
@@ -30,7 +31,7 @@ const { content } = Astro.props;
 	{title}
 	{description} 
 	{layoutCss} 
-	canonicalUrl={Astro.canonicalURL.href}
+	{canonicalURL}
 >
 
 <DashboardGrid selector="section">

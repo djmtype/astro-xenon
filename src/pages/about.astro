@@ -3,17 +3,18 @@ import DefaultLayout from '@layouts/DefaultLayout.astro';
 
 
 import * as About from '../demo/about.md';
+let title = "About";
+let description = "About Xenon for Astro";
+let canonicalURL = Astro.canonicalURL;
 
 
 
-const { content } = Astro.props;
 ---
 
 <DefaultLayout
-	title="About"
-	description="About Xenon for Astro"
-	path={Astro.canonicalURL.pathname}
-	canonicalUrl={Astro.canonicalURL.href}
+	{title}
+	{description}
+	{canonicalURL}
 >
 	<div class="flow">
 	

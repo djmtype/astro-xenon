@@ -1,60 +1,54 @@
 ---
-import * as Template from '../demo/template.md';
+import * as Template from "../demo/template.md"
 
-import Head from '@components/global/Head.astro';
-import Footer from '@components/global/Footer.astro';
-import Sidebar from '@components/global/Sidebar.astro';
-import SkipLinks from '@components/global/SkipLinks.astro';
-import PostEntry from '@components/PostEntry.astro';
-
+import Head from "@components/global/Head.astro"
+import Footer from "@components/global/Footer.astro"
+import Sidebar from "@components/global/Sidebar.astro"
+import SkipLinks from "@components/global/SkipLinks.astro"
+import PostEntry from "@components/PostEntry.astro"
 
 export interface Props {
-	layoutCss?: string;
-
+	layoutCss?: string
 }
-let layoutCss = 'entry';
+let layoutCss = "entry"
 
-const { content } = Astro.props;
-const {
-  title,
-	date,
-  description,
-  canonicalUrl,
-  image,
-  category,
-  tags,
-} = content;
+const { content } = Astro.props
+let canonicalURL = Astro.canonicalURL
 
-
+const { title, date, description, image, category, tags } = content
 ---
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 	<head>
-		<Head {title} {description} {canonicalUrl} />
+		<Head
+			title={content.title}
+			description={content.description}
+			ogImage={content.image.path}
+			{canonicalURL}
+		/>
 	</head>
 	<body>
-		<div data-layout={layoutCss ? layoutCss : `default` }>
-		
+		<div data-layout={layoutCss ? layoutCss : `default`}>
 			<SkipLinks client:load />
-			<div class='wrapper'>
+			<div class="wrapper">
 				<Sidebar />
-				<main class='site-content' id='site-content' role='main'>
+				<main class="site-content" id="site-content" role="main">
 					<PostEntry
-          {title}
-            category={category} 
-            image={image.path} imageCredit={image.credit} imageOrigin={image.origin} 
-            alt={image.alt}
-            datePublished={date.published} 
-						dateUpdated={date.updated} 
-            {tags}
-          >
-            <slot></slot>
+						{title}
+						category={category}
+						image={image.path}
+						imageCredit={image.credit}
+						imageOrigin={image.origin}
+						alt={image.alt}
+						datePublished={date.published}
+						dateUpdated={date.updated}
+						{tags}
+					>
+						<slot></slot>
 
-            <Template.Content />
-          </PostEntry>
-
-					
+						<Template.Content />
+					</PostEntry>
 				</main>
 			</div>
 			<Footer />

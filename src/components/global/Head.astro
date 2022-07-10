@@ -4,30 +4,18 @@ import '@styles/main.css';
 
 export interface Props {
 	title: string;
-	subtitle?: string;
 	description?: string;
 	permalink: string;
-	featuredImage?: string;
 	publishDate: string;
-	// ogImageUrl: string;
-	canonicalUrl?: string;
-	path?: string;
-	articleSchema?: boolean;
+	canonicalURL?: string | URL;
 	ogImage?: string;
 	ogImageAlt?: string;
 }
 
 const {
 	title,
-	subtitle,
 	description,
-	permalink,
-	publishDate,
-	// ogImageUrl,
-	canonicalUrl,
-	path,
-	articleSchema,
-	featuredImage,
+	canonicalURL,
 	ogImage = '/images/social.jpg',
 	ogImageAlt = 'Xenon website social image'
 } = Astro.props as Props;
@@ -36,7 +24,7 @@ const ogImageSrc = new URL(ogImage, Astro.site);
 
 const siteOrigin = new URL(Astro.request.url).origin;
 
-// siteUrl and canonicalUrl return the same result
+// siteUrl and canonicalURL return the same result
 const siteUrl = new URL(Astro.request.url);
 ---
 
@@ -56,7 +44,7 @@ const siteUrl = new URL(Astro.request.url);
 
 <meta name='description' content={description || site.description} />
 <!-- Sitemap -->
-<link rel='sitemap' href='/sitemap.xml' />
+<link rel='sitemap' href='/sitemap-index.xml' />
 <!-- RSS -->
 <link
 	rel='alternate'
@@ -65,7 +53,7 @@ const siteUrl = new URL(Astro.request.url);
 	href={`${siteOrigin}/feed.xml`}
 />
 
-<link rel='canonical' href={canonicalUrl} />
+<link rel="canonical" href={canonicalURL} />
 
 <!-- open graph -->
 <meta property='og:title' content={title || site.title} />
@@ -73,17 +61,18 @@ const siteUrl = new URL(Astro.request.url);
 <meta property='og:description' content={description || site.description} />
 
 <meta property='og:type' content='website' />
-<meta property='og:url' content={canonicalUrl || site.url} />
+<meta property='og:url' content={canonicalURL || site.url} />
 <meta
 	property='og:image'
 	content={ogImageSrc}
 />
+<meta property="og:image:alt" content={ogImageAlt} />
 
 <meta name='color-scheme' content='dark light' />
 
 <!-- Twitter -->
 <meta property='twitter:card' content='summary_large_image' />
-<meta property='twitter:url' content={canonicalUrl || site.url} />
+<meta property='twitter:url' content={canonicalURL || site.url} />
 <meta
 	property='twitter:title'
 	content={title ? `${title} / ${site.title}` : site.title}
@@ -94,3 +83,4 @@ const siteUrl = new URL(Astro.request.url);
 	property='twitter:image'
 	content={ogImageSrc}
 />
+<meta property="twitter:image:alt" content={ogImageAlt} />
