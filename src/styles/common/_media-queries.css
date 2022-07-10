@@ -13,3 +13,8 @@
 @custom-media --motion (prefers-reduced-motion: no-preference);
 
 @custom-media --no-motion (prefers-reduced-motion: reduce);
+
+@custom-media --touch    (hover: none) and (pointer: coarse);
+@custom-media --stylus   (hover: none) and (pointer: fine);
+@custom-media --pointer  (hover) and (pointer: coarse);
+@custom-media --mouse    (hover) and (pointer: fine);

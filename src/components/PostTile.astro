@@ -11,7 +11,7 @@ export interface Props {
   datePublished?: string;
 }
 
-const { url, title, image, alt, label, datePublished } = Astro.props;
+const { url, title, image, alt, label } = Astro.props;
 ---
 
 <div class={image ? "tile tile-has-img" : "tile"}>
@@ -103,12 +103,18 @@ const { url, title, image, alt, label, datePublished } = Astro.props;
     background-position: 100% 100%;
     transition: background-position 0.3s;
 
+
+  }
+
+  @media (--mouse) {
+  .tile-title a {
     &:hover,
     &:focus {
       color: var(--color-background);
       background-position: 0% 100%;
-    }
+    } 
   }
+}
 
   .tile-content {
     align-self: end;

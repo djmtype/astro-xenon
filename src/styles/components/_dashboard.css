@@ -1,34 +1,34 @@
-main {
+.dashboard {
   display: grid;
   gap: var(--gutter);
   grid-template-columns: repeat(auto-fit, minmax(var(--base-amount), 1fr));
 
 }
 
-.tile:first-child {
+ .dashboard > *:first-child {
   grid-column: 1/-1;
 }
 
 @media (--viewport-lg) {
-  main {
+  .dashboard {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, minmax(0, var(--base-amount)));
   }
 
-  .tile:first-child {
+  .dashboard > *:first-child {
     grid-column: span 2;
     grid-row: span 2;
   }
 
-  .tile:nth-child(2) {
+  .dashboard > *:nth-child(2) {
     grid-row: span 2;
   }
 
-  .tile:nth-child(3) {
+  .dashboard > *:nth-child(3) {
     grid-row: span 2;
   }
 
-  .tile:nth-child(4) {
+  .dashboard > *:nth-child(4) {
     grid-column: span 2;
   }
 

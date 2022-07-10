@@ -1,15 +1,15 @@
 ---
 import site from "@data/site.json";
-import '@styles/main.css';
+import styles from '@styles/main.css';
 
 export interface Props {
 	title: string;
 	subtitle?: string;
 	description?: string;
-	permalink: string;
 	featuredImage?: string;
 	publishDate: string;
-	ogImageUrl: string;
+	ogImage?: string;
+	ogImageAlt?: string;
 	canonicalUrl?: string;
 	path?: string;
 	articleSchema?: boolean;
@@ -17,19 +17,15 @@ export interface Props {
 
 const {
 	title,
-	subtitle,
 	description,
-	permalink,
-	publishDate,
-	ogImageUrl,
 	canonicalUrl,
-	path,
-	articleSchema,
-	featuredImage,
+	ogImage = '/public/images/social.jpg',
+	ogImageAlt = 'Xenon website social image'
 } = Astro.props as Props;
 
+// const ogImageSrc = new URL(ogImage, Astro.site);
 
-
+const ogImageSrc = new URL(ogImage, Astro.request.url);
 const siteOrigin = new URL(Astro.request.url).origin;
 
 // siteUrl and canonicalUrl return the same result
@@ -72,10 +68,9 @@ const siteUrl = new URL(Astro.request.url);
 <meta property='og:url' content={canonicalUrl || site.url} />
 <meta
 	property='og:image'
-	content={ogImageUrl
-		? `${canonicalUrl}${ogImageUrl}`
-		: `${siteOrigin}/public/images/social.jpg`}
+	content={ogImageSrc}
 />
+<meta property="og:image:alt" content={ogImageAlt} />
 
 <meta name='color-scheme' content='dark light' />
 
@@ -90,7 +85,8 @@ const siteUrl = new URL(Astro.request.url);
 />
 <meta
 	property='twitter:image'
-	content={ogImageUrl
-		? `${canonicalUrl}${ogImageUrl}`
-		: `${siteOrigin}/public/images/social.jpg`}
+	content={ogImageSrc}
 />
+<meta property="twitter:image:alt" content={ogImageAlt} />
+
+<style set:html={styles}></style>

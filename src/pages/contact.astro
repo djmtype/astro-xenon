@@ -5,15 +5,12 @@ import Button from "@components/Button.astro"
 let title = "Contact"
 let description = "Contact page"
 
-let permalink = "https://astro-xenon.netlify.app/contact"
-
 const { content } = Astro.props
 ---
 
 <DefaultLayout
 	{title}
 	{description}
-	{permalink}
 	path={Astro.canonicalURL.pathname}
 	canonicalUrl={Astro.canonicalURL.href}
 >
@@ -68,7 +65,6 @@ const { content } = Astro.props
 		<fieldset>
 			<legend>Your feeling towards corgies?</legend>
 
-
 			<div>
 				<input type="radio" id="love" name="corgy" value="love" checked />
 				<label for="love">I love them</label>
@@ -78,8 +74,6 @@ const { content } = Astro.props
 				<input type="radio" id="like" name="corgy" value="like" />
 				<label for="like">I like them</label>
 			</div>
-
-			
 
 			<div>
 				<input
@@ -110,10 +104,8 @@ const { content } = Astro.props
 </DefaultLayout>
 
 <style>
-
 	form > *:not(button) {
 		width: min(100%, var(--line-length-md));
-		
 	}
 
 	input:not([type="radio"]),
@@ -145,7 +137,6 @@ const { content } = Astro.props
 	.form-control {
 		display: flex;
 		flex-direction: column;
-
 	}
 
 	:where(.form-control > *:last-child) {

@@ -1,16 +1,12 @@
 ---
-import '@styles/layouts/dashboard.css';
 import DefaultLayout from '@layouts/DefaultLayout.astro';
+import DashboardGrid from '@components/DashboardGrid.astro';
 import PostTile from "@components/PostTile.astro";
 
 
 
-let title = 'Home';
-let description = 'Official website for mtype';
 
-let permalink = 'https://astro-xenon.netlify.app';
 
-let layoutCss = 'dashboard';
 
 
 let posts = await Astro.glob("../pages/blog/*.md");
@@ -22,8 +18,7 @@ posts = posts
     (a, b) =>
       new Date(b.frontmatter.date.published).valueOf() -
       new Date(a.frontmatter.date.published).valueOf()
-  )
-	.slice(0, 6);
+  );
 
 const image = posts[0].frontmatter.image.path;
 
@@ -31,14 +26,14 @@ const { content } = Astro.props;
 ---
 
 <DefaultLayout
-	{title}
-	{description}
-	{permalink}
-	{layoutCss}  
+	title="Home"
+	description="Welcome to Xenon for Astro" 
+	layoutCss="dashboard" 
 	canonicalUrl={Astro.canonicalURL.href}
 >
 
-{posts.map((post) => (
+<DashboardGrid selector="section">
+{posts.slice(0, 6).map((post) => (
 	<PostTile
 		url={post.url}
 		title={post.frontmatter.title}
@@ -47,6 +42,7 @@ const { content } = Astro.props;
 		label={post.frontmatter.category}
 	></PostTile>
 ))}
+</DashboardGrid>
 
 
 	

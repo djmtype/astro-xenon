@@ -30,7 +30,7 @@
 	grid-column: 1/-1;
 	aspect-ratio: 1/1;
 	@media (--viewport-sm) {
-		height: calc(100vh - var(--gutter) * 2);
+		height: min(40rem, calc(100vh - var(--gutter) * 2));
 		aspect-ratio: initial;
 		grid-row: 1/-1;
 	}

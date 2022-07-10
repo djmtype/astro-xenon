@@ -1,0 +1,85 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+	className: string;
+	type?: string;
+	title?: string;
+	icon?: any;
+}
+
+const { className, title, type, icon } = Astro.props;
+---
+
+<div class={`callout ${className ? className : ""}`} data-type={type}>
+
+	{type === "info" ? <Icon name="ri:information-line" width={48} class="callout-icon" /> : ''}
+
+	{type === "warning" ? <Icon name="ri:error-warning-line" width={48} class="callout-icon" /> : ''}
+
+	{type === "yield" ? <Icon name="ri:alert-line" width={48} class="callout-icon" /> : ''}
+
+	{type === "success" ? <Icon name="ri:checkbox-circle-line" width={48} class="callout-icon" /> : ''}
+
+	{icon && type == null ? <Icon name={icon} width={48} class="callout-icon" /> : ''}
+	
+	<div>
+		{title ? (
+			<p class="callout-title">{title}</p>
+			) : null }
+		<slot />
+	</div>
+</div>
+
+<style>
+:global(.callout) {
+	color: var(--color-muted);
+	background: var(--color-gloss);
+	border-left: var(--border-width-2) solid currentColor;
+	padding: var(--gutter);
+	display: flex;
+	column-gap: var(--gutter);
+
+}
+
+:global(.callout-icon) {
+	width: 2.5rem;
+	height: auto;
+}
+
+:global(.callout:not([data-type]) p) {
+ color: var(--color-foreground);
+}
+
+:global([data-type="warning"]) {
+	color: var(--color-red);
+	border-color: currentColor;
+	
+}
+
+:global([data-type="yeild"]) {
+	color: var(--color-yellow);
+	border-color: currentColor;
+	
+}
+
+:global([data-type="info"]) {
+	color: var(--color-blue);
+	border-color: currentColor;
+	
+}
+
+:global([data-type="success"]) {
+	color: var(--color-green);
+	border-color: currentColor;
+	
+}
+
+:global(.callout-title) {
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-bold);
+}
+
+
+
+</style>

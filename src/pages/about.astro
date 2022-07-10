@@ -1,14 +1,8 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro';
-import Button from "@components/Button.astro";
+
 
 import * as About from '../demo/about.md';
-
-let title = 'About';
-let description = 'About page';
-
-let permalink = 'https://astro-xenon.netlify.app/about';
-
 
 
 
@@ -16,9 +10,8 @@ const { content } = Astro.props;
 ---
 
 <DefaultLayout
-	{title}
-	{description}
-	{permalink} 
+	title="About"
+	description="About Xenon for Astro"
 	path={Astro.canonicalURL.pathname}
 	canonicalUrl={Astro.canonicalURL.href}
 >

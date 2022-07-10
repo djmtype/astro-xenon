@@ -1,14 +1,14 @@
 ---
 export interface Props {
-	className: string;
-	href?: string;
-	externalTarget?: boolean;
-	id?: string;
-	type?: string;
-	name?: string;
+	className: string
+	href?: string
+	externalTarget?: boolean
+	id?: string
+	type?: string
+	name?: string
 }
 
-const { id, className, href, externalTarget, type, name } = Astro.props;
+const { id, className, href, externalTarget, type, name } = Astro.props
 ---
 
 {(() => {
@@ -59,7 +59,6 @@ const { id, className, href, externalTarget, type, name } = Astro.props;
 		}
 	}
 
-
 	/* .btn-default {
 		background-color: var(--color-muted);
 		color: var(--color-background);
@@ -91,8 +90,7 @@ const { id, className, href, externalTarget, type, name } = Astro.props;
 		border-color: var(--color-primary);
 	}
 
-
-  .btn-secondary {
+	.btn-secondary {
 		background: var(--color-secondary);
 		color: var(--color-background);
 		border-color: var(--color-secondary);
@@ -112,7 +110,7 @@ const { id, className, href, externalTarget, type, name } = Astro.props;
 	}
 
 	.btn-disabled {
-		opacity: .7;
+		opacity: 0.7;
 		cursor: not-allowed;
 	}
 
@@ -120,6 +118,4 @@ const { id, className, href, externalTarget, type, name } = Astro.props;
 		display: flex;
 		width: 100%;
 	}
-
-
 </style>

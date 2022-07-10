@@ -20,12 +20,17 @@
 			"name": "Blog"
 		},
 		{
+			"link": "/contact",
+			"name": "Contact"
+		},
+		{
 			"link": "/about",
 			"name": "About"
 		},
 		{
-			"link": "/contact",
-			"name": "Contact"
+			"link": "https://github.com/djmtype/astro-xenon#readme",
+			"name": "More info",
+			"target": "_blank"
 		}
 	]
 }

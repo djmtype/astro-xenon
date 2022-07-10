@@ -1,0 +1,41 @@
+---
+import '@styles/components/_dashboard.css';
+
+export interface Props {
+	className?: string;
+	type?: string;
+	selector?: string;
+	id?: string; 
+	
+}
+
+const { className, type, selector, id } = Astro.props;
+
+---
+
+
+
+{(() => {
+
+	if (selector === "list")
+	return (
+		<ul id={id} class={`dashboard ${className ? className : ""}`} role="list" data-type={type}>
+		<slot />
+		</ul>
+	)
+	else if (selector === "section")
+	return (
+		<section id={id} class={`dashboard ${className ? className : ""}`} data-type={type}>
+		<slot />
+		</section>
+	)
+	
+	else 
+		return (
+		<div id={id} class={`dashboard ${className ? className : ""}`} data-type={type}>
+		<slot />
+		</div>
+		)
+	
+	})()}
+
