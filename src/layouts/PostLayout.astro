@@ -7,12 +7,13 @@ import Sidebar from '@components/global/Sidebar.astro';
 import SkipLinks from '@components/global/SkipLinks.astro';
 import PostEntry from '@components/PostEntry.astro';
 
+
 export interface Props {
-	title: string;
 	layoutCss?: string;
 
 }
-let layoutCss = 'entry'
+let layoutCss = 'entry';
+
 const { content } = Astro.props;
 const {
   title,
@@ -40,7 +41,7 @@ const {
 				<Sidebar />
 				<main class='site-content' id='site-content' role='main'>
 					<PostEntry
-          title={title}
+          {title}
             category={category} 
             image={image.path} imageCredit={image.credit} imageOrigin={image.origin} 
             alt={image.alt}

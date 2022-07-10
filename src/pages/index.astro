@@ -3,14 +3,15 @@ import DefaultLayout from '@layouts/DefaultLayout.astro';
 import DashboardGrid from '@components/DashboardGrid.astro';
 import PostTile from "@components/PostTile.astro";
 
-
-
-
-
-
-
 let posts = await Astro.glob("../pages/blog/*.md");
 posts = posts.filter((date) => date.frontmatter.status === "published");
+
+let title = "Home";
+let description = "Welcome to Xenon for Astro";
+let layoutCss = "dashboard";
+
+// Leave out a specific category
+
 // posts = posts.filter((category) => category.frontmatter.category !== 'Bookmarks');
 
 posts = posts
@@ -26,9 +27,9 @@ const { content } = Astro.props;
 ---
 
 <DefaultLayout
-	title="Home"
-	description="Welcome to Xenon for Astro" 
-	layoutCss="dashboard" 
+	{title}
+	{description} 
+	{layoutCss} 
 	canonicalUrl={Astro.canonicalURL.href}
 >
 
