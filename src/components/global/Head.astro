@@ -1,31 +1,39 @@
 ---
 import site from "@data/site.json";
-import styles from '@styles/main.css';
+import '@styles/main.css';
 
 export interface Props {
 	title: string;
 	subtitle?: string;
 	description?: string;
+	permalink: string;
 	featuredImage?: string;
 	publishDate: string;
-	ogImage?: string;
-	ogImageAlt?: string;
+	// ogImageUrl: string;
 	canonicalUrl?: string;
 	path?: string;
 	articleSchema?: boolean;
+	ogImage?: string;
+	ogImageAlt?: string;
 }
 
 const {
 	title,
+	subtitle,
 	description,
+	permalink,
+	publishDate,
+	// ogImageUrl,
 	canonicalUrl,
-	ogImage = '/public/images/social.jpg',
+	path,
+	articleSchema,
+	featuredImage,
+	ogImage = '/images/social.jpg',
 	ogImageAlt = 'Xenon website social image'
 } = Astro.props as Props;
 
-// const ogImageSrc = new URL(ogImage, Astro.site);
+const ogImageSrc = new URL(ogImage, Astro.site);
 
-const ogImageSrc = new URL(ogImage, Astro.request.url);
 const siteOrigin = new URL(Astro.request.url).origin;
 
 // siteUrl and canonicalUrl return the same result
@@ -70,7 +78,6 @@ const siteUrl = new URL(Astro.request.url);
 	property='og:image'
 	content={ogImageSrc}
 />
-<meta property="og:image:alt" content={ogImageAlt} />
 
 <meta name='color-scheme' content='dark light' />
 
@@ -87,6 +94,3 @@ const siteUrl = new URL(Astro.request.url);
 	property='twitter:image'
 	content={ogImageSrc}
 />
-<meta property="twitter:image:alt" content={ogImageAlt} />
-
-<style set:html={styles}></style>
