@@ -1,5 +1,4 @@
 ---
-import nav from '@data/site.json';
 import * as Template from '../demo/template.md';
 
 import Head from '@components/global/Head.astro';
@@ -41,7 +40,7 @@ const {
 				<Sidebar />
 				<main class='site-content' id='site-content' role='main'>
 					<PostEntry
-            {title}
+          title={title}
             category={category} 
             image={image.path} imageCredit={image.credit} imageOrigin={image.origin} 
             alt={image.alt}
