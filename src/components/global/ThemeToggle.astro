@@ -2,9 +2,9 @@
 import Button from "@components/Button.astro"
 ---
 <Button className="btn btn-default" id="theme-toggle">Toggle Theme</Button>
-<script type="module">
+<script is:inline>
   let getSavedTheme = () => {
-    const theme = window.localStorage.getItem("theme");
+    const theme = window.localStorage.getItem("color-scheme");
     // If the user has explicitly chosen light or dark,
     // let's use it. Otherwise, this value will be null.
     if (typeof theme === "string") return theme;
@@ -16,7 +16,7 @@ import Button from "@components/Button.astro"
 
   let saveTheme = (theme) => {
     // If the user has explicitly chosen light or dark, store the default theme
-    if (typeof theme === "string") window.localStorage.setItem("theme", theme);
+    if (typeof theme === "string") window.localStorage.setItem("color-scheme", theme);
   };
 
   let mediaTheme = () => {

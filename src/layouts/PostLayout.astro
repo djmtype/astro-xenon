@@ -1,16 +1,8 @@
 ---
+import DefaultLayout from "./DefaultLayout.astro"
 import * as Template from "../demo/template.md"
 
-import Head from "@components/global/Head.astro"
-import Footer from "@components/global/Footer.astro"
-import Sidebar from "@components/global/Sidebar.astro"
-import SkipLinks from "@components/global/SkipLinks.astro"
 import PostEntry from "@components/PostEntry.astro"
-
-export interface Props {
-	layoutCss?: string
-}
-let layoutCss = "entry"
 
 const { content } = Astro.props
 let canonicalURL = Astro.canonicalURL
@@ -18,40 +10,22 @@ let canonicalURL = Astro.canonicalURL
 const { title, date, description, image, category, tags } = content
 ---
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-	<head>
-		<Head
-			title={content.title}
-			description={content.description}
-			ogImage={content.image.path}
-			{canonicalURL}
-		/>
-	</head>
-	<body>
-		<div data-layout={layoutCss ? layoutCss : `default`}>
-			<SkipLinks client:load />
-			<div class="wrapper">
-				<Sidebar />
-				<main class="site-content" id="site-content" role="main">
-					<PostEntry
-						{title}
-						category={category}
-						image={image.path}
-						imageCredit={image.credit}
-						imageOrigin={image.origin}
-						alt={image.alt}
-						datePublished={date.published}
-						dateUpdated={date.updated}
-						{tags}
-					>
-						<slot></slot>
+<DefaultLayout {title} {description} {canonicalURL}>
+	<PostEntry
+		{title}
+		category={category}
+		image={image.path}
+		imageCredit={image.credit}
+		imageOrigin={image.origin}
+		alt={image.alt}
+		datePublished={date.published}
+		dateUpdated={date.updated}
+		{tags}
+	>
+		<slot></slot>
 
-						<Template.Content />
-					</PostEntry>
-				</main>
-			</div>
-			<Footer />
-		</div>
-	</body>
-</html>
+		<Template.Content />
+	</PostEntry>
+</DefaultLayout>
+
+

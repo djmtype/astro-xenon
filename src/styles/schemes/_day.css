@@ -1,4 +1,4 @@
-[color-scheme='light'] {
+:root[color-scheme="light"] {
 	color-scheme: light;
 
 	--color-yellow: hsl(35 100% 39%);

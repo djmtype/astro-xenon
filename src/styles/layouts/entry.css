@@ -24,19 +24,21 @@
 
 
 
-.entry-thumb {
+.entry-figure {
 	position: relative;
 	grid-row: 1/3;
 	grid-column: 1/-1;
 	aspect-ratio: 1/1;
+	z-index: -1;
 	@media (--viewport-sm) {
 		height: min(40rem, calc(100vh - var(--gutter) * 2));
 		aspect-ratio: initial;
 		grid-row: 1/-1;
+
 	}
 }
 
-:global(.entry-thumb img),
+:global(.entry-figure img),
 .entry-img {
 	object-fit: cover;
 	height: 100%;
@@ -159,11 +161,7 @@
 	border-radius: var(--border-radius-rounded);
 }
 
-sup {
-	position: relative;
-	top: 0.5ch;
-	font-size: var(--font-size-xs);
-}
+
 
 [aria-describedby="footnote-label"] {
 	display: inline-block;

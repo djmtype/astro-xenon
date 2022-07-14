@@ -37,6 +37,11 @@ const {
 ---
 
 <article class="entry">
+
+	<figure class="entry-figure" id="entry-figure">
+		<Img src={image} quality={50} width={1200}  layout="fill" alt={alt ? `${alt}` : ` `} />
+	</figure>
+
 	<div class="entry-heading">
 		<div class="entry-header">
 			<h1 class="entry-title">{title}</h1>
@@ -62,9 +67,7 @@ const {
 			</div>
 		</div>
 
-		<figure class="entry-thumb">
-			<Img src={image} quality={50} width={1200}  layout="fill" alt={alt ? `${alt}` : ` `} />
-		</figure>
+
 	</div>
 
 	<div class="entry-body section-xl">
@@ -100,3 +103,17 @@ const {
 		image-rendering: pixelated;
 	} */
 </style>
+
+<script is:inline>
+// const thumb = document.querySelector('#entry-thumb');
+// const rate = 1; // lower = faster fade
+// let vh = Math.round(window.innerHeight / 100);
+
+// document.addEventListener('scroll', () => {
+//   thumb.style.opacity = vh/window.scrollY*rate;
+// });
+
+
+
+
+</script>
