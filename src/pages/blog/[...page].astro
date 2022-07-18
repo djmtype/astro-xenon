@@ -3,6 +3,7 @@ import DefaultLayout from "@layouts/DefaultLayout.astro"
 import Pagination from "@components/Pagination.astro"
 import PostItem from "@components/PostItem.astro"
 
+
 export async function getStaticPaths({ paginate, rss }) {
 	const allPosts = await Astro.glob("./*.md")
 	const sortedPosts = allPosts.sort(
@@ -34,18 +35,14 @@ let description = "Posts for Xenon"
 // let canonicalURL = Astro.canonicalURL;
 let layoutCss = "blog"
 
-const { canonicalURL } = Astro;
+const { canonicalURL } = Astro
 const { page } = Astro.props
 ---
 
-<DefaultLayout
-	{title}
-	{description}
-	{layoutCss}
-	{canonicalURL}
->
+<DefaultLayout {title} {description} {layoutCss} {canonicalURL}>
 	<div class="main-content">
 		<div class="main-header">
+
 			<h1 class="main-title font-size-display">{title}</h1>
 		</div>
 		<div class="main-body section-3xl">
@@ -75,30 +72,60 @@ const { page } = Astro.props
 </DefaultLayout>
 
 <style>
-	/* :global(.post-list > *) {
-		border-bottom: var(--border-width-1) solid var(--color-separator);
-		padding-bottom: var(--gutter);
-	} */
+	.main-body {
+		background-color: var(--color-background);
+	}
 
 	.main-header {
-		/* background-image: linear-gradient(0deg, var(--color-background) 10%, var(--color-gloss)); */
-		background: var(--color-gloss);
-		padding: var(--gutter);
 		aspect-ratio: 3/1;
+		position: relative;
+		overflow: hidden;
+		/* border-radius: var(--border-radius-rounded); */
+background-blend-mode: var(--blend-mode);
+		background-image: url(/images/thomas-stephan-mUcYC3-MtMk-unsplash.jpg), linear-gradient(
+			45deg,
+			var(--color-green),
+			var(--color-blue),
+			var(--color-purple),
+			var(--color-red)
+		);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+		background-position: 50% 50%;
 		display: flex;
 		flex-direction: column;
+		padding: var(--gutter);
 		& > * {
 			margin-top: auto;
 			margin-bottom: 0;
 			align-self: start;
 		}
-		& > *:last-child {
+		/* & > *:last-child {
 			padding-bottom: 0.1ch;
-		}
+		} */
 	}
 
+	/* .main-header::after {
+		content: "";
+		width: calc(100% - var(--space-lg));
+		height: calc(100% - var(--space-lg));
+		border: var(--border-width-3) solid var(--color-background);
+		display: block;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		border-radius: calc(var(--border-radius-rounded) / 2);
+	} */
 	.main-title {
-		background-image: linear-gradient(
+		z-index: 2;
+		display: inline-block;
+		/* padding: var(--space-xs) var(--space-md); */
+		/* text-shadow: .04em -.04em var(--color-gloss), -.04em .04em var(--color-gloss), .04em .04em var(--color-gloss), -.04em -.04em var(--color-gloss); */
+		color: var(--color-foreground);
+
+		/* background: linear-gradient(
 			45deg,
 			var(--color-primary),
 			var(--color-secondary)
@@ -108,12 +135,15 @@ const { page } = Astro.props
 		background-repeat: repeat;
 
 		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
+		-webkit-text-fill-color: transparent;  */
 	}
 
 	.post-list {
+		
 		display: flex;
 		flex-direction: column;
 		row-gap: var(--gutter);
 	}
+
+
 </style>

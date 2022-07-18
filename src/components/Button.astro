@@ -1,4 +1,6 @@
 ---
+
+
 export interface Props {
 	className: string
 	href?: string
@@ -6,9 +8,10 @@ export interface Props {
 	id?: string
 	type?: string
 	name?: string
+
 }
 
-const { id, className, href, externalTarget, type, name } = Astro.props
+const { id, className, href, externalTarget, type, name} = Astro.props
 ---
 
 {(() => {
@@ -46,7 +49,10 @@ const { id, className, href, externalTarget, type, name } = Astro.props
 		align-items: center;
 		justify-content: center;
 		transition: 250ms ease-in-out filter;
+		/* column-gap: 1ch; */
 	}
+
+
 
 	.btn {
 		&:hover,
@@ -117,5 +123,15 @@ const { id, className, href, externalTarget, type, name } = Astro.props
 	.btn-block {
 		display: flex;
 		width: 100%;
+	}
+
+	:global(.btn-icon) {
+		width: 1em;
+		height: auto;
+	}
+
+	.btn-text {
+		padding: 0;
+		color: var(--color-primary);
 	}
 </style>

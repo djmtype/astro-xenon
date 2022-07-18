@@ -98,6 +98,7 @@
   --border-width-none: 0;
   --border-width-1: max(1px, 0.0625rem);
   --border-width-2: max(2px, 0.125rem);
+  --border-width-3: max(3px, 0.1875rem);
 
 
   --border-radius-rounded: max(5px, 0.3125rem);

@@ -7,6 +7,15 @@
 
  .dashboard > *:first-child {
   grid-column: 1/-1;
+
+}
+
+.dashboard::before {
+  content: "";
+  position: relative;
+  grid-row: 1;
+  grid-column: 3;
+  z-index: 10;
 }
 
 @media (--viewport-lg) {
@@ -25,11 +34,11 @@
   }
 
   .dashboard > *:nth-child(3) {
-    grid-row: span 2;
-  }
-
-  .dashboard > *:nth-child(4) {
     grid-column: span 2;
   }
+
+  /* .dashboard > *:nth-child(4) {
+    grid-column: span 2;
+  } */
 
 }

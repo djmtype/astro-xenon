@@ -37,37 +37,38 @@ const {
 ---
 
 <article class="entry">
-
 	<figure class="entry-figure" id="entry-figure">
-		<Img src={image} quality={50} width={1200}  layout="fill" alt={alt ? `${alt}` : ` `} />
+		<Img
+			src={image}
+			quality={50}
+			width={1200}
+			layout="fill"
+			alt={alt ? `${alt}` : ` `}
+		/>
 	</figure>
 
 	<div class="entry-heading">
-		<div class="entry-header">
-			<h1 class="entry-title">{title}</h1>
-			<div class="entry-meta margin-top-xs">
-				<dl class="entry-date entry-meta-list">
-					<dt class="entry-meta-key">Date Published</dt>
-					<dd class="entry-meta-value">
-						{dayjs(datePublished).format("DD MMMM YYYY")}
-					</dd>
-				</dl>
+		<h1 class="entry-title">{title}</h1>
+		<div class="entry-meta margin-top-xs">
+			<dl class="entry-date entry-meta-list">
+				<dt class="entry-meta-key">Date Published</dt>
+				<dd class="entry-meta-value">
+					{dayjs(datePublished).format("DD MMMM YYYY")}
+				</dd>
+			</dl>
 
-				<dl class="entry-category entry-meta-list">
-					<dt class="entry-meta-key">Category</dt>
-					<dd class="entry-meta-value">{category}</dd>
-				</dl>
+			<dl class="entry-category entry-meta-list">
+				<dt class="entry-meta-key">Category</dt>
+				<dd class="entry-meta-value">{category}</dd>
+			</dl>
 
-				<dl class="entry-tags entry-meta-list">
-					<dt class="entry-meta-key">Tags</dt>
-					<dd class="entry-meta-value">
-						{tags.map((tag) => <span>#{tag} </span>)}
-					</dd>
-				</dl>
-			</div>
+			<dl class="entry-tags entry-meta-list">
+				<dt class="entry-meta-key">Tags</dt>
+				<dd class="entry-meta-value">
+					{tags.map((tag) => <span>#{tag} </span>)}
+				</dd>
+			</dl>
 		</div>
-
-
 	</div>
 
 	<div class="entry-body section-xl">
@@ -84,12 +85,12 @@ const {
 							alt={alt ? `${alt}` : ` `}
 						/>
 
-					
-							<div>
-								<h2 class="sr-only" id="image-credit">Image Credit</h2>
-								<p set:html={imageCredit} />
-							</div>
-					
+						<div>
+							<h2 class='sr-only' id='image-credit'>
+								Image Credit
+							</h2>
+							<p set:html={imageCredit} />
+						</div>
 					</div>
 				</footer>
 			) : (
@@ -105,15 +106,18 @@ const {
 </style>
 
 <script is:inline>
-// const thumb = document.querySelector('#entry-thumb');
-// const rate = 1; // lower = faster fade
-// let vh = Math.round(window.innerHeight / 100);
+// 	const mql = window.matchMedia("(min-width: 75rem)")
 
-// document.addEventListener('scroll', () => {
-//   thumb.style.opacity = vh/window.scrollY*rate;
-// });
+// 	const thumb = document.querySelector(".entry-figure")
 
+// 	const rate = 0.5
+// 	let vh = Math.round(window.innerHeight / 100)
 
-
-
+// 	mql.addEventListener( "change", (e) => {
+// 	if (e.matches) {
+// 		document.addEventListener("scroll", () => {
+// 			thumb.style.opacity = (100 / window.scrollY) * rate
+// 		})
+// 	}
+// })
 </script>
