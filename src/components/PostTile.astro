@@ -63,12 +63,12 @@ const { url, title, image, alt, label } = Astro.props;
     height: 100%;
     top: 0;
     left: 0;
-    /* opacity: 0.5; */
+
     background-image: linear-gradient(
       45deg,
       var(--color-red) 0%,
-      #00000000 35%,
-      #00000000 65%,
+      hsl(0 0% 0% / 0) 35%,
+      hsl(0 0% 0% / 0) 65%,
       var(--color-blue) 100%
     );
   }
@@ -110,7 +110,7 @@ const { url, title, image, alt, label } = Astro.props;
   .tile-title a {
     &:hover,
     &:focus {
-      color: var(--color-background);
+      color: var(--color-gloss);
       background-position: 0% 100%;
     } 
   }

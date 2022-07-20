@@ -10,12 +10,14 @@
 
 }
 
+@media (--viewport-lg) {
 .dashboard::before {
   content: "";
   position: relative;
   grid-row: 1;
   grid-column: 3;
   z-index: 10;
+}
 }
 
 @media (--viewport-lg) {

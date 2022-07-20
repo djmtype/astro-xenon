@@ -3,7 +3,6 @@ import DefaultLayout from "@layouts/DefaultLayout.astro"
 import Pagination from "@components/Pagination.astro"
 import PostItem from "@components/PostItem.astro"
 
-
 export async function getStaticPaths({ paginate, rss }) {
 	const allPosts = await Astro.glob("./*.md")
 	const sortedPosts = allPosts.sort(
@@ -12,20 +11,6 @@ export async function getStaticPaths({ paginate, rss }) {
 			new Date(a.frontmatter.date.published).valueOf()
 	)
 
-	// Generate an RSS feed from this collection of posts.
-	// NOTE: This is disabled by default, since it requires `site` to be set in your "astro.config.mjs" file.
-	//   rss({
-	//     title: 'Don’s Blog',
-	//     description: 'An example blog on Astro',
-	//     customData: `<language>en-us</language>`,
-	//     items: sortedPosts.map(item => ({
-	//       title: item.title,
-	//       description: item.description,
-	//       link: item.url,
-	//       pubDate: item.date,
-	//     })),
-	//   });
-
 	// Return a paginated collection of paths for all posts
 	return paginate(sortedPosts, { pageSize: 5 })
 }
@@ -33,16 +18,15 @@ export async function getStaticPaths({ paginate, rss }) {
 let title = "Blog"
 let description = "Posts for Xenon"
 // let canonicalURL = Astro.canonicalURL;
-let layoutCss = "blog"
 
 const { canonicalURL } = Astro
 const { page } = Astro.props
 ---
 
-<DefaultLayout {title} {description} {layoutCss} {canonicalURL}>
+<DefaultLayout {title} {description} {canonicalURL}>
 	<div class="main-content">
+		<div class="main-figure"></div>
 		<div class="main-header">
-
 			<h1 class="main-title font-size-display">{title}</h1>
 		</div>
 		<div class="main-body section-3xl">
@@ -60,6 +44,7 @@ const { page } = Astro.props
 				))}
 			</ul>
 		</div>
+		
 		<footer class="main-footer">
 			<Pagination
 				prevUrl={page.url.prev}
@@ -69,81 +54,91 @@ const { page } = Astro.props
 			/>
 		</footer>
 	</div>
+
+	
+
 </DefaultLayout>
 
 <style>
+	.main-content {
+		display: grid;
+		grid-template-rows: auto auto;
+	}
 	.main-body {
 		background-color: var(--color-background);
 	}
 
-	.main-header {
-		aspect-ratio: 3/1;
-		position: relative;
-		overflow: hidden;
-		/* border-radius: var(--border-radius-rounded); */
-background-blend-mode: var(--blend-mode);
-		background-image: url(/images/thomas-stephan-mUcYC3-MtMk-unsplash.jpg), linear-gradient(
-			45deg,
-			var(--color-green),
-			var(--color-blue),
-			var(--color-purple),
-			var(--color-red)
-		);
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		background-size: cover;
-		background-position: 50% 50%;
-		display: flex;
-		flex-direction: column;
-		padding: var(--gutter);
-		& > * {
-			margin-top: auto;
-			margin-bottom: 0;
-			align-self: start;
-		}
-		/* & > *:last-child {
-			padding-bottom: 0.1ch;
-		} */
+	:global(.main-body > *) {
+		max-width: calc(var(--breakpoint-sm) - var(--gutter));
 	}
 
-	/* .main-header::after {
-		content: "";
-		width: calc(100% - var(--space-lg));
-		height: calc(100% - var(--space-lg));
-		border: var(--border-width-3) solid var(--color-background);
-		display: block;
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		border-radius: calc(var(--border-radius-rounded) / 2);
-	} */
-	.main-title {
-		z-index: 2;
-		display: inline-block;
-		/* padding: var(--space-xs) var(--space-md); */
-		/* text-shadow: .04em -.04em var(--color-gloss), -.04em .04em var(--color-gloss), .04em .04em var(--color-gloss), -.04em -.04em var(--color-gloss); */
-		color: var(--color-foreground);
+	.main-header {
+		grid-row: 1;
+		grid-column: 1;
+		align-self: end;
+		padding: var(--gutter) var(--gutter) 1ch 0;
+		background-color: var(--color-background);
+		max-width: var(--breakpoint-sm);
+	}
 
-		/* background: linear-gradient(
-			45deg,
-			var(--color-primary),
-			var(--color-secondary)
-		);
+	.main-figure {
+		aspect-ratio: 1/1;
+		@media (--viewport-xs) {
+			aspect-ratio: 2/1;
+		}
+		@media (--viewport-md) {
+			aspect-ratio: initial;
+			height: 50vh;
+		}
+	}
 
-		background-size: 100%;
-		background-repeat: repeat;
+	.main-figure {
+		
+		grid-row: 1;
+		grid-column: 1;
+		z-index: -1;
+		--bg-image: url(/images/page-header-dark.svg);
+		
+		position: sticky;
+		top: var(--gutter);
+		overflow: hidden;
+		background-image: var(--bg-image),
+			linear-gradient(
+				45deg,
+				var(--color-green),
+				var(--color-blue),
+				var(--color-purple),
+				var(--color-red)
+			);
+		background-blend-mode: soft-light;
 
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;  */
+		background-repeat: repeat, no-repeat;
+		background-attachment: fixed;
+		background-size: auto 20%, cover;
+	}
+
+	:root[color-scheme="light"] .main-figure {
+		--bg-image: url(/images/page-header-light.svg);
+	}
+
+	.main-footer {
+		max-width: calc(var(--breakpoint-sm) - var(--gutter));
 	}
 
 	.post-list {
-		
 		display: flex;
 		flex-direction: column;
 		row-gap: var(--gutter);
 	}
 
-
+	:global(.post-list > *::after) {
+		content: "";
+		width: 100%;
+		border-bottom: var(--border-width-1) solid var(--color-separator);
+		display: block;
+		grid-column: span 2;
+		position: relative;
+		left: 0;
+		bottom: 0;
+	}
 </style>

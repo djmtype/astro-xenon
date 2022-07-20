@@ -33,5 +33,5 @@
 	--box-shadow-color: hsl(var(--gray-h) var(--gray-s) 0% / 0.5);
 
 	--blend-mode: multiply;
-	--invert-blend-mode: screen;
+	--blend-mode-invert: screen;
 }

@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro';
+import PageLayout from '@layouts/PageLayout.astro';
 
 
 import * as About from '../demo/about.md';
@@ -16,11 +17,15 @@ let canonicalURL = Astro.canonicalURL;
 	{description}
 	{canonicalURL}
 >
+
+<PageLayout title={title}>
 	<div class="flow">
 	
 	<About.Content />
 
 	</div>
+	
+</PageLayout>
 </DefaultLayout>
 
 <style>

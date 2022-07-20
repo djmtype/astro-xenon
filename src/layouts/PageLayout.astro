@@ -1,0 +1,82 @@
+---
+
+
+export interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+---
+
+<div class="main-content">
+	<div class="main-figure"></div>
+	<div class="main-header">
+		<h1 class="main-title">{title}</h1>
+	</div>
+	<div class="main-body section-3xl">
+		<slot></slot>
+	</div>
+	<slot name="main-footer"/>
+</div>
+
+<style>
+	.main-content {
+		display: grid;
+		grid-template-rows: auto auto;
+	}
+	.main-body {
+		background-color: var(--color-background);
+	}
+
+	:global(.main-body > *) {
+		max-width: calc(var(--breakpoint-sm) - var(--gutter));
+	}
+
+	.main-header {
+		grid-row: 1;
+		grid-column: 1;
+		align-self: end;
+		padding: var(--gutter) var(--gutter) 1ch 0;
+		background-color: var(--color-background);
+		max-width: var(--breakpoint-sm);
+	}
+
+	.main-figure {
+		aspect-ratio: 1/1;
+		@media (--viewport-xs) {
+			aspect-ratio: 2/1;
+		}
+		@media (--viewport-md) {
+			aspect-ratio: initial;
+			height: 50vh;
+		}
+	}
+
+	.main-figure {
+		grid-row: 1;
+		grid-column: 1;
+		z-index: -1;
+		--bg-image: url(/images/page-header-dark.svg);
+
+		position: sticky;
+		top: var(--gutter);
+		overflow: hidden;
+		background-image: var(--bg-image),
+			linear-gradient(
+				45deg,
+				var(--color-green),
+				var(--color-blue),
+				var(--color-purple),
+				var(--color-red)
+			);
+		background-blend-mode: soft-light;
+
+		background-repeat: repeat, no-repeat;
+		background-attachment: fixed;
+		background-size: auto 20%, cover;
+	}
+
+	:root[color-scheme="light"] .main-figure {
+		--bg-image: url(/images/page-header-light.svg);
+	}
+</style>

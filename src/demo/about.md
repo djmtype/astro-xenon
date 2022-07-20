@@ -1,5 +1,5 @@
 ---
-title: This is Astro Xenon
+title: Welcome to Astro Xenon
 date: 
   published: 2022-07-07
 	updated: 2022-07-10
@@ -7,7 +7,7 @@ setup: |
   import Callout from '@components/Callout.astro'
 ---
 
-# Welcome to [Astro Xenon](https://astro-xenon.netlify.app)
+## Welcome to [Astro Xenon](https://astro-xenon.netlify.app)
 
 ## ⛺ Setup
 1. Clone this project:  

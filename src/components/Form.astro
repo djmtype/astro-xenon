@@ -1,0 +1,157 @@
+---
+import Button from "@components/Button.astro"
+---
+
+<form id="contact-form" name="contact" method="POST" class="flow">
+	<div class="form-control">
+		<label for="name">Name</label>
+		<input
+			type="text"
+			name="name"
+			id="name"
+			autocomplete="name"
+			placeholder="Your name"
+			title="Please enter your name"
+			required
+		/>
+	</div>
+
+	<div class="form-control">
+		<label for="email">Email</label>
+		<input
+			type="email"
+			name="email"
+			id="email"
+			autocomplete="email"
+			placeholder="Your email address"
+			required
+		/>
+	</div>
+
+	<div class="form-control">
+		<label for="character-select"
+			>Your favorite Science Ninja Team character?
+		</label>
+		<small
+			><a
+				href="https://en.wikipedia.org/wiki/Science_Ninja_Team_Gatchaman"
+				target="_blank"
+				rel="noopener nofollow"
+				>Help me remember?
+			</a>
+		</small>
+		<select name="characters" id="character-select">
+			<option value="">Select a character</option>
+			<option value="Ken the Eagle">Ken the Eagle</option>
+			<option value="Joe the Condor">Joe the Condor</option>
+			<option value="Jun the Swan">Jun the Swan</option>
+			<option value="Jinpei the Swallow">Jinpei the Swallow</option>
+			<option value="Ryu the Owl">Ryu the Owl</option>
+		</select>
+	</div>
+
+	<fieldset>
+		<legend>Your feeling towards corgies?</legend>
+
+		<div>
+			<input type="radio" id="love" name="corgy" value="love" checked />
+			<label for="love">I love them</label>
+		</div>
+
+		<div>
+			<input type="radio" id="like" name="corgy" value="like" />
+			<label for="like">I like them</label>
+		</div>
+
+		<div>
+			<input
+				type="radio"
+				id="indifferent"
+				name="corgy"
+				value="indifferent"
+				disabled
+			/>
+			<label for="indifferent">I prefer chihuahuas</label>
+		</div>
+	</fieldset>
+
+	<div class="form-control">
+		<label for="message">Message</label>
+		<textarea
+			name="message"
+			id="message"
+			placeholder="Write your message here"
+			rows="7"
+			required></textarea>
+	</div>
+
+	<Button className="btn btn-primary" type="submit" name="submit"
+		>Send Message
+	</Button>
+</form>
+
+<style>
+	form > *:not(button) {
+		width: min(100%, var(--line-length-md));
+	}
+
+	input:not([type="radio"]),
+	textarea,
+	select,
+	fieldset {
+		appearance: none;
+		padding: var(--space-xs) var(--space-sm);
+		background: var(--color-background);
+		border: var(--border-width-1) solid var(--color-muted);
+		color: var(--color-foreground);
+		&:focus-visible {
+			outline: var(--border-width-1) solid var(--color-primary);
+			border-color: var(--color-primary);
+			background-color: var(--color-gloss);
+		}
+		&::placeholder {
+			color: var(--color-muted);
+		}
+	}
+
+	select {
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBhcmlhLWhpZGRlbj0idHJ1ZSIgcm9sZT0iaW1nIiBjbGFzcz0iaWNvbmlmeSBpY29uaWZ5LS1yaSIgd2lkdGg9IjFlbSIgaGVpZ2h0PSIxZW0iIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iIzgwODA4MCIgZD0ibTEyIDE0bC00LTRoOHoiPjwvcGF0aD48L3N2Zz4=);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right 50%;
+	}
+
+	.form-control {
+		display: flex;
+		flex-direction: column;
+	}
+
+	:where(.form-control > *:last-child) {
+		margin-top: var(--space-xs);
+	}
+
+	.form-control label,
+	legend {
+		display: inline-block;
+		font-weight: var(--font-weight-600);
+	}
+
+	fieldset {
+		appearance: none;
+	}
+	input:checked + label {
+		font-weight: var(--font-weight-600);
+		color: var(--color-primary);
+	}
+
+	input:disabled {
+		cursor: not-allowed;
+	}
+	input:disabled + label {
+		color: var(--color-muted);
+	}
+
+	option:disabled {
+		color: var(--color-muted);
+	}
+</style>

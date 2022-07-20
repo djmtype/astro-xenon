@@ -2,7 +2,6 @@
 import { Img } from "astro-imagetools/components"
 import Label from "@components/Label.astro"
 import dayjs from "dayjs"
-import Button from "./Button.astro"
 
 export interface Props {
 	url: string
@@ -32,12 +31,11 @@ const { url, title, image, alt, label, datePublished, description } =
 		<div class="post-header">
 			<Label className="label-default" name={label} />
 			<h2 class="post-title font-size-lg">
-				<a href={url} class="post-link link-block">{title}</a>
+				<a href={url} class="post-link">{title}</a>
 			</h2>
 
 			<dl class="post-meta">
 				<dt class="post-meta-key">
-					<!-- <Icon name="ri:calendar-line" width={18} /> -->
 					<span class="sr-only">Date Published</span>
 				</dt>
 				<dd class="post-meta-value">
@@ -45,46 +43,37 @@ const { url, title, image, alt, label, datePublished, description } =
 				</dd>
 			</dl>
 		</div>
-		<p class="post-description" set:html={description}> 
-		</p>
-		
-		
+		<p class="post-description" set:html={description}></p>
 	</div>
 </li>
 
 <style>
 	.post {
 		display: grid;
-		background: var(--color-gloss);
-		border-radius: var(--border-radius-rounded);
+		/* background: var(--color-gloss);
+		border-radius: var(--border-radius-rounded); */
 		position: relative;
-		padding: var(--gutter);
+		/* padding: var(--gutter); */
 		grid-template-columns: min(20%, 8rem) auto;
 		gap: var(--gutter);
-		border: var(--border-width-1) solid transparent;
 
 	}
 
 
 
+	.post-figure {
+		align-self: start;
+	}
 
-.post-figure {
-align-self: start;	
-
-}
-
-.post-content {
-	display: flex;
-	flex-direction: column;
-	row-gap: var(--space-lg);
-}
-
-
+	.post-content {
+		display: flex;
+		flex-direction: column;
+		row-gap: var(--space-lg);
+	}
 
 	.post-header {
 		display: grid;
 		grid-template-columns: auto min-content;
-		
 	}
 
 	.post-header > * {
@@ -100,14 +89,10 @@ align-self: start;
 		grid-row: 1;
 	}
 
-
-.post-meta {
-	font-family: var(--font-family-mono);
-	font-size: var(--font-size-smaller);
-}
-
-
-
+	.post-meta {
+		font-family: var(--font-family-mono);
+		font-size: var(--font-size-smaller);
+	}
 
 	.post-description {
 		max-width: var(--line-length-md);

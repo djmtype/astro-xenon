@@ -1,2 +1,43 @@
 <span class="site-brand-logo">Xe</span>
 
+<style>
+	.site-brand-logo {
+  font-family: var(--font-family-heading);
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  justify-self: center;
+  background: var(--gradient-primary);
+  background-size: 100%;
+  font-weight: var(--font-weight-900);
+  font-size: var(--font-size-3xl);
+  padding: 0 var(--space-lg);
+  border-radius: var(--border-radius-rounded);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-background);
+  position: relative;
+  transition: background-size 250ms ease-in-out;
+
+}
+
+.site-brand-logo:hover {
+  background-size: 400%;
+}
+
+.site-brand-logo:before {
+  content: "";
+  position: absolute;
+  width: calc(100% - .5rem);
+  height: calc(100% - .5rem);
+  border: var(--border-width-2) solid var(--color-background);
+  display: inline-block;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: calc(var(--border-radius-rounded) / 2);
+}
+
+.site-brand-logo {
+  color: var(--color-background);
+}
+</style>
