@@ -1,5 +1,5 @@
 ---
-title: Welcome to Astro Xenon
+title: About Astro Xenon
 date: 
   published: 2022-07-07
 	updated: 2022-07-10
@@ -83,7 +83,7 @@ These values can be adjusted separately for both `day` and `night` schemes insid
 </Callout>
 
 
-### Astro's Instructions 
+### Common Astro Practices 
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 

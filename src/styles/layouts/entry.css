@@ -30,6 +30,9 @@ aspect-ratio: 1/1;
 		width: 100%;
 		position: sticky;
 		top: var(--gutter);
+		height: 50vh;
+	}
+	@media (--viewport-md) {
 		height: calc(100vh - var(--gutter) * 2);
 	}
 }
@@ -50,10 +53,13 @@ aspect-ratio: 1/1;
 	max-width: calc(var(--breakpoint-sm) - var(--gutter));
 }
 
+.entry-content.flow > *:first-child {
+	margin-top: 0;
+}
 
 .entry-meta {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(10.0rem, 1fr));
 	padding: var(--space-md) 0 var(--space-md);
 	gap: var(--gutter);
 	font-family: var(--font-family-mono);
@@ -103,7 +109,7 @@ aspect-ratio: 1/1;
 }
 
 .entry-content blockquote {
-	border-left: var(--border-width-2) solid var(--color-secondary);
+	border-left: var(--border-width-4) solid var(--color-secondary);
 	padding: var(--gutter);
 	background-color: var(--color-gloss);
 }

@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from "@layouts/DefaultLayout.astro"
+import PageLayout from "@layouts/PageLayout.astro"
 import Form from "@components/Form.astro"
 
 
@@ -15,8 +16,11 @@ const { content } = Astro.props
 	{description}
 	{canonicalURL}
 >
+<PageLayout title={title}>
 
 <Form />	
+
+</PageLayout>
 
 </DefaultLayout>
 

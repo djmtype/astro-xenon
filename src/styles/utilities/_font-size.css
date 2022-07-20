@@ -27,8 +27,6 @@
 
 .font-size-display {
   font-size: clamp(var(--font-size-xl), 2.25vw + var(--font-size-xl), var(--font-size-3xl));
-  font-weight: var(--font-weight-700);
-  letter-spacing: var(--letter-spacing-tight);
 }
 
 .font-size-smaller {

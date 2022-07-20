@@ -10,6 +10,8 @@ let canonicalURL = Astro.canonicalURL;
 
 
 
+
+
 ---
 
 <DefaultLayout
@@ -18,8 +20,8 @@ let canonicalURL = Astro.canonicalURL;
 	{canonicalURL}
 >
 
-<PageLayout title={title}>
-	<div class="flow">
+<PageLayout title={About.frontmatter.title}>
+	<div class="entry-content flow">
 	
 	<About.Content />
 

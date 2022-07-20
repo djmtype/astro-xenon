@@ -1,24 +1,80 @@
-# Welcome to [Astro](https://astro.build)
+# Welcome to [Astro Xenon](https://astro-xenon.netlify.app)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## ⛺ Setup
+1. Clone this project:  
+[https://github.com/djmtype/astro-xenon.git](https://github.com/djmtype/astro-xenon.git)
+2. Run `npm install` or use your favorite build tool. 
+3. Enjoy!
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside the Astro Xenon project, you'll see the following folders and files:
 
 ```
 /
 ├── public/
-│   └── favicon.ico
+│   ├── fonts/
+│   ├── images/
+│   └── rss/
 ├── src/
 │   ├── components/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   │   ├── global/
+│   ├── data/
+│   ├── demo/
+│   ├── layouts/
+│   ├── pages/
+│   │   └── blog/
+│   └── styles/
+├── astro.config.mjs
+├── package.json
+└── postcss.config.js
 ```
+Xenon is an opensource dark-first theme for Astro. Its color palette is based around the [Tomorrow theme](https://github.com/chriskempson/tomorrow-theme). 
+
+Xenon contains a few other plugins from the community like [astro-imagetools](https://github.com/RafidMuhymin/astro-imagetools#readme) and [astro-icon](https://github.com/natemoo-re/astro-icon#readme). 
+
+## 📖 Settings / Instructions
+
+### General Info / Menu 
+General site info and main navigation items can be managed via `src/data/site.json`
+
+### RSS Feed
+RSS has been pre-configured based on any markdown file placed within `src/pages/blog`. Be sure to configure your site's feed information in `src/pages/feed.xml.js`. 
+
+Postscript, adjust the `site` property value found in `astro.config.mjs` 
+
+### Styling 
+Sorry, no Tailwinds. No Sass. 
+
+This theme utilizes [PostCSS Env](https://preset-env.cssdb.org/) to accomplish Sass-like things such as custom media queries, css file imports, and nesting.
+
+CSS custom properties (or variables) play a big part. 
+
+- All color properties are located within the `src/styles/schemes` directory
+- All other properties reside in `src/styles/common/_variables.css` 
+
+The global gray scale is adaptive, based on the controls below. 
+
+```css
+/* Xenon's Default Background */
+:root {
+--color-primary-h: 205;
+--gray-h: var(--color-primary-h);
+--gray-s: 5%;
+--gray-l: 90%;
+--gray-increment: 10%;
+}
+```
+
+These values can be adjusted separately for both `day` and `night` schemes inside the `src/styles/schemes` directory. 
+
+<Callout type="info"> 
+**Question:** What does *adaptive* grayscale even mean?  
+**Answer:** Basically, you can tint your grays. *Be cautious about color accessibility.*
+</Callout>
+
+
+### Common Astro Practices 
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
@@ -37,6 +93,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`   | Build your production site to `./dist/`      |
 | `npm run preview` | Preview your build locally, before deploying |
 
-## 👀 Want to learn more?
+## 👀 Want to learn more about Astro?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [Astro's documentation](https://docs.astro.build) or jump into Astro's [Discord server](https://astro.build/chat).

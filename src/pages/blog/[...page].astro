@@ -1,5 +1,7 @@
 ---
 import DefaultLayout from "@layouts/DefaultLayout.astro"
+import PageLayout from "@layouts/PageLayout.astro"
+
 import Pagination from "@components/Pagination.astro"
 import PostItem from "@components/PostItem.astro"
 
@@ -24,12 +26,7 @@ const { page } = Astro.props
 ---
 
 <DefaultLayout {title} {description} {canonicalURL}>
-	<div class="main-content">
-		<div class="main-figure"></div>
-		<div class="main-header">
-			<h1 class="main-title font-size-display">{title}</h1>
-		</div>
-		<div class="main-body section-3xl">
+<PageLayout title={title}>
 			<ul class="post-list" role="list">
 				{page.data.map((post) => (
 					<PostItem
@@ -43,86 +40,24 @@ const { page } = Astro.props
 					/>
 				))}
 			</ul>
-		</div>
-		
-		<footer class="main-footer">
-			<Pagination
+			<footer slot="main-footer" class="main-footer">
+				<Pagination
 				prevUrl={page.url.prev}
 				nextUrl={page.url.next}
 				currentPage={page.currentPage}
 				totalPages={page.lastPage}
 			/>
-		</footer>
-	</div>
+		 </footer>
+</PageLayout>
 
 	
 
 </DefaultLayout>
 
 <style>
-	.main-content {
-		display: grid;
-		grid-template-rows: auto auto;
-	}
-	.main-body {
-		background-color: var(--color-background);
-	}
-
-	:global(.main-body > *) {
-		max-width: calc(var(--breakpoint-sm) - var(--gutter));
-	}
-
-	.main-header {
-		grid-row: 1;
-		grid-column: 1;
-		align-self: end;
-		padding: var(--gutter) var(--gutter) 1ch 0;
-		background-color: var(--color-background);
-		max-width: var(--breakpoint-sm);
-	}
-
-	.main-figure {
-		aspect-ratio: 1/1;
-		@media (--viewport-xs) {
-			aspect-ratio: 2/1;
-		}
-		@media (--viewport-md) {
-			aspect-ratio: initial;
-			height: 50vh;
-		}
-	}
-
-	.main-figure {
-		
-		grid-row: 1;
-		grid-column: 1;
-		z-index: -1;
-		--bg-image: url(/images/page-header-dark.svg);
-		
-		position: sticky;
-		top: var(--gutter);
-		overflow: hidden;
-		background-image: var(--bg-image),
-			linear-gradient(
-				45deg,
-				var(--color-green),
-				var(--color-blue),
-				var(--color-purple),
-				var(--color-red)
-			);
-		background-blend-mode: soft-light;
-
-		background-repeat: repeat, no-repeat;
-		background-attachment: fixed;
-		background-size: auto 20%, cover;
-	}
-
-	:root[color-scheme="light"] .main-figure {
-		--bg-image: url(/images/page-header-light.svg);
-	}
-
+	
 	.main-footer {
-		max-width: calc(var(--breakpoint-sm) - var(--gutter));
+		max-width: calc(var(--breakpoint-sm) + var(--gutter));
 	}
 
 	.post-list {

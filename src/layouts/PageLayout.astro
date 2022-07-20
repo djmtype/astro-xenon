@@ -2,7 +2,7 @@
 
 
 export interface Props {
-	title: string
+	title: any
 }
 
 const { title } = Astro.props
@@ -13,7 +13,7 @@ const { title } = Astro.props
 	<div class="main-header">
 		<h1 class="main-title">{title}</h1>
 	</div>
-	<div class="main-body section-3xl">
+	<div class="main-body section-2xl">
 		<slot></slot>
 	</div>
 	<slot name="main-footer"/>
@@ -36,17 +36,20 @@ const { title } = Astro.props
 		grid-row: 1;
 		grid-column: 1;
 		align-self: end;
-		padding: var(--gutter) var(--gutter) 1ch 0;
+		padding: var(--gutter) var(--gutter) .5ch 0;
 		background-color: var(--color-background);
 		max-width: var(--breakpoint-sm);
 	}
 
+
+	.main-title {
+		font-weight: var(--font-weight-700); 
+	}
+
 	.main-figure {
 		aspect-ratio: 1/1;
-		@media (--viewport-xs) {
-			aspect-ratio: 2/1;
-		}
-		@media (--viewport-md) {
+
+		@media (--viewport-sm) {
 			aspect-ratio: initial;
 			height: 50vh;
 		}
