@@ -11,9 +11,11 @@ setup: |
 
 ## ⛺ Setup
 1. Clone this project:  
-[https://github.com/djmtype/astro-xenon.git](https://github.com/djmtype/astro-xenon.git)
-2. Run `npm install` or use your favorite build tool. 
-3. Enjoy!
+```
+git clone https://github.com/djmtype/astro-xenon.git
+```
+1. Run `npm install` or use your favorite build tool. 
+2. Enjoy!
 
 ## 🚀 Project Structure
 
