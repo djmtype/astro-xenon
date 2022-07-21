@@ -23,7 +23,7 @@ const { className, title, type, icon } = Astro.props;
 
 	{icon && type == null ? <Icon name={icon} width={48} class="callout-icon" /> : ''}
 	
-	<div>
+	<div class="callout-content">
 		{title ? (
 			<p class="callout-title">{title}</p>
 			) : null }
@@ -43,8 +43,12 @@ const { className, title, type, icon } = Astro.props;
 }
 
 :global(.callout-icon) {
-	width: 2.5rem;
+	width: min(20%, 3.0rem);
 	height: auto;
+}
+
+:global(.callout-content) {
+	flex: 1;
 }
 
 :global(.callout:not([data-type]) p) {

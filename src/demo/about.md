@@ -40,7 +40,9 @@ Inside the Astro Xenon project, you'll see the following folders and files:
 ├── package.json
 └── postcss.config.js
 ```
-Xenon is an opensource dark-first theme for Astro. Its color palette is based around the [Tomorrow theme](https://github.com/chriskempson/tomorrow-theme). 
+Xenon is an opensource dark-favored theme for Astro that aims to excel in accessibility and performance. 
+
+Its color palette is loosely based upon the [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) by Chris Kempson. 
 
 Xenon contains a few other plugins from the community like [astro-imagetools](https://github.com/RafidMuhymin/astro-imagetools#readme) and [astro-icon](https://github.com/natemoo-re/astro-icon#readme). 
 
@@ -55,9 +57,9 @@ RSS has been pre-configured based on any markdown file placed within `src/pages/
 Postscript, adjust the `site` property value found in `astro.config.mjs` 
 
 ### Styling 
-Sorry, no Tailwinds. No Sass. 
+Sorry, no Tailwinds. No Sass.
 
-This theme utilizes [PostCSS Env](https://preset-env.cssdb.org/) to accomplish Sass-like things such as custom media queries, css file imports, and nesting.
+This theme utilizes [PostCSS Preset Env](https://preset-env.cssdb.org/) to accomplish Sass-like things such as custom media queries, css file imports, and nesting.
 
 CSS custom properties (or variables) play a big part. 
 
@@ -67,7 +69,7 @@ CSS custom properties (or variables) play a big part.
 The global gray scale is adaptive, based on the controls below. 
 
 ```css
-/* Xenon's Default Background */
+/* Xenon's Default Dark Background */
 :root {
 --color-primary-h: 205;
 --gray-h: var(--color-primary-h);
@@ -80,10 +82,9 @@ The global gray scale is adaptive, based on the controls below.
 These values can be adjusted separately for both `day` and `night` schemes inside the `src/styles/schemes` directory. 
 
 <Callout type="info"> 
-**Question:** What does *adaptive* grayscale even mean?  
-**Answer:** Basically, you can tint your grays. *Be cautious about color accessibility.*
+**What does *adaptive* grayscale even mean?**  
+Basically, the overall grayscale values can be tinted based on the primary hue. The intensity will be determined by the saturation value. *Be cautious about color accessibility.*
 </Callout>
-
 
 ### Common Astro Practices 
 
@@ -92,6 +93,10 @@ Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page
 There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components or layouts.
 
 Any static assets, like images, can be placed in the `public/` directory.
+
+#### Learn more about Astro
+
+Feel free to check [Astro's documentation](https://docs.astro.build) or jump into Astro's [Discord server](https://astro.build/chat).
 
 ## 🧞 Commands
 
@@ -103,8 +108,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run dev`     | Starts local dev server at `localhost:3000`  |
 | `npm run build`   | Build your production site to `./dist/`      |
 | `npm run preview` | Preview your build locally, before deploying |
-
-## 👀 Want to learn more about Astro?
-
-Feel free to check [Astro's documentation](https://docs.astro.build) or jump into Astro's [Discord server](https://astro.build/chat).
-
