@@ -9,7 +9,7 @@
 .grid,
 [class*="grid-auto-"] {
   display: grid;
-  gap: var(--gap, var(--gap-xl));
+  gap: var(--gap, var(--gap-6));
 }
 
 .grid {
@@ -210,44 +210,44 @@
 } */
 
 .gap-xs {
-  --gap: var(--gap-xs);
+  --gap: var(--gap-2);
 }
 
 .gap-sm {
-  --gap: var(--gap-sm);
+  --gap: var(--gap-3);
 }
 
 .gap-md {
-  --gap: var(--gap-md);
+  --gap: var(--gap-4);
 }
 
 .gap-lg {
-  --gap: var(--gap-lg);
+  --gap: var(--gap-5);
 }
 
 .gap-xl {
-  --gap: var(--gap-xl);
+  --gap: var(--gap-6);
 }
 
 @media (--viewport-xs) {
   .xs\:gap-xs {
-    --gap: var(--gap-xs);
+    --gap: var(--gap-2);
   }
 
   .xs\:gap-sm {
-    --gap: var(--gap-sm);
+    --gap: var(--gap-3);
   }
 
   .xs\:gap-md {
-    --gap: var(--gap-md);
+    --gap: var(--gap-4);
   }
 
   .xs\:gap-lg {
-    --gap: var(--gap-lg);
+    --gap: var(--gap-5);
   }
 
   .xs\:gap-xl {
-    --gap: var(--gap-xl);
+    --gap: var(--gap-6);
   }
 
   .xs\:grid-auto-xs {
@@ -434,25 +434,25 @@
     grid-column-end: auto;
   }
 }
-@media (--viewport-sm) {
+@media (--rem-sm-n-above) {
   .sm\:gap-xs {
-    --gap: var(--gap-xs);
+    --gap: var(--gap-2);
   }
 
   .sm\:gap-sm {
-    --gap: var(--gap-sm);
+    --gap: var(--gap-3);
   }
 
   .sm\:gap-md {
-    --gap: var(--gap-md);
+    --gap: var(--gap-4);
   }
 
   .sm\:gap-lg {
-    --gap: var(--gap-lg);
+    --gap: var(--gap-5);
   }
 
   .sm\:gap-xl {
-    --gap: var(--gap-xl);
+    --gap: var(--gap-6);
   }
 
   .sm\:grid-auto-xs {
@@ -639,25 +639,25 @@
     grid-column-end: auto;
   }
 }
-@media (--viewport-md) {
+@media (--rem-md-n-above) {
   .md\:gap-xs {
-    --gap: var(--gap-xs);
+    --gap: var(--gap-2);
   }
 
   .md\:gap-sm {
-    --gap: var(--gap-sm);
+    --gap: var(--gap-3);
   }
 
   .md\:gap-md {
-    --gap: var(--gap-md);
+    --gap: var(--gap-4);
   }
 
   .md\:gap-lg {
-    --gap: var(--gap-lg);
+    --gap: var(--gap-5);
   }
 
   .md\:gap-xl {
-    --gap: var(--gap-xl);
+    --gap: var(--gap-6);
   }
 
   .md\:grid-auto-xs {
@@ -844,25 +844,25 @@
     grid-column-end: auto;
   }
 }
-@media (--viewport-lg) {
+@media (--rem-lg-n-above) {
   .lg\:gap-xs {
-    --gap: var(--gap-xs);
+    --gap: var(--gap-2);
   }
 
   .lg\:gap-sm {
-    --gap: var(--gap-sm);
+    --gap: var(--gap-3);
   }
 
   .lg\:gap-md {
-    --gap: var(--gap-md);
+    --gap: var(--gap-4);
   }
 
   .lg\:gap-lg {
-    --gap: var(--gap-lg);
+    --gap: var(--gap-5);
   }
 
   .lg\:gap-xl {
-    --gap: var(--gap-xl);
+    --gap: var(--gap-6);
   }
 
   .lg\:grid-auto-xs {
@@ -1049,25 +1049,25 @@
     grid-column-end: auto;
   }
 }
-@media (--viewport-xl) {
+@media (--rem-xl-n-above) {
   .xl\:gap-xs {
-    --gap: var(--gap-xs);
+    --gap: var(--gap-2);
   }
 
   .xl\:gap-sm {
-    --gap: var(--gap-sm);
+    --gap: var(--gap-3);
   }
 
   .xl\:gap-md {
-    --gap: var(--gap-md);
+    --gap: var(--gap-4);
   }
 
   .xl\:gap-lg {
-    --gap: var(--gap-lg);
+    --gap: var(--gap-5);
   }
 
   .xl\:gap-xl {
-    --gap: var(--gap-xl);
+    --gap: var(--gap-6);
   }
 
   .xl\:grid-auto-xs {

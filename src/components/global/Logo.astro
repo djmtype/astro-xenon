@@ -2,19 +2,23 @@
 
 <style>
 	.site-brand-logo {
-  font-family: var(--font-family-heading);
-  display: inline-block;
+    aspect-ratio: 1/1;
+  width: 7rem;
+  font-family: var(--font-heading);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   text-decoration: none;
   justify-self: center;
-  background: var(--gradient-primary);
+  background: var(--gradient-brand);
   background-size: 100%;
-  font-weight: var(--font-weight-900);
-  font-size: var(--font-size-3xl);
-  padding: 0 var(--space-lg);
-  border-radius: var(--border-radius-rounded);
-  letter-spacing: var(--letter-spacing-tight);
-  color: var(--color-background);
+  font-weight: var(--font-weight-9);
+  font-size: var(--font-size-8);
+  /* padding: 0 var(--size-4); */
+  border-radius: var(--radius-rounded);
+  letter-spacing: var(--font-letterspacing-tight);
+  color: var(--surface-1);
   position: relative;
   transition: background-size 250ms ease-in-out;
 
@@ -29,15 +33,15 @@
   position: absolute;
   width: calc(100% - .5rem);
   height: calc(100% - .5rem);
-  border: var(--border-width-2) solid var(--color-background);
+  border: var(--border-size-2) solid var(--surface-1);
   display: inline-block;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border-radius: calc(var(--border-radius-rounded) / 2);
+  border-radius: calc(var(--radius-rounded) / 2);
 }
 
 .site-brand-logo {
-  color: var(--color-background);
+  color: var(--surface-1);
 }
 </style>

@@ -30,14 +30,14 @@ const { url, title, image, alt, label } = Astro.props;
 
 <style>
   .tile {
-    /* border-radius: var(--border-radius-rounded); */
+    /* border-radius: var(--radius-rounded); */
     overflow: hidden;
     position: relative;
     z-index: var(--layer-0);
-    min-height: var(--base-amount);
+    min-height: var(--size-span-fluid);
     display: grid;
     grid-template-rows: 1fr min-content;
-    padding: var(--space-lg);
+    padding: var(--size-4);
   }
 
   .tile .label {
@@ -47,7 +47,7 @@ const { url, title, image, alt, label } = Astro.props;
   }
 
   .tile-thumb {
-    z-index: var(--layer-01);
+    z-index: var(--layer-00);
     position: absolute;
     top: 0;
     left: 0;
@@ -66,10 +66,10 @@ const { url, title, image, alt, label } = Astro.props;
 
     background-image: linear-gradient(
       45deg,
-      var(--color-red) 0%,
+      var(--brand) 0%,
       hsl(0 0% 0% / 0) 35%,
       hsl(0 0% 0% / 0) 65%,
-      var(--color-blue) 100%
+      var(--brand-2) 100%
     );
   }
 
@@ -83,21 +83,21 @@ const { url, title, image, alt, label } = Astro.props;
   }
 
   .tile-title {
-    font-size: var(--font-size-md);
-    line-height: calc(var(--line-height-body) * var(--space-xl));
+    font-size: var(--font-size-2);
+    line-height: calc(var(--font-lineheight-2) * var(--size-5));
   }
 
   .tile-title a {
     text-decoration: none;
-    font-weight: var(--font-weight-500);
+    font-weight: var(--font-weight-5);
     background: linear-gradient(
       to right,
-      var(--color-primary) 50%,
-      var(--color-background) 50%
+      var(--brand) 50%,
+      var(--surface-1) 50%
     );
 
     box-decoration-break: clone;
-    padding: var(--space-2xs) var(--space-sm);
+    padding: var(--size-1) var(--size-2);
     background-size: 200% 100%;
     background-repeat: no-repeat;
     background-position: 100% 100%;
@@ -110,7 +110,7 @@ const { url, title, image, alt, label } = Astro.props;
   .tile-title a {
     &:hover,
     &:focus {
-      color: var(--color-gloss);
+      color: var(--gloss);
       background-position: 0% 100%;
     } 
   }
@@ -123,11 +123,11 @@ const { url, title, image, alt, label } = Astro.props;
 
 
 
-  @media (--motion) {
+  @media (--motionOK) {
     .tile {
-      transition: 200ms ease transform, 200ms ease box-shadow;
+      transition: 250ms ease transform, 250ms ease box-shadow;
       transform: scale(1);
-      box-shadow: var(--box-shadow-0);
+      box-shadow: var(--shadow-2);
     }
     .tile-thumb {
       opacity: 0.7;
@@ -136,13 +136,13 @@ const { url, title, image, alt, label } = Astro.props;
     .tile:hover,
     .tile:focus-within {
       transform: scale(1.025);
-      box-shadow: var(--box-shadow-sm);
+      box-shadow: var(--shadow-3);
     }
     .tile:active {
       transform: scale(1);
       box-shadow: var(--box-shadow-0);
     }
-    .tile:hover .tile-thumb {
+    .tile:hover .tile-thumb, .tile:focus-within .tile-thumb {
       opacity: 1;
     }
   }

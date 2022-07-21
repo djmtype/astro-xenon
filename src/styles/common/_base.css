@@ -1,29 +1,80 @@
 html {
 	font-size: clamp(1rem, 0.25vw + 0.9rem, 1.2rem);
-	min-height: 100%; /* Look, it's not fixed anymore! */
-
+	/* min-height: 100%; 
 	display: flex;
-	flex-direction: column;
+	flex-direction: column; */
+	accent-color: var(--brand);
 }
 
+
+
+:root {
+
+	--surface-1: var(--gray-1);
+
+	--accent-yellow: var(--yellow-7);
+	--accent-orange: var(--orange-7);
+	--accent-red: var(--red-7);
+	--accent-purple: var(--grape-7);
+	--accent-blue: var(--blue-7);
+	--accent-green: var(--green-7);
+
+
+	--brand: var(--blue-7);
+	--brand-2: var(--violet-7);
+	--text-3: var(--gray-7);
+	
+	--gloss: var(--gray-0);
+
+	--link: var(--brand);
+	--link-visited: var(--brand);
+
+	--blend-mode: screen;
+
+	
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+
+		--surface-1: var(--gray-9);
+
+		--accent-yellow: var(--yellow-3);
+		--accent-orange: var(--orange-3);
+		--accent-red: var(--red-3);
+		--accent-purple: var(--grape-3);
+		--accent-blue: var(--blue-3);
+		--accent-green: var(--green-3);
+
+
+		--brand: var(--yellow-3);
+		--brand-2: var(--cyan-3);
+		--text-3: var(--gray-5);
+
+		--gloss: var(--gray-10);
+
+		--blend-mode: multiply;
+	}
+}
 body {
 	/* transition: background 250ms ease-in-out, color 250ms ease; */
-	flex-grow: 1;
-	background-color: var(--color-background);
+	/* flex-grow: 1; */
+	/* background-color: var(--color-background);
 	color: var(--color-foreground);
-	font-family: var(--font-family-body);
-	font-size: var(--font-size-sm);
-	line-height: var(--line-height-body);
+	font-family: var(--font-sans);
+	font-size: var(--font-size-1);
+	line-height: var(--line-height-body); */
 }
 
 ::selection {
-	color: var(--color-gloss);
-	background-color: var(--color-primary);
-	-webkit-text-fill-color: var(--color-gloss);
+	color: var(--gray-10);
+	background-color: var(--yellow-2);
+	-webkit-text-fill-color: var(--gray-10);
 }
 
 a {
-	color: var(--color-primary);
+	/* color: var(--color-primary); */
 	text-underline-offset: 0.1em;
 }
 :where(h1 a, h2 a, h3 a, h4 a, h5 a) {
@@ -35,58 +86,56 @@ a::after {
 	margin-inline-start: 0.25ch;
 }
 
-/* a:visited {
-  opacity: 0.7;
-} */
+
 
 a:hover,
 a:focus-within {
 	text-decoration: none;
-	opacity: 1;
-	color: var(--color-foreground);
+
+	/* color: var(--color-foreground); */
 }
 
-button:focus-within,
+/* button:focus-within,
 a:focus-within {
-	outline: var(--color-primary) solid var(--border-width-1);
+	outline: var(--color-primary) solid var(--border-size-1);
 	outline-offset: 0.125rem;
-}
+} */
 
 h1 {
-	font-size: var(--font-size-2xl);
-	line-height: var(--line-height-heading);
+	font-size: var(--font-size-5);
+	line-height: var(--font-lineheight-fluid);
 }
 
 h2 {
-	font-size: var(--font-size-xl);
-	line-height: var(--line-height-heading);
+	font-size: var(--font-size-4);
+	line-height: var(--font-lineheight-fluid);
 }
 
 h3 {
-	font-size: var(--font-size-lg);
-	line-height: var(--line-height-heading);
+	font-size: var(--font-size-3);
+	line-height: var(--font-lineheight-fluid);
 }
 
 h4 {
-	font-size: var(--font-size-md);
+	font-size: var(--font-size-2);
 }
 
 h5 {
-	font-size: var(--font-size-sm);
+	font-size: var(--font-size-1);
 }
 h6 {
-	font-size: var(--font-size-xs);
+	font-size: var(--font-size-0);
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-	font-family: var(--font-family-heading);
+	font-family: var(--font-heading);
 	font-weight: 600;
 }
 
 a[href*="//"]::after
 {
 	font-weight: inherit;
-	font-size: var(--font-size-smaller);
+	/* font-size: var(--font-size-smaller); */
 	content: "\2197";
 	color: currentColor;
 	opacity: 0.7;
@@ -96,54 +145,54 @@ a[href*="//"]::after
 
 pre {
 	padding: var(--gutter);
-	border-radius: var(--border-radius-rounded);
+	border-radius: var(--radius-rounded);
 }
 
 hr {
 	width: 100%;
 	border: 0;
-	height: var(--hr-height, var(--border-width-1));
-	background-color: var(--hr-color, var(--color-separator));
+	height: var(--hr-height, var(--border-size-1));
+	background-color: var(--hr-color, var(--separator-surface));
 }
 
 table {
-	border: var(--border-width-1) solid var(--color-separator);
+	border: var(--border-size-1) solid var(--separator-surface);
 	border-collapse: collapse;
 }
 
 th,
 td {
-	padding: var(--space-xs) var(--space-md);
+	padding: var(--size-1) var(--size-3);
 	&:not(:last-child) {
-		border-right: var(--border-width-1) solid var(--color-separator);
+		border-right: var(--border-size-1) solid var(--separator-surface);
 	}
 }
 
 tr:nth-child(even) {
-	background-color: var(--color-gloss);
+	background-color: var(--gloss);
 }
 
 thead {
-	border-bottom: var(--border-width-1) solid var(--color-separator);
-	text-transform: var(--text-uppercase);
-	font-size: var(--font-size-xs);
-	letter-spacing: var(--letter-spacing-loose);
-	font-family: var(--font-family-mono);
-	font-weight: var(--font-weight-600);
+	border-bottom: var(--border-size-1) solid var(--separator-surface);
+	text-transform: var(--font-uppercase);
+	font-size: var(--font-size-0);
+	letter-spacing: var(--font-letterspacing-loose);
+	font-family: var(--font-mono);
+	font-weight: var(--font-weight-6);
 	color: var(--color-secondary);
 }
 
 mark {
 	background-color: var(--color-secondary);
-	color: var(--color-gloss);
+	color: var(--gloss);
 	padding: 0.15em;
 }
 
 code {
-	background-color: var(--color-gloss);
-	border-radius: var(--border-radius-rounded);
+	background-color: var(--gloss);
+	border-radius: var(--radius-rounded);
 	padding: 0.3em;
-	font-family: var(--font-family-mono);
+	font-family: var(--font-mono);
 	font-size: var(--font-size-smaller);
 }
 
@@ -154,7 +203,7 @@ del {
 sup {
 	position: relative;
 	top: 0.5ch;
-	font-size: var(--font-size-xs);
+	font-size: var(--font-size-0);
 }
 
 pre {
@@ -164,10 +213,10 @@ pre {
 pre button {
   opacity: .7;
 	display: inline-flex;
-	padding: var(--space-2xs) var(--space-sm);
-	font-family: var(--font-family-heading);
-	border: var(--border-width-1) solid transparent;
-	border-radius: var(--border-radius-rounded);
+	padding: var(--size-1) var(--size-2);
+	font-family: var(--font-heading);
+	border: var(--border-size-1) solid transparent;
+	border-radius: var(--radius-rounded);
 	text-decoration: none;
 	cursor: pointer;
 	font-weight: var(--font-weight-bold);
@@ -180,11 +229,11 @@ pre button {
 	color: var(--color-foreground);
 	border-color: var(--color-surface-1);
 
-	font-family: var(--font-family-body);
-	font-size: var(--font-size-xs);
+	font-family: var(--font-sans);
+	font-size: var(--font-size-0);
 	position: absolute;
-	top: var(--space-sm);
-	right: var(--space-sm);
+	top: var(--size-2);
+	right: var(--size-2);
 
 	&:hover,
 	&:focus-within {

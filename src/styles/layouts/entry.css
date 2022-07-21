@@ -1,5 +1,5 @@
 .entry {
-	@media (--viewport-sm) {
+	@media (--rem-sm-n-above) {
 		display: grid;
 		grid-template-rows: auto auto;
 		/* grid-template-rows: calc(100vh - var(--gutter) * 2) auto; */
@@ -7,11 +7,11 @@
 }
 
 .entry-heading {
-	max-width: var(--breakpoint-sm);
+	max-width: var(--size-span-sm);
 	padding: var(--gutter) 0 0 0;
 	position: relative;
 	background: var(--color-background);
-	@media (--viewport-sm) {
+	@media (--rem-sm-n-above) {
 		padding: var(--gutter) var(--gutter) 0 0;
 		align-self: end;
 		grid-row: 1;
@@ -31,10 +31,10 @@
 		top: var(--gutter);
 		height: 75vh;
 	}
-	@media (--viewport-sm) {
+	@media (--rem-sm-n-above) {
 		height: 50vh;
 	}
-	@media (--viewport-md) {
+	@media (--rem-md-n-above) {
 		height: calc(100vh - var(--gutter) * 2);
 	}
 }
@@ -52,7 +52,7 @@
 }
 
 .entry-content {
-	max-width: calc(var(--breakpoint-sm) - var(--gutter));
+	max-width: calc(var(--size-span-sm) - var(--gutter));
 }
 
 .entry-content.flow > *:first-child {
@@ -62,9 +62,9 @@
 .entry-meta {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-	padding: var(--space-md) 0 var(--space-md);
+	padding: var(--size-3) 0 var(--size-3);
 	gap: var(--gutter);
-	font-family: var(--font-family-mono);
+	font-family: var(--font-mono);
 }
 .entry-meta-list {
 	display: flex;
@@ -74,12 +74,12 @@
 	column-gap: 1ch;
 }
 .entry-meta-key {
-	font-family: var(--font-family-mono);
-	font-size: var(--font-size-xs);
+	font-family: var(--font-mono);
+	font-size: var(--font-size-0);
 	color: var(--color-secondary);
-	font-weight: var(--font-weight-600);
-	letter-spacing: var(--letter-spacing-loose);
-	text-transform: var(--text-uppercase);
+	font-weight: var(--font-weight-6);
+	letter-spacing: var(--font-letterspacing-loose);
+	text-transform: var(--font-uppercase);
 }
 
 .entry-meta-value {
@@ -102,7 +102,7 @@
 	& li,
 	& dt,
 	& dd {
-		max-width: var(--line-length-lg);
+		max-width: var(--size-content-4);
 	}
 }
 
@@ -111,25 +111,25 @@
 }
 
 .entry-content blockquote {
-	border-left: var(--border-width-4) solid var(--color-secondary);
+	border-left: var(--border-size-4) solid var(--color-secondary);
 	padding: var(--gutter);
-	background-color: var(--color-gloss);
+	background-color: var(--gloss);
 }
 
 /* .entry-content.flow > *:last-child {
-	margin-bottom: var(--space-2xl);
+	margin-bottom: var(--size-6);
 } */
 
 .entry-footer {
-	margin-top: var(--space-3xl);
-	background-color: var(--color-gloss);
-	padding: var(--space-lg);
-	border-radius: var(--border-radius-rounded);
+	margin-top: var(--size-7);
+	background-color: var(--gloss);
+	padding: var(--size-4);
+	border-radius: var(--radius-rounded);
 }
 
 .image-credit {
 	display: grid;
-	gap: var(--space-lg);
+	gap: var(--size-4);
 	grid-template-columns: min(20%, 4rem) auto;
 	& > div {
 		align-self: center;
@@ -137,9 +137,9 @@
 }
 
 .entry hr {
-	margin-top: var(--space-2xl);
+	margin-top: var(--size-6);
 	& + * {
-		margin-top: var(--space-2xl);
+		margin-top: var(--size-6);
 	}
 }
 
@@ -153,9 +153,9 @@
 
 
 .footnotes {
-	border-top: var(--border-width-1) solid var(--color-separator);
-	margin-top: var(--space-2xl);
-	padding-top: var(--space-2xl);
+	border-top: var(--border-size-1) solid var(--separator-surface);
+	margin-top: var(--size-6);
+	padding-top: var(--size-6);
 }
 
 .footnotes ol {
@@ -165,24 +165,24 @@
 
 .data-footnote-backref {
 	text-decoration: none;
-	background-color: var(--color-gloss);
-	padding: var(--space-2xs);
-	border-radius: var(--border-radius-rounded);
+	background-color: var(--gloss);
+	padding: var(--size-1);
+	border-radius: var(--radius-rounded);
 }
 
 [aria-describedby="footnote-label"] {
 	display: inline-block;
 	min-width: 3ch;
 	text-align: center;
-	background-color: var(--color-gloss);
+	background-color: var(--gloss);
 	text-decoration: none;
 	padding: 0.15em;
-	border-radius: var(--border-radius-rounded);
+	border-radius: var(--radius-rounded);
 }
 
 .entry-content figure {
-	margin-top: var(--space-2xl);
+	margin-top: var(--size-6);
 }
 .entry-content figure + * {
-	margin-top: var(--space-2xl);
+	margin-top: var(--size-6);
 }

@@ -1,27 +1,4 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
-body {
-  font-family: system-ui, sans-serif;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-figure,
-blockquote,
-dl,
-dd, hr {
-  margin: 0;
-}
 :where(ul, ol) {
   margin-block: 0;
 }
@@ -36,60 +13,14 @@ ol[role="list"] {
   margin: 0;
 }
 
-html:focus-within {
-  scroll-behavior: smooth;
+[dir="ltr"] :where(ol, ul) {
+  padding-left: 0;
 }
 
-html,
-body {
-  height: 100%;
-}
-body {
-  -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  /* text-rendering: optimizeSpeed; */
+[dir="ltr"] :where(li) {
+  padding-left: 0;
 }
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-img {
-  height: auto;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+:where(p, ul, ol, dl, h6) {
+  font-size: unset;
 }

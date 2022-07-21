@@ -57,7 +57,7 @@ const { page } = Astro.props
 <style>
 	
 	.main-footer {
-		max-width: calc(var(--breakpoint-sm) + var(--gutter));
+		max-width: calc(var(--size-span-sm) + var(--gutter));
 	}
 
 	.post-list {
@@ -69,7 +69,7 @@ const { page } = Astro.props
 	:global(.post-list > *::after) {
 		content: "";
 		width: 100%;
-		border-bottom: var(--border-width-1) solid var(--color-separator);
+		border-bottom: var(--border-size-1) solid var(--separator-surface);
 		display: block;
 		grid-column: span 2;
 		position: relative;

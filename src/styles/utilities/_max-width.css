@@ -1,19 +1,19 @@
 .max-width-2xs {
-  max-width: var(--breakpoint-2xs);
+  max-width: var(--size-span-xxs);
 }
 
 .max-width-xs {
-  max-width: var(--breakpoint-xs);
+  max-width: var(--size-span-xs);
 }
 
 .max-width-sm {
-  max-width: var(--breakpoint-sm);
+  max-width: var(--size-span-sm);
 }
 
 .max-width-md {
-  max-width: var(--breakpoint-md);
+  max-width: var(--size-span-md);
 }
 
 .max-width-lg {
-  max-width: var(--breakpoint-lg);
+  max-width: var(--size-span-lg);
 }

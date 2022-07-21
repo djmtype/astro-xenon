@@ -4,7 +4,7 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="site-footer section-lg" role="contentinfo">
-  <div class="container" style="--spread: var(--breakpoint-lg)">
+  <div class="container" style="--spread: var(--size-span-lg)">
     <p>
       Copyright &copy; {currentYear}
       <strong>{site.name}</strong>. Most rights reserved.
@@ -17,14 +17,14 @@ const currentYear = new Date().getFullYear();
 
     /* position: sticky;
     bottom: 0; */
-    border-top: var(--border-width-1) solid var(--color-separator);
-    background-color: var(--color-gloss);
-    color: var(--color-muted);
+    border-top: var(--border-size-1) solid var(--separator-surface);
+    background-color: var(--gloss);
+    color: var(--muted);
   }
 
   .site-footer p {
-    font-family: var(--font-family-mono);
-    font-size: var(--font-size-xs);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-0);
   }
 
   .site-footer > div {

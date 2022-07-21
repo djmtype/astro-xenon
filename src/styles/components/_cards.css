@@ -1,10 +1,10 @@
 .card {
-  background-color: var(--color-gloss);
+  background-color: var(--gloss);
   height: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
-  border-radius: var(--border-radius-rounded);
+  border-radius: var(--radius-rounded);
   overflow: hidden;
 }
 
@@ -18,16 +18,16 @@
 
 
 .card-meta {
-  font-family: var(--font-family-mono);
-  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-0);
   color: var(--color-secondary);
-  font-weight: var(--font-weight-600);
-  letter-spacing: var(--letter-spacing-loose);
-  text-transform: var(--text-uppercase);
+  font-weight: var(--font-weight-6);
+  letter-spacing: var(--font-letterspacing-loose);
+  text-transform: var(--font-uppercase);
 }
 
 .card-thumb {
-  background-color: var(--color-muted);
+  background-color: var(--muted);
 }
 
 .card-tags {
@@ -38,9 +38,9 @@
 }
 
 .card-tags li {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-mono);
   font-size: var(--font-size-smaller);
   display: inline-block;
   margin-right: 1em;
-  color: var(--color-muted);
+  color: var(--muted);
 }

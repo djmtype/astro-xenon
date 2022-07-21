@@ -1,5 +1,5 @@
 ---
-title: Post Two
+title: Post Two Has A Very Long Title
 description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 date: 
   published: 2022-06-12

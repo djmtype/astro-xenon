@@ -19,7 +19,7 @@ const { title } = Astro.props
 
 <style>
 	.main-content {
-		@media (--viewport-sm) {
+		@media (--rem-sm-n-above) {
 		display: grid;
 		grid-template-rows: auto auto;
 		}
@@ -29,7 +29,7 @@ const { title } = Astro.props
 	}
 
 	:global(.main-body > *) {
-		max-width: calc(var(--breakpoint-sm) - var(--gutter));
+		max-width: calc(var(--size-span-sm) - var(--gutter));
 	}
 
 	.main-header {
@@ -38,18 +38,18 @@ const { title } = Astro.props
 		align-self: end;
 		padding: var(--gutter) var(--gutter) .5ch 0;
 		background-color: var(--color-background);
-		max-width: var(--breakpoint-sm);
+		max-width: var(--size-span-sm);
 	}
 
 
 	.main-title {
-		font-weight: var(--font-weight-700); 
+		font-weight: var(--font-weight-7); 
 	}
 
 	.main-figure {
 		aspect-ratio: 4/3;
 
-		@media (--viewport-sm) {
+		@media (--rem-sm-n-above) {
 			aspect-ratio: initial;
 			height: 50vh;
 		}

@@ -92,7 +92,7 @@ import Button from "@components/Button.astro"
 
 <style>
 	form > *:not(button) {
-		width: min(100%, var(--line-length-md));
+		width: min(100%, var(--size-content-3));
 	}
 
 	input:not([type="radio"]),
@@ -100,17 +100,17 @@ import Button from "@components/Button.astro"
 	select,
 	fieldset {
 		appearance: none;
-		padding: var(--space-xs) var(--space-sm);
+		padding: var(--size-1) var(--size-2);
 		background: var(--color-background);
-		border: var(--border-width-1) solid var(--color-muted);
+		border: var(--border-size-1) solid var(--muted);
 		color: var(--color-foreground);
 		&:focus-visible {
-			outline: var(--border-width-1) solid var(--color-primary);
+			outline: var(--border-size-1) solid var(--color-primary);
 			border-color: var(--color-primary);
-			background-color: var(--color-gloss);
+			background-color: var(--gloss);
 		}
 		&::placeholder {
-			color: var(--color-muted);
+			color: var(--muted);
 		}
 	}
 
@@ -127,20 +127,20 @@ import Button from "@components/Button.astro"
 	}
 
 	:where(.form-control > *:last-child) {
-		margin-top: var(--space-xs);
+		margin-top: var(--size-1);
 	}
 
 	.form-control label,
 	legend {
 		display: inline-block;
-		font-weight: var(--font-weight-600);
+		font-weight: var(--font-weight-6);
 	}
 
 	fieldset {
 		appearance: none;
 	}
 	input:checked + label {
-		font-weight: var(--font-weight-600);
+		font-weight: var(--font-weight-6);
 		color: var(--color-primary);
 	}
 
@@ -148,10 +148,10 @@ import Button from "@components/Button.astro"
 		cursor: not-allowed;
 	}
 	input:disabled + label {
-		color: var(--color-muted);
+		color: var(--muted);
 	}
 
 	option:disabled {
-		color: var(--color-muted);
+		color: var(--muted);
 	}
 </style>

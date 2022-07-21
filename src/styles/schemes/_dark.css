@@ -1,0 +1,14 @@
+:root[color-scheme="dark"] {
+	color-scheme: dark;
+
+	--color-yellow: hsl(35 86% 67%);
+	--color-orange: hsl(26 79% 62%);
+	--color-red: hsl(358 64% 62%);
+	--color-purple: hsl(292 25% 66%);
+	--color-blue: hsl(205 37% 62%);
+	--color-green: hsl(67 43% 54%);
+
+
+	--blend-mode: multiply;
+
+}

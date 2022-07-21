@@ -73,27 +73,28 @@ const pathname = new URL(Astro.request.url).pathname
 	.nav-list {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-		/* gap: var(--space-xs); */
+		/* gap: var(--size-1); */
 
-		font-family: var(--font-family-heading);
+		font-family: var(--font-heading);
 	}
 
 	.nav-link {
 		text-decoration: none;
 		display: block;
-		padding: var(--space-xs) var(--space-md);
-		color: var(--color-muted);
-		border-radius: var(--border-radius-rounded);
+		padding: var(--size-2) var(--size-3);
+		color: var(--muted);
+		border-radius: var(--radius-rounded);
+		margin: 0;
 		&:link {
-			color: var(--color-muted);
+			color: var(--muted);
 		}
 		&:hover,
 		&:focus-visible {
-			color: var(--color-foreground);
+			color: var(--text-1);
 		}
 		&[aria-current="page"] {
-			background-color: var(--color-gloss);
-			color: var(--color-foreground);
+			background-color: var(--gloss);
+			color: var(--text-1);
 			font-weight: var(--font-weight-bold);
 		}
 	}

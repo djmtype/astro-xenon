@@ -1,5 +1,5 @@
 .flow > * + * {
-  margin-block-start: var(--flow, var(--space-xl));
+  margin-block-start: var(--flow, var(--size-5));
 }
 
 .margin-top-0 {
@@ -7,32 +7,32 @@
 }
 
 .margin-top-2xs {
-  margin-block-start: var(--flow-top, var(--space-2xs));
+  margin-block-start: var(--flow-top, var(--size-1));
 }
 
 .margin-top-xs {
-  margin-block-start: var(--flow-top, var(--space-xs));
+  margin-block-start: var(--flow-top, var(--size-1));
 }
 
 .margin-top-sm {
-  margin-block-start: var(--flow-top, var(--space-sm));
+  margin-block-start: var(--flow-top, var(--size-2));
 }
 
 .margin-top-md {
-  margin-block-start: var(--flow-top, var(--space-md));
+  margin-block-start: var(--flow-top, var(--size-3));
 }
 
 .margin-top-lg {
-  margin-block-start: var(--flow-top, var(--space-lg));
+  margin-block-start: var(--flow-top, var(--size-4));
 }
 .margin-top-xl {
-  margin-block-start: var(--flow-top, var(--space-xl));
+  margin-block-start: var(--flow-top, var(--size-5));
 }
 
 .margin-top-2xl {
-  margin-block-start: var(--flow-top, var(--space-2xl));
+  margin-block-start: var(--flow-top, var(--size-6));
 }
 
 .margin-top-3xl {
-  margin-block-start: var(--flow-top, var(--space-3xl));
+  margin-block-start: var(--flow-top, var(--size-7));
 }

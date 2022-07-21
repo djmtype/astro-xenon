@@ -14,42 +14,42 @@ const { name, className } = Astro.props;
 <style>
 	.label {
 		display: inline-block;
-		padding: var(--space-2xs) var(--space-xs);
-		color: var(--color-gray-10);
+		padding: var(--size-1) var(--size-2);
+		color: var(--text-1);
 		line-height: 1;
-		background-color: var(--color-gray-0);
-		font-family: var(--font-family-mono);
-		font-weight: var(--font-weight-600);
-		border-radius: var(--border-radius-rounded);
-		letter-spacing: var(--letter-spacing-loose);
+		background-color: var(--gloss);
+		font-family: var(--font-mono);
+		font-weight: var(--font-weight-6);
+		border-radius: var(--radius-rounded);
+		letter-spacing: var(--font-letterspacing-loose);
 		text-transform: uppercase;
-		font-size: var(--font-size-xs);
+		font-size: var(--font-size-0);
 	}
 
 	/* .label-default {
-    background-color: var(--color-muted);
+    background-color: var(--muted);
 		opacity: 0.7;
 		backdrop-filter: blur(15px);
 		color: var(--color-background);
 	} */
 
 	.label-default {
-    background-color: var(--color-surface-1);
+    background-color: var(--surface-1);
 		opacity: 0.7;
 		backdrop-filter: blur(15px);
-		color: var(--color-foreground);
+		color: var(--text-1);
 	}
 
 	.label-primary {
-    background-color: var(--color-primary);
+    background-color: var(--brand);
 		opacity: 0.7;
 		backdrop-filter: blur(15px);
-		color: var(--color-background);
+		color: var(--surface-1);
 	}
 
 	.label-overlay {
-    background-color: var(--color-gray-0);
-		color: var(--color-gray-100);
+    background-color: var(--gray-1);
+		color: var(--gray-10);
 		opacity: 0.7;
 		mix-blend-mode: screen;
 		backdrop-filter: blur(15px);
