@@ -20,7 +20,7 @@
 .card-meta {
   font-family: var(--font-mono);
   font-size: var(--font-size-0);
-  color: var(--color-secondary);
+  color: var(--brand-2);
   font-weight: var(--font-weight-6);
   letter-spacing: var(--font-letterspacing-loose);
   text-transform: var(--font-uppercase);

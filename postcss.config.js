@@ -10,7 +10,7 @@ module.exports = {
 				"custom-media-queries": {
 					importFrom: [
 						"./node_modules/open-props/src/props.media.css",
-						"./src/styles/common/_media.css",
+						// "./src/styles/common/_media.css",
 					],
 				},
 			},

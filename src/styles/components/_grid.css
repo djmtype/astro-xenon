@@ -229,7 +229,7 @@
   --gap: var(--gap-6);
 }
 
-@media (--viewport-xs) {
+@media (--xs-n-above) {
   .xs\:gap-xs {
     --gap: var(--gap-2);
   }
@@ -434,7 +434,7 @@
     grid-column-end: auto;
   }
 }
-@media (--rem-sm-n-above) {
+@media (--sm-n-above) {
   .sm\:gap-xs {
     --gap: var(--gap-2);
   }
@@ -639,7 +639,7 @@
     grid-column-end: auto;
   }
 }
-@media (--rem-md-n-above) {
+@media (--md-n-above) {
   .md\:gap-xs {
     --gap: var(--gap-2);
   }
@@ -844,7 +844,7 @@
     grid-column-end: auto;
   }
 }
-@media (--rem-lg-n-above) {
+@media (--lg-n-above) {
   .lg\:gap-xs {
     --gap: var(--gap-2);
   }
@@ -1049,7 +1049,7 @@
     grid-column-end: auto;
   }
 }
-@media (--rem-xl-n-above) {
+@media (--xl-n-above) {
   .xl\:gap-xs {
     --gap: var(--gap-2);
   }

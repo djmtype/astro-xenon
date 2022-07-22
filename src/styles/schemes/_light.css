@@ -2,15 +2,15 @@
   color-scheme: light;
 
 
-  --accent-yellow: var(--yellow-7);
-	--accent-orange: var(--orange-7);
-	--accent-red: var(--red-7);
-	--accent-purple: var(--grape-7);
-	--accent-blue: var(--blue-7);
-	--accent-green: var(--green-7);
+  --accent-yellow: var(--yellow-8);
+	--accent-orange: var(--orange-8);
+	--accent-red: var(--red-8);
+	--accent-purple: var(--violet-8);
+	--accent-blue: var(--blue-8);
+	--accent-green: var(--green-8);
 
-  --brand: var(--blue-7);
-	--brand-2: var(--violet-7);
+  --brand: var(--blue-8);
+	--brand-2: var(--violet-8);
 
   --link: var(--brand);
 	--link-visited: var(--brand);

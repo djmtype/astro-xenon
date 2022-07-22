@@ -1,9 +1,9 @@
-@custom-media --rem-xxxs-n-above (width >= 18rem);
-@custom-media --rem-xxs-n-above (width >= 24rem);
-@custom-media --rem-xs-n-above (width >= 36rem);
-@custom-media --rem-sm-n-above (width >= 48rem);
-@custom-media --rem-md-n-above (width >= 62rem);
-@custom-media --rem-lg-n-above (width >= 75rem);
-@custom-media --rem-xl-n-above (width >= 90rem);
-@custom-media --rem-xxl-n-above (width >= 100rem);
+@custom-media --xxxs-n-above (width >= 18rem);
+@custom-media --xxs-n-above (width >= 24rem);
+@custom-media --xs-n-above (width >= 36rem);
+@custom-media --sm-n-above (width >= 48rem);
+@custom-media --md-n-above (width >= 62rem);
+@custom-media --lg-n-above (width >= 75rem);
+@custom-media --xl-n-above (width >= 90rem);
+@custom-media --xxl-n-above (width >= 100rem);
 

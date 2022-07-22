@@ -41,14 +41,14 @@ const { id, className, href, externalTarget, type, name} = Astro.props
 		padding: var(--size-2) var(--size-5);
 		font-family: var(--font-heading);
 		border: var(--border-size-1) solid transparent;
-		border-radius: var(--radius-round);
+		border-radius: var(--radius-rounded);
 		text-decoration: none;
 		cursor: pointer;
 		font-weight: var(--font-weight-bold);
 		text-align: center;
 		align-items: center;
 		justify-content: center;
-		transition: 250ms ease-in-out filter;
+		box-shadow: var(--shadow-1);
 		/* column-gap: 1ch; */
 	}
 
@@ -57,18 +57,20 @@ const { id, className, href, externalTarget, type, name} = Astro.props
 	.btn {
 		&:hover,
 		&:focus-within {
-			filter: brightness(1.2);
+		
+			filter: brightness(1.1);
 		}
 		&:active {
 			filter: brightness(0.9);
 			transform: scale(0.95);
+			box-shadow: var(--inner-shadow-1);
 		}
 	}
 
 
 	.btn-default {
 		background-color: var(--surface-3);
-		color: var(--text-1);
+		color: var(--text-2);
 		border-color: var(--surface-3);
 	}
 

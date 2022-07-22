@@ -3,7 +3,7 @@
 @import "common/_fonts.css";
 @import "common/_reset.css";
 
-@import "common/_media.css";
+/* @import "common/_media.css"; */
 
 @import "schemes/_light.css";
 @import "schemes/_dark.css";

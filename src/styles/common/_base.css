@@ -55,7 +55,7 @@
 
 
 
-:where(a[href*="//"]::after)
+:where(a[href*="//"])::after
 {
 	margin-inline-start: 0.25ch;
 	font-weight: inherit;
@@ -64,6 +64,7 @@
 	opacity: 0.7;
 	display: inline-block;
 	text-decoration: none;
+	font-size: var(--font-size-smaller);
 }
 
 :focus-visible { 
@@ -130,7 +131,7 @@ td {
 }
 
 tr:nth-child(even) {
-	background-color: var(--surface-0);
+	background-color: var(--surface-2);
 }
 
 thead {
@@ -140,11 +141,11 @@ thead {
 	letter-spacing: var(--font-letterspacing-loose);
 	font-family: var(--font-mono);
 	font-weight: var(--font-weight-6);
-	color: var(--color-secondary);
+	color: var(--brand-2);
 }
 
 mark {
-	background-color: var(--color-secondary);
+	background-color: var(--brand-2);
 	color: var(--surface-0);
 	padding: 0.15em;
 }
@@ -158,7 +159,7 @@ code {
 }
 
 del {
-	text-decoration-color: var(--color-red);
+	text-decoration-color: var(--accent-red);
 }
 
 sup {
@@ -172,6 +173,7 @@ pre {
 }
 
 pre button {
+	
   opacity: .7;
 	display: inline-flex;
 	padding: var(--size-1) var(--size-2);
@@ -186,9 +188,9 @@ pre button {
 	justify-content: center;
 	transition: 250ms ease-in-out filter;
 
-	background-color: var(--color-surface-1);
-	color: var(--color-foreground);
-	border-color: var(--color-surface-1);
+	background-color: var(--surface-3);
+	color: var(--text-1);
+	border-color: var(--surface-3);
 
 	font-family: var(--font-sans);
 	font-size: var(--font-size-0);
@@ -196,7 +198,7 @@ pre button {
 	top: var(--size-2);
 	right: var(--size-2);
 
-	&:hover,
+	/* &:hover,
 	&:focus-within {
 		filter: brightness(1.2);
     opacity: 1;
@@ -204,5 +206,5 @@ pre button {
 	&:active {
 		filter: brightness(0.9);
 		transform: scale(0.95);
-	}
+	} */
 }

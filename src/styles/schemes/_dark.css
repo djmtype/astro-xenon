@@ -2,15 +2,15 @@
   :where(html) {
     color-scheme: dark;
 
-    --accent-yellow: var(--yellow-3);
-		--accent-orange: var(--orange-3);
-		--accent-red: var(--red-3);
-		--accent-purple: var(--grape-3);
-		--accent-blue: var(--blue-3);
-		--accent-green: var(--green-3);
+    --accent-yellow: var(--yellow-4);
+		--accent-orange: var(--orange-4);
+		--accent-red: var(--red-4);
+		--accent-purple: var(--violet-4);
+		--accent-blue: var(--cyan-4);
+		--accent-green: var(--teal-4);
 
-    --brand: var(--yellow-3);
-		--brand-2: var(--cyan-3);
+    --brand: var(--yellow-4);
+		--brand-2: var(--cyan-4);
 
     --link: var(--brand);
     --link-visited: var(--brand);

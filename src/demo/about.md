@@ -2,9 +2,7 @@
 title: About Astro Xenon
 date: 
   published: 2022-07-07
-	updated: 2022-07-10
-setup: |
-  import Callout from '@components/Callout.astro'
+	updated: 2022-07-22
 ---
 
 ## Welcome to [Astro Xenon](https://astro-xenon.netlify.app)
@@ -14,8 +12,8 @@ setup: |
 ```
 git clone https://github.com/djmtype/astro-xenon.git
 ```
-1. Run `npm install` or use your favorite build tool. 
-2. Enjoy!
+2. Run `npm install` or use your favorite build tool. 
+3. Enjoy!
 
 ## 🚀 Project Structure
 
@@ -40,9 +38,7 @@ Inside the Astro Xenon project, you'll see the following folders and files:
 ├── package.json
 └── postcss.config.js
 ```
-Xenon is an opensource dark-favored theme for Astro that aims to excel in accessibility and performance. 
-
-Its color palette is loosely based upon the [Tomorrow Theme](https://github.com/chriskempson/tomorrow-theme) by Chris Kempson. 
+Xenon is an opensource theme for Astro that aims to excel in performance with accessibility in mind. 
 
 Xenon contains a few other plugins from the community like [astro-imagetools](https://github.com/RafidMuhymin/astro-imagetools#readme) and [astro-icon](https://github.com/natemoo-re/astro-icon#readme). 
 
@@ -57,34 +53,12 @@ RSS has been pre-configured based on any markdown file placed within `src/pages/
 Postscript, adjust the `site` property value found in `astro.config.mjs` 
 
 ### Styling 
-Sorry, no Tailwinds. No Sass.
+This theme utilizes <abbr title="Just In Time">JIT</abbr>  [Open-Props](https://open-props.style/) in a big way. 
 
-This theme utilizes [PostCSS Preset Env](https://preset-env.cssdb.org/) to accomplish Sass-like things such as custom media queries, css file imports, and nesting.
+In addition, [PostCSS Preset Env](https://preset-env.cssdb.org/) is used to accomplish Sass-like things such as custom media queries, css file imports, and nesting.
 
-CSS custom properties (or variables) play a big part. 
-
-- All color properties are located within the `src/styles/schemes` directory
-- All other properties reside in `src/styles/common/_variables.css` 
-
-The global gray scale is adaptive, based on the controls below. 
-
-```css
-/* Xenon's Default Dark Background */
-:root {
---color-primary-h: 205;
---gray-h: var(--color-primary-h);
---gray-s: 5%;
---gray-l: 90%;
---gray-increment: 10%;
-}
-```
-
-These values can be adjusted separately for both `day` and `night` schemes inside the `src/styles/schemes` directory. 
-
-<Callout type="info"> 
-**What does *adaptive* grayscale even mean?**  
-Basically, the overall grayscale values can be tinted based on the primary hue. The intensity will be determined by the saturation value. *Be cautious about color accessibility.*
-</Callout>
+- Schemes for `light` and `dark` can be found within the `src/styles/schemes` directory
+- Extra and aliased props reside in `src/styles/common/_variables.css` 
 
 ### Common Astro Practices 
 

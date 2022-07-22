@@ -19,13 +19,13 @@ const { title } = Astro.props
 
 <style>
 	.main-content {
-		@media (--rem-sm-n-above) {
+		@media (--sm-n-above) {
 		display: grid;
 		grid-template-rows: auto auto;
 		}
 	}
 	.main-body {
-		background-color: var(--color-background);
+		background-color: var(--surface-1);
 	}
 
 	:global(.main-body > *) {
@@ -37,19 +37,20 @@ const { title } = Astro.props
 		grid-column: 1;
 		align-self: end;
 		padding: var(--gutter) var(--gutter) .5ch 0;
-		background-color: var(--color-background);
+		background-color: var(--surface-1);
 		max-width: var(--size-span-sm);
 	}
 
 
 	.main-title {
-		font-weight: var(--font-weight-7); 
+		font-size: var(--font-size-7);
+	letter-spacing: var(--font-letterspacing-tight);
 	}
 
 	.main-figure {
 		aspect-ratio: 4/3;
 
-		@media (--rem-sm-n-above) {
+		@media (--sm-n-above) {
 			aspect-ratio: initial;
 			height: 50vh;
 		}
@@ -59,7 +60,7 @@ const { title } = Astro.props
 		grid-row: 1;
 		grid-column: 1;
 		z-index: -1;
-		--bg-image: url(/images/page-header-dark.svg);
+		--bg-image: url(/images/page-header-light.svg);
 
 		position: sticky;
 		top: var(--gutter);
@@ -67,10 +68,10 @@ const { title } = Astro.props
 		background-image: var(--bg-image),
 			linear-gradient(
 				45deg,
-				var(--color-green),
-				var(--color-blue),
-				var(--color-purple),
-				var(--color-red)
+				var(--accent-green),
+				var(--accent-blue),
+				var(--accent-purple),
+				var(--accent-red)
 			);
 		background-blend-mode: soft-light;
 
@@ -79,7 +80,9 @@ const { title } = Astro.props
 		background-size: auto 20%, cover;
 	}
 
-	:root[color-scheme="light"] .main-figure {
-		--bg-image: url(/images/page-header-light.svg);
+	@media(--OSdark) {
+	 .main-figure {
+		--bg-image: url(/images/page-header-dark.svg);
 	}
+}
 </style>

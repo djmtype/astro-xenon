@@ -35,7 +35,7 @@ const { className, title, type, icon } = Astro.props;
 :global(.callout) {
 	color: var(--muted);
 	background: var(--surface-0);
-	border-left: var(--border-size-4) solid currentColor;
+	border-left: var(--border-size-3) solid currentColor;
 	padding: var(--gutter);
 	display: flex;
 	column-gap: var(--gutter);
@@ -52,29 +52,29 @@ const { className, title, type, icon } = Astro.props;
 }
 
 :global(.callout:not([data-type]) p) {
- color: var(--color-foreground);
+ color: var(--text-1);
 }
 
 :global([data-type="warning"]) {
-	color: var(--color-red);
+	color: var(--accent-red);
 	border-color: currentColor;
 	
 }
 
 :global([data-type="yeild"]) {
-	color: var(--color-yellow);
+	color: var(--accent-yellow);
 	border-color: currentColor;
 	
 }
 
 :global([data-type="info"]) {
-	color: var(--color-blue);
+	color: var(--accent-blue);
 	border-color: currentColor;
 	
 }
 
 :global([data-type="success"]) {
-	color: var(--color-green);
+	color: var(--accent-green);
 	border-color: currentColor;
 	
 }

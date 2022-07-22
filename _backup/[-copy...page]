@@ -46,7 +46,7 @@ const { page } = Astro.props
 >
 	<div class="main-content">
 		<div class="main-header">
-			<h1 class="main-title font-size-display">{title}</h1>
+			<h1 class="main-title font-size-fluid-3">{title}</h1>
 		</div>
 
 		<div class="main-body section-3xl">
@@ -102,7 +102,7 @@ const { page } = Astro.props
 		background-image: linear-gradient(
 			45deg,
 			var(--color-primary),
-			var(--color-secondary)
+			var(--brand-2)
 		);
 
 		background-size: 100%;

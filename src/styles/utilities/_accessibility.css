@@ -1,9 +1,23 @@
-.sr-only {
+/* .sr-only {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
   margin: 0;
   padding: 0;
+  width: 1px;
+  height: auto;
+  border: 0;
+  white-space: nowrap;
+} */
+
+
+
+:is(.visually-hidden, .sr-only) {
+  inline-size: 0;
+  block-size: 0;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0);
   width: 1px;
   height: auto;
   border: 0;

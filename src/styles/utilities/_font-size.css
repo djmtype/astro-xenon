@@ -1,47 +1,63 @@
-.font-size-xs {
+.font-size-0 {
   font-size: var(--font-size-0);
 }
-.font-size-sm {
+.font-size-1 {
   font-size: var(--font-size-1);
 }
 
-.font-size-md {
+.font-size-2 {
   font-size: var(--font-size-2);
 }
 
-.font-size-lg {
+.font-size-3 {
   font-size: var(--font-size-3);
 }
 
-.font-size-xl {
+.font-size-4 {
   font-size: var(--font-size-4);
 }
 
-.font-size-2xl {
+.font-size-5 {
   font-size: var(--font-size-5);
 }
 
-.font-size-3xl {
+.font-size-6 {
   font-size: var(--font-size-6);
 }
 
-.font-size-display {
-  font-size: clamp(var(--font-size-4), 2.25vw + var(--font-size-4), var(--font-size-6));
+.font-size-7 {
+  font-size: var(--font-size-7);
+}
+
+.font-size-8 {
+  font-size: var(--font-size-8);
+}
+
+.font-size-9 {
+  font-size: var(--font-size-9);
+}
+
+.font-size-fluid-3 {
+  font-size: var(--font-size-fluid-3);
 }
 
 .font-size-smaller {
   font-size: var(--font-size-smaller);
 }
 
-.font-weight-400 {
+.font-weight-4 {
   font-weight: var(--font-weight-4);
 }
-.font-weight-500 {
+.font-weight-5 {
   font-weight: var(--font-weight-5);
 }
 
-.font-weight-600 {
+.font-weight-6 {
   font-weight: var(--font-weight-6);
+}
+
+.font-weight-7 {
+  font-weight: var(--font-weight-7);
 }
 
 .text-uppercase {
@@ -54,6 +70,10 @@
 
 .letter-spacing-loose {
   letter-spacing: var(--font-letterspacing-loose);
+}
+
+.letter-spacing-tight {
+  letter-spacing: var(--font-letterspacing-tight);
 }
 
 .text-truncate {

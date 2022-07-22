@@ -117,5 +117,6 @@ h6 {
 :where(pre) { 
   white-space: pre;
   min-inline-size: 0;
+	max-inline-size: 100%;
   /* max-inline-size: max-content;  */
 }

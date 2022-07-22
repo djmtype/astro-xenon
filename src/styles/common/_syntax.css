@@ -3,13 +3,13 @@
 :root {
 	--astro-code-color-text: var(--text-1);
 	--astro-code-color-background: var(--surface-0);
-	--astro-code-token-constant: var(--text-1);
-	--astro-code-token-string: var(--accent-green);
+	--astro-code-token-constant: var(--text-2);
+	--astro-code-token-string: var(--accent-x);
 	--astro-code-token-comment: var(--muted);
 	--astro-code-token-keyword: var(--accent-red);
-	--astro-code-token-parameter: var(--accent-green);
-	--astro-code-token-function: var(--color-secondary);
-	--astro-code-token-string-expression: var(--accent-yellow);
+	--astro-code-token-parameter: var(--accent-x);
+	--astro-code-token-function: var(--brand);
+	--astro-code-token-string-expression: var(--brand-2);
 	--astro-code-token-punctuation: var(--text-1);
-	--astro-code-token-link: var(--accent-green);
+	--astro-code-token-link: var(--accent-x);
 }
