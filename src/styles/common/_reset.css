@@ -1,26 +1,121 @@
-
-:where(ul, ol) {
-  margin-block: 0;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
+/* :where(:not(dialog)), */
+:where(body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd) {
+	margin: 0;
 }
+
+:where(:not(fieldset, progress, meter)) {
+	border-width: 0;
+	border-style: solid;
+	background-origin: border-box;
+	background-repeat: no-repeat;
+}
+
+/* :where(html, body) {
+	height: 100%;
+  
+} */
+
+:where(html) {
+	block-size: 100%;
+	-webkit-text-size-adjust: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:where(html) {
+		scroll-behavior: smooth;
+	}
+
+	:focus-visible {
+		transition: outline-offset 150ms ease;
+	}
+	:where(:not(:active)):focus-visible {
+		transition-duration: 250ms;
+	}
+}
+
+:where(:not(:active)):focus-visible {
+	outline-offset: .25rem;
+}
+
+:where(body) {
+	font-family: system-ui, sans-serif;
+	min-block-size: 100%;
+	line-height: 1.5;
+	/* min-height: 100vh; */
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: antialiased;
+  
+}
+
+:where(a, u, ins, abbr) {
+	text-underline-offset: 0.1em;
+
+	@supports (-moz-appearance: none) {
+		text-underline-offset: 0.2em;
+	}
+}
+
+:where(a[href], area, button, input, label[for], select, summary, textarea, [tabindex]:not([tabindex*="-"])) {
+	cursor: pointer;
+	touch-action: manipulation;
+	-webkit-tap-highlight-color: transparent;
+}
+
+:where(a:not([class])) {
+  text-decoration-skip-ink: auto;
+}
+
+/* :where(a:not(:hover)) {
+	text-decoration: inherit;
+} */
 
 :where(ul[role="list"], ol[role="list"]) {
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
-[dir="ltr"] :where(ol, ul) {
-  padding-left: 0;
+:where(img, svg, video, canvas, audio, iframe, embed, object) {
+	display: block;
 }
 
-[dir="ltr"] :where(li) {
-  padding-left: 0;
+:where(img, svg, video) {
+	max-inline-size: 100%;
+	block-size: auto;
 }
 
-:where(p, ul, ol, dl, h6) {
-  font-size: unset;
+:where(input, button, textarea, select),
+:where(input[type="file"])::-webkit-file-upload-button {
+	font: inherit;
+	font-size: inherit;
+	color: inherit;
+	letter-spacing: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+}
+
+:where(textarea) { resize: block }
+
+:where(svg) {
+  fill: currentColor;
+}
+
+:where(pre) { 
+  white-space: pre;
+  min-inline-size: 0;
+  /* max-inline-size: max-content;  */
 }

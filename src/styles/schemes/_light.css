@@ -1,15 +1,42 @@
-:root {
-	color-scheme: light;
+:where(html) {
+  color-scheme: light;
 
-	--color-yellow: hsl(35 100% 39%);
-	/* --color-yellow: hsl(37 100% 47%); */
-	--color-orange: hsl(26 97% 45%);
-	--color-red: hsl(358 62% 49%);
-	--color-purple: hsl(292 24% 49%);
-	--color-blue: hsl(205 41% 43%);
-	--color-green: hsl(67 51% 31%);
 
-	
+  --accent-yellow: var(--yellow-7);
+	--accent-orange: var(--orange-7);
+	--accent-red: var(--red-7);
+	--accent-purple: var(--grape-7);
+	--accent-blue: var(--blue-7);
+	--accent-green: var(--green-7);
+
+  --brand: var(--blue-7);
+	--brand-2: var(--violet-7);
+
+  --link: var(--brand);
+	--link-visited: var(--brand);
+
+  --text-1: var(--gray-9);
+  --text-2: var(--gray-8);
+  --text-3: var(--gray-7);
+
+  --surface-0: var(--gray-0);
+  --surface-1: var(--gray-1);
+  --surface-2: var(--gray-2);
+  --surface-3: var(--gray-3);
+  --surface-4: var(--gray-4);
+  
+  
 
 	--blend-mode: screen;
+
+  --selection-text: var(--gray-10);
+  --selection-surface: var(--yellow-2);
+
 }
+
+
+/* :root[color-scheme="light"] {
+
+  
+
+} */

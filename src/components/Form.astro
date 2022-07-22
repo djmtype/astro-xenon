@@ -101,13 +101,13 @@ import Button from "@components/Button.astro"
 	fieldset {
 		appearance: none;
 		padding: var(--size-1) var(--size-2);
-		background: var(--color-background);
+		background: var(--surface-1);
 		border: var(--border-size-1) solid var(--muted);
-		color: var(--color-foreground);
+		color: var(--text-1);
 		&:focus-visible {
-			outline: var(--border-size-1) solid var(--color-primary);
-			border-color: var(--color-primary);
-			background-color: var(--gloss);
+			outline: var(--border-size-1) solid var(--brand);
+			border-color: var(--brand);
+			background-color: var(--surface-0);
 		}
 		&::placeholder {
 			color: var(--muted);
@@ -141,7 +141,7 @@ import Button from "@components/Button.astro"
 	}
 	input:checked + label {
 		font-weight: var(--font-weight-6);
-		color: var(--color-primary);
+		color: var(--brand);
 	}
 
 	input:disabled {

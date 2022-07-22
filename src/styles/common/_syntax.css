@@ -1,6 +1,8 @@
+/* syntax color */
+
 :root {
 	--astro-code-color-text: var(--text-1);
-	--astro-code-color-background: var(--gloss);
+	--astro-code-color-background: var(--surface-0);
 	--astro-code-token-constant: var(--text-1);
 	--astro-code-token-string: var(--accent-green);
 	--astro-code-token-comment: var(--muted);

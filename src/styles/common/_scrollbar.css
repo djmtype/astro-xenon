@@ -1,0 +1,29 @@
+/* scrollbar */
+
+html {
+  --scrollthumb-color: var(--surface-4);
+  --scrolltrack-color: var(--surface-0);
+  --scrollthumb-hover-color: var(--gray-5);
+
+  scrollbar-color: var(--scrollthumb-color) transparent;
+
+
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--scrolltrack-color);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--scrollthumb-color);
+  /* border-radius: var(--radius-round); */
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollthumb-hover-color);
+}
+
