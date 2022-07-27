@@ -1,5 +1,6 @@
 /* @import "open-props/postcss/normalize"; */
 
+
 @import "common/_fonts.css";
 @import "common/_reset.css";
 
@@ -20,6 +21,7 @@
 @import "layouts/global.css";
 
 @import "utilities/_accessibility.css";
+@import "utilities/_container.css";
 @import "utilities/_section.css";
 @import "utilities/_flow.css";
 @import "utilities/_font-size.css";

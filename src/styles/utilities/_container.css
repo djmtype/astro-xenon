@@ -1,6 +1,11 @@
 .container {
   /* width: min(100% - var(--gutter, var(--size-5)) * 2, var(--spread, var(--size-span-md))); */
+  position: var(--position, initial);
   width: 100%;
-  max-width: var(--size-span-lg);
+  max-width: var(--spread, var(--size-span-lg));
   margin-inline: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
+
+

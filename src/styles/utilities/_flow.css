@@ -2,37 +2,42 @@
   margin-block-start: var(--flow, var(--size-5));
 }
 
+
+
+[class*="margin-top-"] {
+  margin-block-start: var(--flow-top, inherit);
+}
 .margin-top-0 {
-  margin-block-start: var(--flow-top, 0);
+  --flow-top: 0;
 }
 
 .margin-top-2xs {
-  margin-block-start: var(--flow-top, var(--size-1));
+  --flow-top: var(--size-1);
 }
 
 .margin-top-xs {
-  margin-block-start: var(--flow-top, var(--size-1));
+  --flow-top: var(--size-1);
 }
 
 .margin-top-sm {
-  margin-block-start: var(--flow-top, var(--size-2));
+  --flow-top: var(--size-2);
 }
 
 .margin-top-md {
-  margin-block-start: var(--flow-top, var(--size-3));
+  --flow-top: var(--size-3);
 }
 
 .margin-top-lg {
-  margin-block-start: var(--flow-top, var(--size-4));
+  --flow-top: var(--size-4);
 }
 .margin-top-xl {
-  margin-block-start: var(--flow-top, var(--size-5));
+  --flow-top: var(--size-5);
 }
 
 .margin-top-2xl {
-  margin-block-start: var(--flow-top, var(--size-6));
+  --flow-top: var(--size-6);
 }
 
 .margin-top-3xl {
-  margin-block-start: var(--flow-top, var(--size-7));
+  --flow-top: var(--size-7);
 }

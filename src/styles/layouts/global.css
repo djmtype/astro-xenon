@@ -35,7 +35,7 @@ main {
 	max-width: 100%;
 }
 
-@media (--md-n-above) {
+@media (--lg-n-above) {
 	.wrapper {
 		/* grid-template-rows: 1fr auto; */
 
@@ -65,14 +65,12 @@ main {
 	color: var(--muted);
 	font-size: var(--font-size-0);
 	border: var(--border-size-1) solid var(--separator-surface);
-	min-height: 10rem;
 	padding: var(--size-2);
+	min-height: 10rem;
 }
 
 @media (--md-n-above) {
 	.sponsor {
-		aspect-ratio: 16/9;
 		align-self: end;
-		min-height: initial;
 	}
 }

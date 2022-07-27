@@ -5,7 +5,7 @@ import * as Template from "../demo/template.md"
 import PostEntry from "@components/PostEntry.astro"
 
 const { content } = Astro.props
-let canonicalURL = Astro.canonicalURL
+let canonicalURL = Astro.url
 
 const { title, date, description, image, category, tags } = content
 ---

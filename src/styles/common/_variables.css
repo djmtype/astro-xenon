@@ -74,4 +74,6 @@
 :root {
 	--separator-surface: var(--surface-4);
 	--muted: var(--text-3);
+	--flow-top: inherit;
 }
+

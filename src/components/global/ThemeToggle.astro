@@ -1,69 +1,128 @@
 ---
-import { Icon } from 'astro-icon';
-import Button from "@components/Button.astro"
+import Icon from "astro-icon";
+import Button from "@components/Button.astro";
+
 ---
-<Button className="btn btn-default" id="theme-toggle">Toggle Theme</Button>
+
+<Button className="theme-toggle btn btn-default" id="theme-toggle" title="Toggles light and dark" label="auto" live="polite">
+  <Icon name="ri:sun-fill" width={24} class="icon-light" />
+  <Icon name="ri:moon-fill" width={24} class="icon-dark" />
+</Button>
+
+
 <script is:inline>
-  let getSavedTheme = () => {
-    const theme = window.localStorage.getItem("color-scheme");
-    // If the user has explicitly chosen light or dark,
-    // let's use it. Otherwise, this value will be null.
-    if (typeof theme === "string") return theme;
+const storageKey = 'color-scheme'
 
-    // If they are using a browser/OS that doesn't support
-    // color themes, let's not do anything.
-    return null;
-  };
+const onClick = () => {
+  // flip current value
+  theme.value = theme.value === 'light'
+    ? 'dark'
+    : 'light'
 
-  let saveTheme = (theme) => {
-    // If the user has explicitly chosen light or dark, store the default theme
-    if (typeof theme === "string") window.localStorage.setItem("color-scheme", theme);
-  };
+  setPreference()
+}
 
-  let mediaTheme = () => {
-    // If they haven't been explicitly set, let's check the media query
-    const mql = matchMedia("(prefers-color-scheme: light)");
-    const hasMediaQueryPreference = typeof mql.matches === "boolean";
-    if (hasMediaQueryPreference) return mql.matches ? "light" : "dark";
-  };
+const getColorPreference = () => {
+  if (localStorage.getItem(storageKey))
+    return localStorage.getItem(storageKey)
+  else
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light'
+}
 
-  const html = document.querySelector("html");
+const setPreference = () => {
+  localStorage.setItem(storageKey, theme.value)
+  reflectPreference()
+}
 
-  // Get theme from html tag, if it has a theme or get it from localStorage
-  let checkCurrentTheme = () => {
-    let themeAttr = html.getAttribute("color-scheme");
-    if (themeAttr) return themeAttr;
+const reflectPreference = () => {
+  document.firstElementChild
+    .setAttribute('data-theme', theme.value)
 
-    return getSavedTheme();
-  };
+  document
+    .querySelector('#theme-toggle')
+    ?.setAttribute('aria-label', theme.value)
+}
 
-  // Set theme in localStorage, as well as in the html tag
-  let applyTheme = (theme) => {
-    // html.className = theme;
-    html.setAttribute("color-scheme", theme);
-  };
+const theme = {
+  value: getColorPreference(),
+}
 
-  try {
-    let theme = getSavedTheme();
-    if (theme == null) theme = mediaTheme();
-    html.setAttribute("color-scheme", theme);
-    // html.classList.add(theme);
+// set early so no page flashes / CSS is made aware
+reflectPreference()
 
-    // If a user changes overall system theme, update site theme as well,
-    // but don't save the change in local storage
-    window
-      .matchMedia("(prefers-color-scheme: light)")
-      .addEventListener("change", (e) => {
-        applyTheme(e.matches ? "light" : "dark");
-      });
+window.onload = () => {
+  // set on load so screen readers can see latest value on the button
+  reflectPreference()
 
-    // On theme switcher button click toggle the theme between dark and light mode
-    document.querySelector("#theme-toggle").addEventListener("click", () => {
-      let theme = checkCurrentTheme() === "light" ? "dark" : "light";
-      applyTheme(theme);
-      saveTheme(theme);
-    });
-  } catch (e) {
-    console.warn("Theming isn't available on this browser.", e);
-  }
+  // now this script can find and listen for clicks on the control
+  document
+    .querySelector('#theme-toggle')
+    .addEventListener('click', onClick)
+}
+
+// sync with system changes
+window
+  .matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', ({matches:isDark}) => {
+    theme.value = isDark ? 'dark' : 'light'
+    setPreference()
+  })
 </script>
+
+
+<style>
+
+  .icon-dark {
+    display: none;
+  }
+
+  .icon-light {
+    display: inline-block;
+  }
+
+@media (--OSdark) {
+
+   .icon-light {
+    display: none;
+  }
+   .icon-dark {
+    display: inline-block;
+  }
+}
+
+[data-theme="dark"], [aria-label="dark"]  {
+  & .icon-light {
+    display: none;
+  }
+  & .icon-dark {
+    display: inline-block;
+  }
+}
+
+[data-theme="light"], [aria-label="light"] {
+  & .icon-dark {
+    display: none;
+  }
+  & .icon-light {
+    display: inline-block;
+  }
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1ch;
+}
+button::before {
+  content: attr(aria-label);
+  text-transform: capitalize;
+}
+button svg {
+  width: 1em;
+  height: auto;
+}
+
+</style>
