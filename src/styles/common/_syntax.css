@@ -3,7 +3,7 @@
 :root {
 	--astro-code-color-text: var(--text-1);
 	--astro-code-color-background: var(--surface-0);
-	--astro-code-token-constant: var(--text-2);
+	--astro-code-token-constant: var(--accent-green);
 	--astro-code-token-string: var(--accent-x);
 	--astro-code-token-comment: var(--muted);
 	--astro-code-token-keyword: var(--accent-red);

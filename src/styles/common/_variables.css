@@ -49,6 +49,8 @@
 	--font-lineheight-fluid: calc(1em + 0.5rem);
 	--font-size-smaller: 0.9em;
 	--font-heading: Outfit, var(--font-sans);
+	--font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	--font-mono: ui-monospace, Dank Mono, Operator Mono, Inconsolata, Fira Mono, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
 	--font-weight-bold: var(--font-weight-6);
 
 	--font-letterspacing-tight: -0.025em;

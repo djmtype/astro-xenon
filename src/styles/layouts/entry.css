@@ -127,7 +127,7 @@
 .entry-footer {
 	margin-top: var(--size-7);
 	background-color: var(--surface-0);
-	padding: var(--size-4);
+	padding: var(--size-2);
 	border-radius: var(--radius-rounded);
 }
 

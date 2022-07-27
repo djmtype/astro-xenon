@@ -14,7 +14,8 @@
 
     --link: var(--brand);
     --link-visited: var(--brand);
-
+    
+    --text-0: var(--gray-0);
     --text-1: var(--gray-1);
     --text-2: var(--gray-4);
     --text-3: var(--gray-5);
