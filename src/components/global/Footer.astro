@@ -1,18 +1,62 @@
 ---
 import site from "@data/site.json";
+import { Icon } from "astro-icon";
+const { profiles} = Astro.props;
+
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="site-footer section-lg" role="contentinfo">
   <div class="container">
+
     <p>
       Copyright &copy; {currentYear}
-      <strong>{site.name}</strong>. Most rights reserved.
+      <strong>{site.title}</strong>. Most rights reserved.
     </p>
+
+    
+    <ul class="profile-list" role="list">
+      {profiles.map(profile => (
+        <li class="profile-list-item">
+          <a title={`Visit ${profile.handle} on ${profile.service}`} href={profile.url} target="_blank" rel="noopener noreferrer" class="profile-list-link"><Icon class="profile-list-icon" name={profile.icon} width={24} fill="currentColor" />{profile.service}</a>                         
+        </li>
+      ))}
+  </ul>
+
+
   </div>
 </footer>
 
 <style>
+
+  .profile-list {
+    display: flex;
+    gap: var(--size-1);
+  }
+  .profile-list-item {
+    font-size: var(--font-size-0);
+  }
+
+  .profile-list-link {
+    padding: var(--size-1) var(--size-2);
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap: .5ch;
+    color: var(--muted);
+    &:hover, &:focus-visible {
+      color: var(--text-1);
+    }
+    &::after {
+      content: unset;
+      
+    }
+  }
+
+  .profile-list-icon {
+    width: 1.5em;
+    height: auto;
+  }
   .site-footer {
 
     /* position: sticky;
@@ -20,6 +64,14 @@ const currentYear = new Date().getFullYear();
     border-top: var(--border-size-1) solid var(--separator-surface);
     background-color: var(--surface-0);
     color: var(--muted);
+  }
+
+  .site-footer > * {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--size-3);
   }
 
   .site-footer p {

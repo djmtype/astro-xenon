@@ -12,8 +12,9 @@
     --brand: var(--yellow-4);
 		--brand-2: var(--cyan-4);
 
-    --link: var(--brand);
-    --link-visited: var(--brand);
+    --link: var(--yellow-4);
+    --link-visited: var(--yellow-4);
+    --link-hover: var(--yellow-2);
     
     --text-0: var(--gray-0);
     --text-1: var(--gray-1);
@@ -32,7 +33,7 @@
 		--blend-mode: multiply;
 
     --selection-text: var(--gray-10);
-    --selection-surface: var(--yellow-2);
+    --selection-surface: var(--brand-2);
   }
 }
 
@@ -42,7 +43,5 @@
 
 /* :root[color-scheme="dark"] {
 
-
-   
   
 } */

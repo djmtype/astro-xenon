@@ -2,14 +2,7 @@
 	"title": "Astro Xenon",
 	"description": "Music. Code. Tech.",
 	"url": "https://astro-xenon.netlify.app",
-	"profiles": [
-		{
-		"twitterId": "djmtype",
-		"spotifyId": "djmtype",
-		"emailUrl": "mailto:xenon@mtype.com",
-		"raindrop": "djmtype"
-		}
-	],
+	"email": "mailto:xenon@mtype.com",
 	"nav": [
 		{
 			"link": "/",
@@ -31,6 +24,32 @@
 			"link": "https://github.com/djmtype/astro-xenon#readme",
 			"name": "More info",
 			"target": "_blank"
+		}
+	],
+	"profiles": [
+		{
+			"service": "Spotify",
+			"handle": "djmtype",
+			"icon": "ri:spotify-fill",
+			"url": "https://open.spotify.com/user/djmtype"
+		},
+		{
+			"service": "Github",
+			"handle": "username",
+			"icon": "ri:github-fill",
+			"url": "https://github.com/"
+		},
+		{
+			"service": "Raindrop",
+			"handle": "username",
+			"icon": "ri:contrast-drop-2-line",
+			"url": "https://raindrop.io/"
+		},
+		{
+			"service": "Twitter",
+			"handle": "username",
+			"icon": "ri:twitter-fill",
+			"url": "https://twitter.com/"
 		}
 	]
 }

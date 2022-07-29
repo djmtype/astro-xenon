@@ -29,21 +29,21 @@
 
 :where(a[href]) {
   color: var(--link);
+	font-weight: var(--font-weight-5);
   &:visited {
     color: var(--link-visited);
   }
 	&:hover, &:focus-within {
-		color: var(--text-1);
+		color: var(--link-hover);
 	}
-	&:active {
-		opacity: .7;
-	}
+
 }
 
 
 :where(h1, h2, h3, h4, h5) {
 	& :where(a) {
 	text-decoration: none;
+	font-weight: unset;
 	}
 }
 
@@ -123,7 +123,7 @@ table {
 
 th,
 td {
-	padding: var(--size-1) var(--size-3);
+	padding: var(--size-2) var(--size-3);
 	&:not(:last-child) {
 		border-right: var(--border-size-1) solid var(--separator-surface);
 	}
@@ -172,8 +172,6 @@ pre {
 }
 
 pre button {
-	
-  opacity: .7;
 	display: inline-flex;
 	padding: var(--size-1) var(--size-2);
 	font-family: var(--font-heading);
@@ -196,14 +194,15 @@ pre button {
 	position: absolute;
 	top: var(--size-2);
 	right: var(--size-2);
+	filter: opacity(0.7);
 
-	/* &:hover,
+	&:hover,
 	&:focus-within {
-		filter: brightness(1.2);
-    opacity: 1;
+		filter: brightness(1.1);
+		filter: opacity(1.0);
 	}
 	&:active {
 		filter: brightness(0.9);
 		transform: scale(0.95);
-	} */
+	}
 }

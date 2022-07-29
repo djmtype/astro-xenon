@@ -85,9 +85,7 @@ const pathname = new URL(Astro.request.url).pathname
 		color: var(--muted);
 		border-radius: var(--radius-rounded);
 		margin: 0;
-		&:link {
-			color: var(--muted);
-		}
+		font-weight: unset;
 		&:hover,
 		&:focus-visible {
 			color: var(--text-1);
@@ -96,6 +94,8 @@ const pathname = new URL(Astro.request.url).pathname
 			/* background-color: var(--surface-0); */
 			color: var(--text-1);
 			font-weight: var(--font-weight-bold);
+			cursor: default;
+			
 		}
 	}
 </style>

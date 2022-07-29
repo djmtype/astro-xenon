@@ -4,6 +4,8 @@ import Footer from '@components/global/Footer.astro';
 import Sidebar from '@components/global/Sidebar.astro';
 import SkipLinks from '@components/global/SkipLinks.astro';
 
+import { profiles } from '@data/site.json';
+
 const { title, description, canonicalURL } =
 	Astro.props;
 
@@ -28,7 +30,7 @@ const { title, description, canonicalURL } =
 					<slot></slot>
 				</main>
 			</div>
-			<Footer />
+			<Footer slot="footer" profiles={profiles} />
 
 	</body>
 </html>

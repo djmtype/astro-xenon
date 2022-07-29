@@ -38,7 +38,7 @@ const setPreference = () => {
 
 const reflectPreference = () => {
   document.firstElementChild
-    .setAttribute('data-theme', theme.value)
+    .setAttribute('color-scheme', theme.value)
 
   document
     .querySelector('#theme-toggle')
@@ -94,7 +94,7 @@ window
   }
 }
 
-[data-theme="dark"], [aria-label="dark"]  {
+[color-scheme="dark"], [aria-label="dark"]  {
   & .icon-light {
     display: none;
   }
@@ -103,7 +103,7 @@ window
   }
 }
 
-[data-theme="light"], [aria-label="light"] {
+[color-scheme="light"], [aria-label="light"] {
   & .icon-dark {
     display: none;
   }
