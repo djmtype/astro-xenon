@@ -1,0 +1,50 @@
+---
+---
+
+<div class='sponsor'>
+	<span class='image'></span>
+	<div>
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, architectos.
+		</p>
+		<p>Ads via Acme</p>
+	</div>
+</div>
+
+<style>
+	.sponsor {
+		margin-inline: auto;
+		display: grid;
+		padding: var(--size-2);
+		background-color: var(--surface-0);
+		max-width: 295px;
+		box-sizing: border-box;
+		border-radius: var(--radius-rounded);
+		position: relative;
+		box-shadow: var(--shadow-1);
+		gap: var(--size-2);
+		grid-template-columns: 110px auto;
+	}
+
+	.sponsor .image {
+		width: min(100%, 110px);
+		height: 100px;
+		background: var(--gradient-brand);
+		display: inline-block;
+	}
+
+
+	.sponsor > div p {
+		font-size: var(--font-size-0);
+		color: var(--text-1);
+		font-weight: var(--font-weight-3);
+		line-height: var(--font-lineheight-1);
+	}
+	.sponsor > div p:last-child {
+		font-size: var(--font-size-00);
+		color: var(--muted);
+		text-transform: uppercase;
+		font-weight: var(--font-weight-5);
+		margin-top: var(--size-2);
+	}
+</style>

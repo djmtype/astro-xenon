@@ -100,9 +100,9 @@ import Button from "@components/Button.astro"
 	select,
 	fieldset {
 		appearance: none;
-		padding: var(--size-1) var(--size-2);
+		padding: var(--size-2) var(--size-2);
 		background: var(--surface-1);
-		border: var(--border-size-1) solid var(--muted);
+		border: var(--border-size-1) solid var(--separator-surface);
 		color: var(--text-1);
 		&:focus-visible {
 			outline: var(--border-size-1) solid var(--brand);
@@ -127,7 +127,7 @@ import Button from "@components/Button.astro"
 	}
 
 	:where(.form-control > *:last-child) {
-		margin-top: var(--size-1);
+		margin-top: var(--size-2);
 	}
 
 	.form-control label,

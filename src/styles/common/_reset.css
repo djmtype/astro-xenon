@@ -9,12 +9,12 @@
 	margin: 0;
 }
 
-:where(:not(fieldset, progress, meter)) {
+/* :where(:not(fieldset, progress, meter)) {
 	border-width: 0;
 	border-style: solid;
 	background-origin: border-box;
 	background-repeat: no-repeat;
-}
+} */
 
 /* :where(html, body) {
 	height: 100%;

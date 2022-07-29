@@ -21,7 +21,7 @@
   background-color: var(--surface-1);
 }
 
-:where(::selection) {
+::selection {
 	color: var(--selection-text);
 	background-color: var(--selection-surface);
 	-webkit-text-fill-color: var(--selection-text);

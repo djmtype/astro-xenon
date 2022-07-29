@@ -27,6 +27,8 @@
     --surface-3: var(--gray-7);
     --surface-4: var(--gray-6);
 
+    --surface-1-trans: hsl(var(--gray-9-hsl) / 70%);
+
 		--blend-mode: multiply;
 
     --selection-text: var(--gray-10);

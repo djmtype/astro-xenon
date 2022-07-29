@@ -60,14 +60,6 @@ main {
 	}
 }
 
-.sponsor {
-	font-family: var(--font-mono);
-	color: var(--muted);
-	font-size: var(--font-size-0);
-	border: var(--border-size-1) solid var(--separator-surface);
-	padding: var(--size-2);
-	min-height: 10rem;
-}
 
 @media (--md-n-above) {
 	.sponsor {

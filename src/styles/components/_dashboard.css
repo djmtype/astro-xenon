@@ -8,7 +8,7 @@
 	grid-column: 1/-1;
 }
 
-@media (--lg-n-above) {
+@media (--xl-n-above) {
 	.dashboard::before {
 		content: "";
 		position: relative;
@@ -18,7 +18,7 @@
 	}
 }
 
-@media (--lg-n-above) {
+@media (--xl-n-above) {
 	.dashboard {
 		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(4, minmax(0, var(--size-span-fluid)));
@@ -40,4 +40,10 @@
 	/* .dashboard > *:nth-child(4) {
     grid-column: span 2;
   } */
+}
+
+.dashboard:hover, .dashboard:focus-within {
+	& [class*="thumb"] {
+		opacity: .7;
+	}
 }

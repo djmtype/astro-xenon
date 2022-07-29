@@ -75,5 +75,6 @@
 	--separator-surface: var(--surface-4);
 	--muted: var(--text-3);
 	--flow-top: inherit;
+	--background-blur: blur(20px);
 }
 

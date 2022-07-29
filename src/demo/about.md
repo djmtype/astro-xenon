@@ -7,6 +7,10 @@ date:
 
 ## Welcome to [Astro Xenon](https://astro-xenon.netlify.app)
 
+Xenon is an open source Astro theme for bloggers that aims to excel in performance with accessibility in mind. 
+
+It contains a few other plugins from the community like [astro-imagetools](https://github.com/RafidMuhymin/astro-imagetools#readme) and [astro-icon](https://github.com/natemoo-re/astro-icon#readme). 
+
 ## ⛺ Setup
 1. Clone this project:  
 ```
@@ -38,9 +42,6 @@ Inside the Astro Xenon project, you'll see the following folders and files:
 ├── package.json
 └── postcss.config.js
 ```
-Xenon is an opensource theme for Astro that aims to excel in performance with accessibility in mind. 
-
-Xenon contains a few other plugins from the community like [astro-imagetools](https://github.com/RafidMuhymin/astro-imagetools#readme) and [astro-icon](https://github.com/natemoo-re/astro-icon#readme). 
 
 ## 📖 Settings / Instructions
 

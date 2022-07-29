@@ -5,8 +5,8 @@ import Button from "@components/Button.astro";
 ---
 
 <Button className="theme-toggle btn btn-default" id="theme-toggle" title="Toggles light and dark" label="auto" live="polite">
-  <Icon name="ri:sun-fill" width={24} class="icon-light" />
-  <Icon name="ri:moon-fill" width={24} class="icon-dark" />
+  <Icon name="ri:sun-fill" width={24} class="icon-light" fill="black" />
+  <Icon name="ri:moon-fill" width={24} class="icon-dark" fill="black" />
 </Button>
 
 
@@ -73,6 +73,8 @@ window
 
 
 <style>
+
+
 
   .icon-dark {
     display: none;

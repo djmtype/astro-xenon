@@ -31,7 +31,7 @@ export async function getStaticPaths({ paginate, rss }) {
 
 let title = "Blog"
 let description = "Posts for Xenon"
-// let canonicalURL = Astro.canonicalURL;
+// let canonicalURL = Astro.url;
 let layoutCss = "blog"
 
 const { canonicalURL } = Astro;

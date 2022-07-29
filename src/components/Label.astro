@@ -29,7 +29,7 @@ const { name, className } = Astro.props;
 	/* .label-default {
     background-color: var(--muted);
 		opacity: 0.7;
-		backdrop-filter: blur(15px);
+		backdrop-filter: var(--background-blur);
 		color: var(--color-background);
 	} */
 
@@ -37,23 +37,23 @@ const { name, className } = Astro.props;
     background-color: var(--surface-3);
 		color: var(--text-2);
 		/* opacity: 0.7;
-		backdrop-filter: blur(15px); */
+		backdrop-filter: var(--background-blur); */
 		
 	}
 
 	.label-primary {
     background-color: var(--brand);
 		opacity: 0.7;
-		backdrop-filter: blur(15px);
+		backdrop-filter: var(--background-blur);
 		color: var(--surface-1);
 	}
 
 	.label-overlay {
     background-color: var(--gray-1);
 		color: var(--gray-10);
-		opacity: 0.7;
 		mix-blend-mode: screen;
-		backdrop-filter: blur(15px);
+		opacity: 0.7;
+		backdrop-filter: var(--background-blur);
 	}
 
 </style>
