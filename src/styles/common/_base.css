@@ -6,7 +6,6 @@
 	font-size: clamp(1rem, 0.25vw + 0.9rem, 1.2rem);
 	accent-color: var(--brand);
   caret-color: var(--brand-2);
-
 }
 
 
