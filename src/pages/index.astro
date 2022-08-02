@@ -3,7 +3,9 @@ import DefaultLayout from '@layouts/DefaultLayout.astro';
 import DashboardGrid from '@components/DashboardGrid.astro';
 import PostTile from "@components/PostTile.astro";
 
-let posts = await Astro.glob("../pages/blog/*.md");
+import site from "@data/site.json";
+
+let posts = await Astro.glob("../pages/blog/*.mdx");
 posts = posts.filter((date) => date.frontmatter.status === "published");
 
 let title = "Home";
@@ -35,7 +37,7 @@ const { content } = Astro.props;
 >
 
 <DashboardGrid selector="section">
-{posts.slice(0, 6).map((post) => (
+{posts.slice(0, site.homePostsSize || 6).map((post) => (
 	<PostTile
 		url={post.url}
 		title={post.frontmatter.title}

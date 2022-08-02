@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 
 import { astroImageTools } from "astro-imagetools";
 
-
+import mdx from '@astrojs/mdx';
 
 
 // https://astro.build/config
@@ -28,7 +28,6 @@ export default defineConfig({
     syntaxHighlight: "shiki",
      shikiConfig: {
        theme: 'css-variables' // wrap: true,
-
      }
 
   },
@@ -38,6 +37,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap(),
+    mdx(),
     astroImageTools,
   ],
 });

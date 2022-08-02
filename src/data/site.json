@@ -3,6 +3,8 @@
 	"description": "Music. Code. Tech.",
 	"url": "https://astro-xenon.netlify.app",
 	"email": "mailto:xenon@mtype.com",
+	"homePostsSize": 6,
+	"blogPaginationSize": 5,
 	"nav": [
 		{
 			"link": "/",
@@ -31,7 +33,7 @@
 			"service": "Spotify",
 			"handle": "djmtype",
 			"icon": "ri:spotify-fill",
-			"url": "https://open.spotify.com/user/djmtype"
+			"url": "https://open.spotify.com/user/djmtype/playlists"
 		},
 		{
 			"service": "Github",

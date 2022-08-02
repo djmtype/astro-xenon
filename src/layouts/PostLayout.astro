@@ -1,8 +1,14 @@
 ---
 import DefaultLayout from "./DefaultLayout.astro"
-import * as Template from "../demo/template.md"
+
 
 import PostEntry from "@components/PostEntry.astro"
+
+import { default as Template } from '../demo/template.mdx';
+
+// import * as Template from "../demo/template.md"
+
+// import {Content as Template} from '../demo/template.md';
 
 const { content } = Astro.props
 let canonicalURL = Astro.url
@@ -23,8 +29,8 @@ const { title, date, description, image, category, tags } = content
 		{tags}
 	>
 		<slot></slot>
-
-		<Template.Content />
+<Template />
+		
 	</PostEntry>
 </DefaultLayout>
 

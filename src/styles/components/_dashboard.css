@@ -2,11 +2,14 @@
 	display: grid;
 	gap: var(--gutter);
 	grid-template-columns: repeat(auto-fit, minmax(var(--size-span-fluid), 1fr));
+	@media (--lg-n-above) {
+	min-height: calc(100vh - var(--gutter) * 2);
+	}
 }
 
-.dashboard > *:first-child {
+/* .dashboard > *:first-child {
 	grid-column: 1/-1;
-}
+} */
 
 @media (--xl-n-above) {
 	.dashboard::before {

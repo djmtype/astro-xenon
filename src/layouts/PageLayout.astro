@@ -48,14 +48,13 @@ const { title } = Astro.props
 	}
 
 	.main-figure {
-		--bg-image: url(/images/page-header-light.svg);
 		aspect-ratio: 16/9;
 		position: sticky;
 		top: var(--gutter);
 		z-index: -1;
 		overflow: hidden;
 
-		background-image: var(--bg-image),
+		background-image: var(--page-bg-image),
 			linear-gradient(
 				45deg,
 				var(--accent-green),
@@ -90,12 +89,6 @@ const { title } = Astro.props
 		}
 		.main-body {
 			grid-row: 2;
-		}
-	}
-
-	@media (--OSdark) {
-		.main-figure {
-			--bg-image: url(/images/page-header-dark.svg);
 		}
 	}
 </style>
