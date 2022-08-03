@@ -19,7 +19,8 @@
       "@styles/*": ["src/styles/*"],
       "@public/*": ["public/*"],
       "@svg/*": ["public/images/svgs/*"],
-      "@data/*": ["src/data/*"]
+      "@data/*": ["src/data/*"],
+      "@demo/*": ["src/demo/*"]
     }
   }
 }
