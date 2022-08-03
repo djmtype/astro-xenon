@@ -9,13 +9,13 @@ export interface Props {
 	type?: string
 	name?: string
 	title?: string
-	label?: string
+	ariaLabel?: string
 	live?: string
 	ariaExpanded?: string
 
 }
 
-const { id, className, href, externalTarget, type, name, ariaExpanded} = Astro.props
+const { id, className, href, externalTarget, type, name, ariaExpanded, ariaLabel} = Astro.props
 ---
 
 {(() => {
@@ -33,7 +33,7 @@ const { id, className, href, externalTarget, type, name, ariaExpanded} = Astro.p
 		)
 	else
 		return (
-			<button id={id} class={className} type={type} name={name} aria-expanded={ariaExpanded}>
+			<button id={id} class={className} type={type} name={name} aria-expanded={ariaExpanded} aria-label={ariaLabel}>
 				<slot />
 			</button>
 		)

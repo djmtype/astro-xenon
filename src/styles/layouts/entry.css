@@ -21,6 +21,7 @@
 	aspect-ratio: 16/9;
 	position: sticky;
 	top: var(--gutter);
+	z-index: -1;
 }
 
 :global(.entry-figure img),

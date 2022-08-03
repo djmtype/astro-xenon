@@ -1,10 +1,10 @@
+---
+import Button from "@components/Button.astro";
+---
 <nav class="skip-links" aria-label="Skiplinks">
   <ul role="list">
     <li>
-      <a href="#main-navigation"> Skip to main menu </a>
-    </li>
-    <li>
-      <a href="#main-content"> Skip to main content </a>
+      <Button href="#site-content" className="btn btn-primary">Skip to main content</Button>
     </li>
   </ul>
 </nav>
@@ -29,34 +29,31 @@
           navigation.querySelector("a").focus();
         }
 
-        if (target === "#main-content") {
-          const h1 = document.querySelector("h1");
-          h1.setAttribute("tabindex", "-1");
-          h1.focus();
+        if (target === "#site-content") {
+          const siteContent = document.querySelector("#site-content");
+          siteContent.setAttribute("tabindex", "-1");
+          siteContent.focus();
         }
+
+        // if (target === "#site-content") {
+        //   const h1 = document.querySelector("h1");
+        //   h1.setAttribute("tabindex", "-1");
+        //   h1.focus();
+        // }
       });
     });
   }
 </script>
 
 <style is:global>
-  .skip-links {
-    & a {
-      color: var(--color-primary);
-      background-color: var(--color-background);
-      border-bottom-right-radius: 6px;
-      padding: 1rem 3.25rem;
+  .skip-links a {
       position: absolute;
-      display: block;
-      z-index: 10;
+      z-index: 100;
       top: -100vh;
-      left: 0;
+      left: var(--size-4);
+  }
 
-      &:hover,
-      &:focus {
-        top: 0;
-        outline-offset: 2px;
-      }
-    }
+  .skip-links a:focus {
+    top: var(--size-4);
   }
 </style>

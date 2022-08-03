@@ -35,6 +35,7 @@ const { content } = Astro.props;
 	{layoutCss} 
 	{canonicalURL}
 >
+<h1 class="sr-only">{description}</h1>
 
 <DashboardGrid selector="section">
 {posts.slice(0, site.homePostsSize || 6).map((post) => (
