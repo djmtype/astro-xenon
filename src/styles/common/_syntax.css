@@ -13,3 +13,17 @@
 	--shiki-token-punctuation: var(--text-1);
 	--shiki-token-link: var(--accent-x);
 }
+
+.language-id {
+		color: var(--muted);
+&::before {
+	content: "// ";
+	color: currentColor;
+}
+&::after {
+	content: "";
+	display: block;
+	height: var(--size-4);
+}
+
+}

@@ -5,7 +5,7 @@ import ThemeToggle from "@components/global/ThemeToggle.astro";
 import Nav from "@components/global/Nav.astro";
 import Sponsor from "./Sponsor.astro";
 
-
+import ResponsiveToggle from "./ResponsiveToggle.astro";
 ---
 
 <div class="sidebar">
@@ -14,11 +14,14 @@ import Sponsor from "./Sponsor.astro";
       <Logo />
       <span class="sr-only">{site.title}</span>
     </a>
+
+    <ResponsiveToggle />
   </header>
 
   <Nav />
 
   <ThemeToggle />
+  
   <Sponsor />
 </div>
 

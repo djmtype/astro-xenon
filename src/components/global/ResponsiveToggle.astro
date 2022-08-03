@@ -1,0 +1,98 @@
+---
+import Button from "@components/Button.astro";
+---
+
+<Button
+	className="btn btn-default responsive-toggle"
+	ariaExpanded="false"
+	label="Open menu navigation"
+><svg aria-hidden="true" focusable="false" width="48" height="48" viewBox="0 0 48 48" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+	<path d="M9.375 36H38.625V32.0001H9.375V36ZM9.375 26.0001H38.625V22H9.375V26.0001ZM9.375 12V15.9998H38.625V12H9.375Z" />
+	</svg>
+	
+</Button>
+
+
+<script is:inline>
+	// variables
+	const responsiveToggle = document.querySelector('.responsive-toggle');
+
+	const icon = `<svg aria-hidden="true" focusable="false" width="48" height="48" viewBox="0 0 48 48" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+	<path d="M9.375 36H38.625V32.0001H9.375V36ZM9.375 26.0001H38.625V22H9.375V26.0001ZM9.375 12V15.9998H38.625V12H9.375Z" />
+	</svg>`;
+
+	const iconClosed = `<svg aria-hidden="true" focusable="false" width="48" height="48" viewBox="0 0 48 48" fill="#000000" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.85791 12.6862L12.6862 9.85791L38.1421 35.3138L35.3138 38.1421L9.85791 12.6862Z" />
+<path d="M38.1421 12.6862L35.3138 9.85791L9.85791 35.3138L12.6862 38.1421L38.1421 12.6862Z" />
+</svg>
+
+`
+
+	// functions
+	const openMenu = (toggle) => {
+		toggle.setAttribute('aria-expanded', true);
+		toggle.setAttribute('aria-label', 'Close menu navigation');
+		toggle.innerHTML = iconClosed;
+	};
+
+	const closeMenu = (toggle) => {
+		toggle.setAttribute('aria-expanded', false);
+		toggle.setAttribute('aria-label', 'Open menu navigation');
+		toggle.innerHTML = icon;
+	};
+
+	// execution
+	responsiveToggle.addEventListener('click', (_) => {
+		const mainNavigation = document.querySelector('#main-navigation');
+
+		mainNavigation.classList.toggle('show');
+		mainNavigation.classList.contains('show')
+			? openMenu(responsiveToggle)
+			: closeMenu(responsiveToggle);
+	});
+
+	// check if responsive menu is open when resized and then remove
+	window.addEventListener('resize', (_) => {
+		const mainNavigation = document.querySelector('#main-navigation');
+
+		if (
+			mainNavigation.classList.contains('show') &&
+			window.matchMedia('(min-width: 768px)').matches
+		) {
+			mainNavigation.classList.remove('show');
+			closeMenu(responsiveToggle);
+		}
+	});
+</script>
+
+<style>
+
+
+	.responsive-toggle {
+		padding: 0;
+		border: 0;
+		overflow: hidden;
+		position: absolute;
+		width: 3rem;
+		height: 3rem;
+		padding: var(--size-2);
+		top: var(--gutter);
+		right: var(--gutter);
+		& svg {
+			height: 100%;
+			width: 100%;
+			object-fit: contain;
+		}
+
+		@media (--md-n-above) {
+			display: none;
+			
+		}
+	}
+
+	.responsive-toggle[aria-expanded="true"] {
+		color: var(--surface-0);
+		background-color: var(--brand);
+}
+
+</style>

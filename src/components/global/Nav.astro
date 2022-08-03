@@ -70,6 +70,17 @@ const pathname = new URL(Astro.request.url).pathname
 </script>
 
 <style>
+
+	nav {
+		display: none;
+		@media (--md-n-above) {
+			display: block;
+		}
+	}
+
+	nav.show {
+		display: block;
+	}
 	.nav-list {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));

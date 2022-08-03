@@ -156,6 +156,9 @@ code {
 	font-family: var(--font-mono);
 	font-size: var(--font-size-smaller);
 }
+pre code {
+	padding: unset;
+}
 
 del {
 	text-decoration-color: var(--accent-red);
@@ -169,6 +172,11 @@ sup {
 
 pre {
 	position: relative;
+	overflow-x: auto;
+}
+
+pre > div {
+	overflow-x: auto;
 }
 
 pre button {
