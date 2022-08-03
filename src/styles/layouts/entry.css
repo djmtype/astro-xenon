@@ -102,9 +102,9 @@
 	}
 }
 
-.prose table {
+/* .prose table {
 	width: 100%;
-}
+} */
 
 /* .entry-content.flow > *:first-child {
 	margin-top: 0;
@@ -140,10 +140,7 @@
 	}
 }
 
-.entry table {
-	width: 100%;
-	max-width: 100%;
-}
+
 
 .footnotes {
 	border-top: var(--border-size-1) solid var(--separator-surface);

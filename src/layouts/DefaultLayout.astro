@@ -67,6 +67,34 @@ async function copyCode(event) {
     button.innerText = copyButtonLabel;
   },1000)
 }
+
+
+
+
+// table
+
+
+function wrap_single(el, wrapper) {
+    el.parentNode.insertBefore(wrapper, el);
+    wrapper.appendChild(el);
+}
+let divWrapper;
+let elementToWrap;
+elementToWrap = document.querySelector('table');
+// wrapping the event form in a row
+divWrapper = document.createElement('div');
+divWrapper.className = 'table-wrapper';
+wrap_single(elementToWrap, divWrapper);
+
+
+
+// let original = document.querySelector('table');
+// let wrapper = document.createElement('div');
+// wrapper.classList.add('table-wrapper');
+// wrapper.append(original.cloneNode(true));
+
+// original.replaceWith(wrapper);
+
 </script>
 
 

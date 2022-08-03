@@ -119,11 +119,18 @@ hr {
 table {
 	border: var(--border-size-1) solid var(--separator-surface);
 	border-collapse: collapse;
+	border: 1px solid var(--separator-surface);
+  max-width: 100%;
+	width: 100%;
 }
+
+
 
 th,
 td {
 	padding: var(--size-2) var(--size-3);
+	min-width: 20ch;
+	white-space: initial;
 	&:not(:last-child) {
 		border-right: var(--border-size-1) solid var(--separator-surface);
 	}

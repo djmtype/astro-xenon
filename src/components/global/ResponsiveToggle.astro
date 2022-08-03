@@ -22,11 +22,9 @@ import Button from "@components/Button.astro";
 	</svg>`;
 
 	const iconClosed = `<svg aria-hidden="true" focusable="false" width="48" height="48" viewBox="0 0 48 48" fill="#000000" xmlns="http://www.w3.org/2000/svg">
-<path d="M9.85791 12.6862L12.6862 9.85791L38.1421 35.3138L35.3138 38.1421L9.85791 12.6862Z" />
-<path d="M38.1421 12.6862L35.3138 9.85791L9.85791 35.3138L12.6862 38.1421L38.1421 12.6862Z" />
-</svg>
-
-`
+<path d="M12.2443 15.0728L32.9272 35.7557L35.7557 32.9273L15.0728 12.2444L12.2443 15.0728Z" />
+<path d="M35.7556 15.0728L15.0728 35.7557L12.2443 32.9273L32.9272 12.2444L35.7556 15.0728Z" />
+</svg>`
 
 	// functions
 	const openMenu = (toggle) => {
@@ -69,6 +67,7 @@ import Button from "@components/Button.astro";
 
 
 	.responsive-toggle {
+		border-radius: var(--radius-round);
 		padding: 0;
 		border: 0;
 		overflow: hidden;
