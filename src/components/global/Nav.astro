@@ -83,13 +83,14 @@ const pathname = new URL(Astro.request.url).pathname
 	}
 	.nav-list {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 		/* gap: var(--size-1); */
 
 		font-family: var(--font-heading);
 	}
 
 	.nav-link {
+		font-size: var(--font-size-2);
 		text-decoration: none;
 		display: block;
 		padding: var(--size-2) var(--size-3);
@@ -107,6 +108,9 @@ const pathname = new URL(Astro.request.url).pathname
 			font-weight: var(--font-weight-bold);
 			cursor: default;
 			
+		}
+		@media (--lg-n-above) {
+			font-size: unset;
 		}
 	}
 </style>

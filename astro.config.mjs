@@ -6,6 +6,8 @@ import { astroImageTools } from "astro-imagetools";
 
 import mdx from '@astrojs/mdx';
 
+import compress from "astro-compress";
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -38,6 +40,13 @@ export default defineConfig({
   integrations: [
     sitemap(),
     mdx(),
+    compress({
+      img: false,
+      css: false,
+			// css: true,
+			// html: true,
+			// js: true,
+		}),
     astroImageTools,
   ],
 });

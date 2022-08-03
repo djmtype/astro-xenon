@@ -75,8 +75,8 @@ async function copyCode(event) {
 
 
 function wrap_single(el, wrapper) {
-    el.parentNode.insertBefore(wrapper, el);
-    wrapper.appendChild(el);
+el.parentNode.insertBefore(wrapper, el);
+wrapper.appendChild(el);
 }
 let divWrapper;
 let elementToWrap;
@@ -84,7 +84,11 @@ elementToWrap = document.querySelector('table');
 // wrapping the event form in a row
 divWrapper = document.createElement('div');
 divWrapper.className = 'table-wrapper';
-wrap_single(elementToWrap, divWrapper);
+
+// wrap_single(elementToWrap, divWrapper)
+if (document.querySelector('table')) {
+	wrap_single(elementToWrap, divWrapper)
+   }
 
 
 

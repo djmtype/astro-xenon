@@ -2,7 +2,10 @@
 ---
 
 <div class='sponsor'>
-	<span class='image'></span>
+	<span class='image'>
+		<img src="/images/sponsor-logo.svg" alt="Logoipsum logo" width="123" height="61" />
+			
+	</span>
 	<div>
 		<p>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, architectos.
@@ -26,11 +29,20 @@
 		grid-template-columns: 110px auto;
 	}
 
+	.sponsor > div {
+		display: flex;
+  flex-direction: column;
+  justify-content: center;
+	}
+
 	.sponsor .image {
 		width: min(100%, 110px);
 		height: 100px;
-		background: var(--gradient-brand);
+		background: var(--gray-1);
 		display: inline-block;
+		padding: var(--size-2);
+		display: grid;
+		place-content: center;
 	}
 
 

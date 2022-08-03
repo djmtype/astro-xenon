@@ -151,6 +151,7 @@
 .footnotes ol {
 	/* padding-inline-start: 3ch; */
 	font-size: var(--font-size-smaller);
+	margin-block: 0;
 }
 
 .data-footnote-backref {

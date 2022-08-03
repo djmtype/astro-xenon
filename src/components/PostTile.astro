@@ -1,5 +1,5 @@
 ---
-import { Img } from "astro-imagetools/components";
+import { Picture } from "astro-imagetools/components";
 import Label from "./Label.astro";
 
 export interface Props {
@@ -16,7 +16,7 @@ const { url, title, image, alt, label } = Astro.props;
 
 <div class={image ? "tile tile-has-img" : "tile"}>
   <figure class="tile-thumb">
-    <Img src={image} layout="fill" alt={alt ? `${alt}` : ` `} />
+    <Picture src={image} layout="fill" alt={alt ? `${alt}` : ` `} />
   </figure>
   <div class="tile-content">
     <h2 class="tile-title">
@@ -55,7 +55,7 @@ const { url, title, image, alt, label } = Astro.props;
     height: 100%;
   }
 
-  .tile-thumb::before {
+  .tile-thumb::after {
     content: "";
     position: absolute;
     z-index: var(--layer-1);

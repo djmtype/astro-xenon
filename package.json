@@ -17,6 +17,7 @@
   "dependencies": {
     "@astrojs/mdx": "^0.5.0",
     "@astrojs/rss": "^0.2.2",
+    "astro-compress": "^0.0.15",
     "astro-icon": "^0.7.3",
     "astro-imagetools": "^0.6.10",
     "autoprefixer": "^10.4.8",
