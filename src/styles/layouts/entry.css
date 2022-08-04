@@ -24,7 +24,7 @@
 	z-index: -1;
 }
 
-:global(.entry-figure img),
+.entry-figure img,
 .entry-img {
 	object-fit: cover;
 	height: 100%;
@@ -132,11 +132,13 @@
 
 .entry hr {
 	margin-top: var(--size-6);
-	& + * {
-		margin-top: var(--size-6);
-	}
 }
 
+
+.entry hr + * {
+		margin-top: var(--size-6);
+
+}
 
 
 .footnotes {

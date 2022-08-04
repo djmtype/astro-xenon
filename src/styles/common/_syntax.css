@@ -78,11 +78,8 @@ pre button {
 	color: var(--muted);
 	font-size: var(--font-size-smaller);
 	font-family: var(--font-mono);
-	padding-left: 5ch;
+	padding-left: 2ch;
 	margin-bottom: 1ex;
-	&::before {
-		content: "// ";
-	}
 }
 
 pre:has(.language-id) {

@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 
+import critters from "astro-critters";
+
 import sitemap from "@astrojs/sitemap";
 
 import { astroImageTools } from "astro-imagetools";
@@ -40,6 +42,7 @@ export default defineConfig({
   integrations: [
     sitemap(),
     mdx(),
+    critters(),
     compress({
       img: false,
       css: false,
