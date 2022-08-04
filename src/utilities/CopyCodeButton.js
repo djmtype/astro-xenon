@@ -1,6 +1,5 @@
 const copyButtonLabel = "Copy Code";
 
-// you can use a class selector instead if you, or the syntax highlighting library adds one to the 'pre'. 
 let blocks = document.querySelectorAll("pre");
 
 blocks.forEach((block) => {

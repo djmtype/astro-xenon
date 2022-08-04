@@ -57,19 +57,32 @@ const { title } = Astro.props
 		background-image: var(--page-bg-image),
 			linear-gradient(
 				45deg,
-				var(--accent-green),
 				var(--accent-blue),
 				var(--accent-purple),
 				var(--accent-red)
 			);
 		background-blend-mode: soft-light;
+		
+		background-repeat: no-repeat, no-repeat;
+		background-attachment: static;
+		background-size: cover, cover;
 
-		background-repeat: repeat, no-repeat;
-		background-attachment: fixed;
-		background-size: auto 20%, cover;
-
-		/* mask-image: linear-gradient(to top, transparent 15%, black 85%); */
+		@media (--mouse) {
+			background-image: var(--page-bg-image),
+			linear-gradient(
+				45deg,
+				var(--accent-green),
+				var(--accent-blue),
+				var(--accent-purple),
+				var(--accent-red)
+			);
+			background-attachment: fixed;
+			background-size: auto 20%, cover;
+			background-repeat: repeat, no-repeat;
+			
+		}
 	}
+	
 
 	@media (--xl-n-above) {
 		.main-entry {

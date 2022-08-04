@@ -51,7 +51,7 @@ import Button from "@components/Button.astro"
 	</div>
 
 	<fieldset>
-		<legend>Your feeling towards corgies</legend>
+		<legend>Your feelings towards corgies</legend>
 		<div aria-hidden='true'>Your feeling towards corgies</div>
 		<div>
 			<input type='radio' id='love' name='corgy' value='love' checked />
@@ -97,8 +97,7 @@ import Button from "@components/Button.astro"
 
 	input:not([type="radio"]),
 	textarea,
-	select,
-	fieldset {
+	select {
 		appearance: none;
 		padding: var(--size-2) var(--size-2);
 		background: var(--surface-1);
@@ -112,6 +111,12 @@ import Button from "@components/Button.astro"
 		&::placeholder {
 			color: var(--muted);
 		}
+	}
+
+	fieldset {
+		appearance: none;
+		border: 0;
+		padding: 0;
 	}
 
 	select {
@@ -135,10 +140,6 @@ import Button from "@components/Button.astro"
 		font-weight: var(--font-weight-6);
 	}
 
-	fieldset {
-		appearance: none;
-	}
-
 	legend {
 		position: absolute;
 		overflow: hidden;
@@ -154,6 +155,10 @@ import Button from "@components/Button.astro"
 		font-weight: var(--font-weight-6);
 	}
 
+	fieldset > div[aria-hidden] + div {
+		margin-top: var(--size-2);
+	}
+
 	input:checked + label {
 		font-weight: var(--font-weight-6);
 		color: var(--brand);
@@ -164,6 +169,7 @@ import Button from "@components/Button.astro"
 	}
 	input:disabled + label {
 		color: var(--muted);
+		cursor: not-allowed;
 	}
 
 	option:disabled {
