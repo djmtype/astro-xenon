@@ -6,17 +6,19 @@ export interface Props {
   url: string;
   title: string;
   image?: string;
+  loading?: string;
   alt: string;
   label: string;
   datePublished?: string;
 }
 
-const { url, title, image, alt, label } = Astro.props;
+const { url, title, image, alt, label, loading } = Astro.props;
 ---
 
 <div class={image ? "tile tile-has-img" : "tile"}>
   <figure class="tile-thumb">
-    <Picture src={image} layout="fill" alt={alt ? `${alt}` : ` `} />
+
+      <Picture src={image} loading={loading} layout="fill" alt={alt ? `${alt}` : ` `} />
   </figure>
   <div class="tile-content">
     <h2 class="tile-title">

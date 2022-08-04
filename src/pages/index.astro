@@ -1,57 +1,50 @@
 ---
-import DefaultLayout from '@layouts/DefaultLayout.astro';
-import DashboardGrid from '@components/DashboardGrid.astro';
-import PostTile from "@components/PostTile.astro";
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+import DashboardGrid from "@components/DashboardGrid.astro"
+import PostTile from "@components/PostTile.astro"
 
-import site from "@data/site.json";
+import site from "@data/site.json"
 
-let posts = await Astro.glob("../pages/blog/*.md");
-posts = posts.filter((date) => date.frontmatter.status === "published");
+let posts = await Astro.glob("../pages/blog/*.md")
+posts = posts.filter((date) => date.frontmatter.status === "published")
 
-let title = "Home";
-let description = "Welcome to Xenon for Astro";
-let layoutCss = "dashboard";
-let canonicalURL = Astro.url;
+let title = "Home"
+let description = "Welcome to Xenon for Astro"
+let layoutCss = "dashboard"
+let canonicalURL = Astro.url
 
 // Leave out a specific category
 
 // posts = posts.filter((category) => category.frontmatter.category !== 'Bookmarks');
 
-posts = posts
-.sort(
-    (a, b) =>
-      new Date(b.frontmatter.date.published).valueOf() -
-      new Date(a.frontmatter.date.published).valueOf()
-  );
+posts = posts.sort(
+	(a, b) =>
+		new Date(b.frontmatter.date.published).valueOf() -
+		new Date(a.frontmatter.date.published).valueOf()
+)
 
-const image = posts[0].frontmatter.image.path;
+const image = posts[0].frontmatter.image.path
 
-const { content } = Astro.props;
+const { content } = Astro.props
 ---
 
-<DefaultLayout
-	{title}
-	{description} 
-	{layoutCss} 
-	{canonicalURL}
->
-<h1 class="sr-only">{description}</h1>
+<DefaultLayout {title} {description} {layoutCss} {canonicalURL}>
+	<h1 class='sr-only'>{description}</h1>
 
-<DashboardGrid selector="section">
-{posts.slice(0, site.homePostsSize || 6).map((post) => (
-	<PostTile
-		url={post.url}
-		title={post.frontmatter.title}
-		image={post.frontmatter.image.path}
-		alt={post.frontmatter.image.alt}
-		label={post.frontmatter.category}
-	></PostTile>
-))}
-</DashboardGrid>
+	<DashboardGrid selector='section'>
 
-
-	
+ 
+		{posts
+      .slice(0,6)
+      .map((post, index) => (
+          <PostTile
+              loading={index === 0 ? `eager` : `lazy`}
+              url={post.url}
+              title={post.frontmatter.title}
+              image={post.frontmatter.image.path}
+              alt={post.frontmatter.image.alt}
+              label={post.frontmatter.category}
+          />
+      ))}
+	</DashboardGrid>
 </DefaultLayout>
-
-
-
