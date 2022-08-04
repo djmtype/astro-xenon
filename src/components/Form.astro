@@ -2,90 +2,90 @@
 import Button from "@components/Button.astro"
 ---
 
-<form id="contact-form" name="contact" method="POST" class="flow">
-	<div class="form-control">
-		<label for="name">Name</label>
+<form id='contact-form' name='contact' method='POST' class='flow'>
+	<div class='form-control'>
+		<label for='name'>Name</label>
 		<input
-			type="text"
-			name="name"
-			id="name"
-			autocomplete="name"
-			placeholder="Your name"
-			title="Please enter your name"
+			type='text'
+			name='name'
+			id='name'
+			autocomplete='name'
+			placeholder='Your name'
+			title='Please enter your name'
 			required
 		/>
 	</div>
 
-	<div class="form-control">
-		<label for="email">Email</label>
+	<div class='form-control'>
+		<label for='email'>Email</label>
 		<input
-			type="email"
-			name="email"
-			id="email"
-			autocomplete="email"
-			placeholder="Your email address"
+			type='email'
+			name='email'
+			id='email'
+			autocomplete='email'
+			placeholder='Your email address'
 			required
 		/>
 	</div>
 
-	<div class="form-control">
-		<label for="character-select"
+	<div class='form-control'>
+		<label for='character-select'
 			>Your favorite Science Ninja Team character
 		</label>
 		<small
 			><a
-				href="https://en.wikipedia.org/wiki/Science_Ninja_Team_Gatchaman"
-				target="_blank"
-				rel="noopener nofollow"
+				href='https://en.wikipedia.org/wiki/Science_Ninja_Team_Gatchaman'
+				target='_blank'
+				rel='noopener nofollow'
 				>Help me remember
 			</a>
 		</small>
-		<select name="characters" id="character-select">
-			<option value="">Select a character</option>
-			<option value="Ken the Eagle">Ken the Eagle</option>
-			<option value="Joe the Condor">Joe the Condor</option>
-			<option value="Jun the Swan">Jun the Swan</option>
-			<option value="Jinpei the Swallow">Jinpei the Swallow</option>
-			<option value="Ryu the Owl">Ryu the Owl</option>
+		<select name='characters' id='character-select'>
+			<option value=''>Select a character</option>
+			<option value='Ken the Eagle'>Ken the Eagle</option>
+			<option value='Joe the Condor'>Joe the Condor</option>
+			<option value='Jun the Swan'>Jun the Swan</option>
+			<option value='Jinpei the Swallow'>Jinpei the Swallow</option>
+			<option value='Ryu the Owl'>Ryu the Owl</option>
 		</select>
 	</div>
 
 	<fieldset>
 		<legend>Your feeling towards corgies</legend>
-
+		<div aria-hidden='true'>Your feeling towards corgies</div>
 		<div>
-			<input type="radio" id="love" name="corgy" value="love" checked />
-			<label for="love">I love them</label>
+			<input type='radio' id='love' name='corgy' value='love' checked />
+			<label for='love'>I love them</label>
 		</div>
 
 		<div>
-			<input type="radio" id="like" name="corgy" value="like" />
-			<label for="like">I like them</label>
+			<input type='radio' id='like' name='corgy' value='like' />
+			<label for='like'>I like them</label>
 		</div>
 
 		<div>
 			<input
-				type="radio"
-				id="indifferent"
-				name="corgy"
-				value="indifferent"
+				type='radio'
+				id='indifferent'
+				name='corgy'
+				value='indifferent'
 				disabled
 			/>
-			<label for="indifferent">I prefer chihuahuas</label>
+			<label for='indifferent'>I prefer chihuahuas</label>
 		</div>
 	</fieldset>
 
-	<div class="form-control">
-		<label for="message">Message</label>
+	<div class='form-control'>
+		<label for='message'>Message</label>
 		<textarea
-			name="message"
-			id="message"
-			placeholder="Write your message here"
-			rows="7"
+			name='message'
+			id='message'
+			placeholder='Write your message here'
+			rows='7'
 			required></textarea>
 	</div>
 
-	<Button className="btn btn-primary" type="submit" name="submit"
+	<Button className='btn btn-primary' type='submit' name='submit'
 		>Send Message
 	</Button>
 </form>
@@ -130,8 +130,7 @@ import Button from "@components/Button.astro"
 		margin-top: var(--size-2);
 	}
 
-	.form-control label,
-	legend {
+	.form-control label {
 		display: inline-block;
 		font-weight: var(--font-weight-6);
 	}
@@ -139,6 +138,22 @@ import Button from "@components/Button.astro"
 	fieldset {
 		appearance: none;
 	}
+
+	legend {
+		position: absolute;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		width: 1px;
+		height: 1px;
+		white-space: nowrap;
+	}
+
+	fieldset > div[aria-hidden] {
+		display: inline-block;
+		font-weight: var(--font-weight-6);
+	}
+
 	input:checked + label {
 		font-weight: var(--font-weight-6);
 		color: var(--brand);

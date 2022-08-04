@@ -20,6 +20,7 @@
       "@public/*": ["public/*"],
       "@svg/*": ["public/images/svgs/*"],
       "@data/*": ["src/data/*"],
+      "@utilities/*": ["src/utilities/*"],
       "@demo/*": ["src/demo/*"]
     }
   }

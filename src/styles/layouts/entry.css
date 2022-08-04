@@ -102,13 +102,10 @@
 	}
 }
 
-/* .prose table {
-	width: 100%;
-} */
+.prose.flow {
+	--flow: 1.5em;	
+}
 
-/* .entry-content.flow > *:first-child {
-	margin-top: 0;
-} */
 
 .entry-content blockquote {
 	border-left: var(--border-size-3) solid var(--brand-2);
