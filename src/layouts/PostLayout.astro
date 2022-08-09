@@ -4,7 +4,7 @@ import DefaultLayout from "@layouts/DefaultLayout.astro"
 import PostEntry from "@components/PostEntry.astro"
 
 // import { default as Template } from '../demo/template.mdx';
-const Template = await import('@demo/template.mdx')
+const Template = await import("@demo/template.mdx")
 
 // import * as Template from "../demo/template.md"
 
@@ -29,9 +29,6 @@ const { title, date, description, image, category, tags } = content
 		{tags}
 	>
 		<slot></slot>
-<Template.default />
-		
+		<Template.default />
 	</PostEntry>
 </DefaultLayout>
-
-

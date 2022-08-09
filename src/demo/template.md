@@ -2,7 +2,6 @@
 title: Demo Markdown Content
 ---
 
-
 ## Heading Level Two
 
 Lorem markdownum solum[^1], vidit semper suis nam quinos sedet, sed tantum ferrem et

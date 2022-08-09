@@ -1,0 +1,51 @@
+---
+import { Picture } from "astro-imagetools/components"
+
+export interface Props {
+	src: string
+	alt: string
+	width?: string
+	height?: string
+	caption?: string
+}
+
+const { src, width, height, alt, caption } = Astro.props as Props
+---
+
+{(() => {
+	if (caption !== undefined)
+		return (
+			<figure>
+				<Picture
+					alt={alt}
+					src={src}
+					width={width}
+					height={height}
+				/>
+				<figcaption>{caption}</figcaption>
+			</figure>
+		)
+	else return <Picture alt={alt} src={src} width={width} height={height} />
+})()}
+
+<style>
+	figure {
+		margin-inline: auto;
+		text-align: center;
+	}
+
+	.figure-background {
+		background-color: var(--surface-0);
+		border-radius: var(--radius-rounded);
+		padding: var(--size-4);
+	}
+	figcaption {
+		text-align: center;
+		margin-top: var(--size-2);
+		font-style: italic;
+		color: var(--muted);
+		font-size: var(--font-size-smaller);
+		width: min(100%, var(--size-content-3));
+		margin-inline: auto;
+	}
+</style>

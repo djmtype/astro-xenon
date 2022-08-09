@@ -5,7 +5,7 @@
 @import "schemes/_dark.css";
 
 @import "common/_variables.css";
-@import "common/_scrollbar.css";
+/* @import "common/_scrollbar.css"; */
 @import "common/_syntax.css";
 
 @import "common/_base.css";

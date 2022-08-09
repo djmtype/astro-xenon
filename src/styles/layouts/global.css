@@ -2,12 +2,14 @@
 	align-self: center;
 	/* aspect-ratio: 2/1; */
 	display: grid;
-	padding: var(--size-3);
+	padding: var(--size-2) 0;
+	row-gap: var(--gutter);
 }
 
 .site-brand {
 	margin-inline: auto;
 	text-decoration: none;
+	display: inline-flex;
 }
 
 .wrapper {
@@ -26,7 +28,7 @@
 .sidebar {
 	padding: var(--gutter);
 	display: grid;
-	grid-template-rows: auto 1fr auto;
+	/* grid-template-rows: auto 1fr auto; */
 	gap: var(--gutter);
 }
 

@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 
-import critters from "astro-critters";
 
 import sitemap from "@astrojs/sitemap";
 
@@ -8,7 +7,7 @@ import { astroImageTools } from "astro-imagetools";
 
 import mdx from '@astrojs/mdx';
 
-import compress from "astro-compress";
+// import compress from "astro-compress";
 
 
 // https://astro.build/config
@@ -42,14 +41,13 @@ export default defineConfig({
   integrations: [
     sitemap(),
     mdx(),
-    critters(),
-    compress({
-      img: false,
-      css: false,
-			// css: true,
-			// html: true,
-			// js: true,
-		}),
+    // compress({
+    //   img: false,
+    //   css: false,
+		// 	// css: true,
+		// 	// html: true,
+		// 	// js: true,
+		// }),
     astroImageTools,
   ],
 });

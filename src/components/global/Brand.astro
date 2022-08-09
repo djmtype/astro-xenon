@@ -1,0 +1,23 @@
+<span class='site-brand-logo'></span>
+
+<style>
+	.site-brand-logo {
+		mask-image: url(/images/logo.svg);
+		mask-size: contain;
+		mask-position: 50% 50%;
+		mask-repeat: no-repeat;
+		aspect-ratio: 1;
+		height: 100%;
+		width: clamp(5rem, 8vw, 7rem);
+		display: inline-block;
+		justify-self: center;
+		background: var(--gradient-brand);
+		background-size: 100%;
+		position: relative;
+		transition: background-size 250ms ease-in-out;
+	}
+
+	.site-brand-logo:hover {
+		background-size: 1000%;
+	}
+</style>

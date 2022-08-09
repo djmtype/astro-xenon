@@ -21,6 +21,7 @@ function commaList(array) {
 	return array.join(", ").replace(/, ((?:.(?!, ))+)$/, " and $1")
 }
 
+
 const {
 	url,
 	title,
@@ -41,27 +42,29 @@ const {
 		<Picture
 			src={image}
 			quality={50}
-			width={1200} height={675}
+			width={1200}
+			height={675}
 			layout='fill'
 			alt={alt ? `${alt}` : ` `}
 		/>
 	</figure>
 
-	<div class='entry-heading'>
+	<div class='entry-heading section-2xl flow'>
 		<h1 class='entry-title'>{title}</h1>
-		<div class='entry-meta margin-top-xs'>
+
+		<div class='entry-meta'>
 			<dl class='entry-date entry-meta-list'>
 				<dt class='entry-meta-key'>Date Published</dt>
 				<dd class='entry-meta-value'>
 					{dayjs(datePublished).format("DD MMMM YYYY")}
 				</dd>
 			</dl>
-
+	
 			<dl class='entry-category entry-meta-list'>
 				<dt class='entry-meta-key'>Category</dt>
 				<dd class='entry-meta-value'>{category}</dd>
 			</dl>
-
+	
 			<dl class='entry-tags entry-meta-list'>
 				<dt class='entry-meta-key'>Tags</dt>
 				<dd class='entry-meta-value'>
@@ -69,19 +72,18 @@ const {
 				</dd>
 			</dl>
 		</div>
-
 	</div>
 
-	<div class='entry-body'>
-		
 
-		<div class='entry-content prose flow section-xl'>
+
+	<div class='entry-body flow'>
+
+		<div class='entry-content prose flow'>
 			<slot />
 
 			{imageCredit ? (
-				<footer class='entry-footer font-size-1aller'>
+				<footer class='entry-footer font-size-smaller'>
 					<div class='image-credit'>
-						
 						<Picture
 							src={image}
 							width={100}
@@ -103,4 +105,3 @@ const {
 		</div>
 	</div>
 </article>
-

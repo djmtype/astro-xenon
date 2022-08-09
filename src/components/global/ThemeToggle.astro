@@ -5,8 +5,8 @@ import Button from "@components/Button.astro";
 ---
 
 <Button className="theme-toggle btn btn-default" id="theme-toggle" title="Toggles light and dark" ariaLabel="auto" live="polite">
-  <Icon name="ri:sun-fill" width={24} class="icon-light" fill="black" />
-  <Icon name="ri:moon-fill" width={24} class="icon-dark" fill="black" />
+  <Icon name="ri:sun-fill" width={24} class="btn-icon icon-light" fill="black" />
+  <Icon name="ri:moon-fill" width={24} class="btn-icon icon-dark" fill="black" />
 </Button>
 
 
@@ -72,7 +72,7 @@ window
 </script>
 
 
-<style>
+<style is:global>
 
 
 
@@ -112,19 +112,35 @@ window
   }
 }
 
-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1ch;
+@media (--lg-n-below) {
+.theme-toggle.btn {
+  display: inline-flex;
+		border: 0;
+		overflow: hidden;
+		position: absolute;
+		width: 2.75rem;
+		height: 2.75rem;
+		padding: 0;
+		top: var(--gutter);
+		right: var(--gutter);
+    border-radius: var(--radius-round);
+    align-items: center;
+    justify-content: center;
+    & svg {
+			height: 1.0em;
+			width: 1.0em;
+			object-fit: contain;
+		}
+
 }
+}
+
+
+@media (--lg-n-above) {
 button::before {
   content: attr(aria-label);
   text-transform: capitalize;
 }
-button svg {
-  width: 1em;
-  height: auto;
 }
 
 </style>

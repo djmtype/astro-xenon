@@ -3,7 +3,7 @@ import DefaultLayout from "@layouts/DefaultLayout.astro"
 import PageLayout from "@layouts/PageLayout.astro"
 import "@styles/layouts/entry.css"
 import dayjs from "dayjs"
-import Page from "./blog/[...page].astro"
+
 // import * as About from "../demo/about.md"
 
 // import { default as About } from '../demo/about.mdx'
@@ -32,7 +32,7 @@ let canonicalURL = Astro.url
 			</dl>
 		</div>
 		
-		<div class='entry-content flow'>
+		<div class='entry-content prose flow margin-top-lg'>
 			
 <About.default />
 

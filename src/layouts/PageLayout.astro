@@ -8,11 +8,11 @@ const { title } = Astro.props
 
 <div class='main-entry'>
 	<div class='main-figure'></div>
-	<div class='main-header'>
+	<div class='main-header section-2xl'>
 		<h1 class='main-title'>{title}</h1>
 	</div>
 	<div class='main-body'>
-		<div class='main-content prose section-2xl'>
+		<div class='main-content'>
 			<slot />
 		</div>
 	</div>
@@ -22,7 +22,6 @@ const { title } = Astro.props
 <style>
 	.main-header {
 		position: relative;
-		padding-top: var(--gutter);
 		background-color: var(--surface-1);
 		/* backdrop-filter: var(--background-blur);
 		background: var(--surface-1-trans); */
