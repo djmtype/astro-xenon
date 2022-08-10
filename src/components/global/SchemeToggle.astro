@@ -1,0 +1,141 @@
+---
+import Icon from "astro-icon"
+import Button from "@components/Button.astro"
+---
+
+<Button
+	className='scheme-toggle btn btn-default'
+	id='scheme-toggle'
+	title='Toggles light and dark'
+	ariaLabel='auto'
+	live='polite'
+>
+	<Icon name='ri:sun-fill' width={24} class='btn-icon icon-light' fill='black'
+	/>
+	<Icon name='ri:moon-fill' width={24} class='btn-icon icon-dark' fill='black'
+	/>
+</Button>
+
+<script is:inline>
+	const storageKey = "color-scheme"
+
+	const onClick = () => {
+		// flip current value
+		theme.value = theme.value === "light" ? "dark" : "light"
+
+		setPreference()
+	}
+
+	const getColorPreference = () => {
+		if (localStorage.getItem(storageKey))
+			return localStorage.getItem(storageKey)
+		else
+			return window.matchMedia("(prefers-color-scheme: dark)").matches
+				? "dark"
+				: "light"
+	}
+
+	const setPreference = () => {
+		localStorage.setItem(storageKey, theme.value)
+		reflectPreference()
+	}
+
+	const reflectPreference = () => {
+		document.firstElementChild.setAttribute("color-scheme", theme.value)
+
+		document
+			.querySelector("#scheme-toggle")
+			?.setAttribute("aria-label", theme.value)
+	}
+
+	const theme = {
+		value: getColorPreference(),
+	}
+
+	// set early so no page flashes / CSS is made aware
+	reflectPreference()
+
+	window.onload = () => {
+		// set on load so screen readers can see latest value on the button
+		reflectPreference()
+
+		// now this script can find and listen for clicks on the control
+		document.querySelector("#scheme-toggle").addEventListener("click", onClick)
+	}
+
+	// sync with system changes
+	window
+		.matchMedia("(prefers-color-scheme: dark)")
+		.addEventListener("change", ({ matches: isDark }) => {
+			theme.value = isDark ? "dark" : "light"
+			setPreference()
+		})
+</script>
+
+<style is:global>
+	.icon-dark {
+		display: none;
+	}
+
+	.icon-light {
+		display: inline-block;
+	}
+
+	@media (--OSdark) {
+		.icon-light {
+			display: none;
+		}
+		.icon-dark {
+			display: inline-block;
+		}
+	}
+
+	[color-scheme="dark"],
+	[aria-label="dark"] {
+		& .icon-light {
+			display: none;
+		}
+		& .icon-dark {
+			display: inline-block;
+		}
+	}
+
+	[color-scheme="light"],
+	[aria-label="light"] {
+		& .icon-dark {
+			display: none;
+		}
+		& .icon-light {
+			display: inline-block;
+		}
+	}
+
+	@media (--lg-n-below) {
+		.scheme-toggle.btn {
+			display: inline-flex;
+			border: 0;
+			overflow: hidden;
+			position: absolute;
+			width: 2.75rem;
+			height: 2.75rem;
+			padding: 0;
+			top: var(--gutter);
+			right: var(--gutter);
+			border-radius: var(--radius-round);
+			align-items: center;
+			justify-content: center;
+			& svg {
+				height: 1em;
+				width: 1em;
+				object-fit: contain;
+			}
+		}
+	}
+
+	@media (--lg-n-above) {
+		button::before {
+			content: attr(aria-label);
+			text-transform: capitalize;
+		}
+	}
+</style>

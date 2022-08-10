@@ -29,7 +29,7 @@ const { url, title, image, alt, label, datePublished, description } =
 	</figure>
 	<div class="post-content">
 		<div class="post-header">
-			<Label className="label-default" name={label} />
+			
 			<h2 class="post-title font-size-4">
 				<a href={url} class="post-link">{title}</a>
 			</h2>
@@ -42,6 +42,7 @@ const { url, title, image, alt, label, datePublished, description } =
 					{dayjs(datePublished).format("DD MMMM YYYY")}
 				</dd>
 			</dl>
+			<Label className="label-default" name={label} />
 		</div>
 		<p class="post-description" set:html={description}></p>
 	</div>
@@ -50,17 +51,10 @@ const { url, title, image, alt, label, datePublished, description } =
 <style>
 	.post {
 		display: grid;
-		/* background: var(--surface-0);
-		border-radius: var(--radius-rounded); */
 		position: relative;
-		/* padding: var(--gutter); */
 		grid-template-columns: min(20%, 8rem) auto;
 		gap: var(--gutter);
-
-
 	}
-
-
 
 	.post-figure {
 		align-self: start;
@@ -74,7 +68,12 @@ const { url, title, image, alt, label, datePublished, description } =
 
 	.post-header {
 		display: grid;
+	}
+
+	@media (--sm-n-above) {
+	.post-header {
 		grid-template-columns: auto min-content;
+		}
 	}
 
 	.post-header > * {
@@ -82,13 +81,16 @@ const { url, title, image, alt, label, datePublished, description } =
 	}
 
 	.post-header .label {
-		grid-column: 2;
 		align-self: start;
+		justify-self: start;
+		margin-top: var(--size-2);
+		@media (--sm-n-above) {
+		grid-area: 1 / 2;
+		margin-top: unset;
+		}
+		
 	}
 
-	.post-header .post-title {
-		grid-row: 1;
-	}
 
 	.post-meta {
 		font-family: var(--font-mono);

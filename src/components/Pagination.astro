@@ -10,7 +10,7 @@ export interface Props {
 const { prevUrl, nextUrl, currentPage, totalPages } = Astro.props;
 ---
 
-<nav class='pagination' aria-label='Pagination'>
+<nav class='pagination section-sm' aria-label='Pagination'>
 	<ul class="pagination-list" role="list">
 		{prevUrl ? (
 			<li class='prev'><a aria-label='Previous Page' href={prevUrl}>

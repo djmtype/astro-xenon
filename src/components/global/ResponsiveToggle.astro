@@ -1,25 +1,35 @@
 ---
-import Button from "@components/Button.astro";
+import Button from "@components/Button.astro"
 ---
 
 <Button
-	className="btn btn-default responsive-toggle"
-	ariaExpanded="false"
-	ariaLabel="Open menu navigation"
-><svg class="btn-icon" aria-hidden="true" focusable="false" width="48" height="48" viewBox="0 0 48 48" fill="#000000" xmlns="http://www.w3.org/2000/svg">
-	<path d="M9.375 36H38.625V32.0001H9.375V36ZM9.375 26.0001H38.625V22H9.375V26.0001ZM9.375 12V15.9998H38.625V12H9.375Z" />
+	className='responsive-toggle btn btn-default'
+	ariaExpanded='false'
+	ariaLabel='Open menu navigation'
+	><svg
+		class='btn-icon'
+		aria-hidden='true'
+		focusable='false'
+		width='48'
+		height='48'
+		viewBox='0 0 48 48'
+		fill='#000000'
+		xmlns='http://www.w3.org/2000/svg'
+	>
+		<path
+			d='M9.375 36H38.625V32.0001H9.375V36ZM9.375 26.0001H38.625V22H9.375V26.0001ZM9.375 12V15.9998H38.625V12H9.375Z'
+		></path>
 	</svg>
 	Menu
 </Button>
 
-
 <script is:inline>
 	// variables
-	const responsiveToggle = document.querySelector('.responsive-toggle');
+	const responsiveToggle = document.querySelector(".responsive-toggle")
 
 	const icon = `<svg class="btn-icon" aria-hidden="true" focusable="false" width="48" height="48" viewBox="0 0 48 48" fill="#000000" xmlns="http://www.w3.org/2000/svg">
 	<path d="M9.375 36H38.625V32.0001H9.375V36ZM9.375 26.0001H38.625V22H9.375V26.0001ZM9.375 12V15.9998H38.625V12H9.375Z" />
-	</svg>`;
+	</svg>`
 
 	const iconClosed = `<svg class="btn-icon" aria-hidden="true" focusable="false" width="48" height="48" viewBox="0 0 48 48" fill="#000000" xmlns="http://www.w3.org/2000/svg">
 <path d="M12.2443 15.0728L32.9272 35.7557L35.7557 32.9273L15.0728 12.2444L12.2443 15.0728Z" />
@@ -28,47 +38,47 @@ import Button from "@components/Button.astro";
 
 	// functions
 	const openMenu = (toggle) => {
-		toggle.setAttribute('aria-expanded', true);
-		toggle.setAttribute('aria-label', 'Close menu navigation');
-		toggle.innerHTML = iconClosed + 'Menu';
-	};
+		toggle.setAttribute("aria-expanded", true)
+		toggle.setAttribute("aria-label", "Close menu navigation")
+		toggle.innerHTML = iconClosed + "Menu"
+	}
 
 	const closeMenu = (toggle) => {
-		toggle.setAttribute('aria-expanded', false);
-		toggle.setAttribute('aria-label', 'Open menu navigation');
-		toggle.innerHTML = icon + 'Menu';
-	};
+		toggle.setAttribute("aria-expanded", false)
+		toggle.setAttribute("aria-label", "Open menu navigation")
+		toggle.innerHTML = icon + "Menu"
+	}
 
 	// execution
-	responsiveToggle.addEventListener('click', (_) => {
-		const mainNavigation = document.querySelector('#main-navigation');
+	responsiveToggle.addEventListener("click", (_) => {
+		const mainNavigation = document.querySelector("#main-navigation")
 
-		mainNavigation.classList.toggle('show');
-		mainNavigation.classList.contains('show')
+		mainNavigation.classList.toggle("show")
+		mainNavigation.classList.contains("show")
 			? openMenu(responsiveToggle)
-			: closeMenu(responsiveToggle);
-	});
+			: closeMenu(responsiveToggle)
+	})
 
 	// check if responsive menu is open when resized and then remove
-	window.addEventListener('resize', (_) => {
-		const mainNavigation = document.querySelector('#main-navigation');
+	window.addEventListener("resize", (_) => {
+		const mainNavigation = document.querySelector("#main-navigation")
 
 		if (
-			mainNavigation.classList.contains('show') &&
-			window.matchMedia('(min-width: 768px)').matches
+			mainNavigation.classList.contains("show") &&
+			window.matchMedia("(min-width: 768px)").matches
 		) {
-			mainNavigation.classList.remove('show');
-			closeMenu(responsiveToggle);
+			mainNavigation.classList.remove("show")
+			closeMenu(responsiveToggle)
 		}
-	});
+	})
 </script>
 
 <style>
-
-
-	.responsive-toggle {
+	.responsive-toggle.btn {
 		font-size: var(--font-size-2);
-		@media (--md-n-above) {
+	}
+	@media (--md-n-above) {
+		.responsive-toggle.btn {
 			display: none;
 		}
 	}
@@ -76,6 +86,5 @@ import Button from "@components/Button.astro";
 	.responsive-toggle[aria-expanded="true"] {
 		color: var(--surface-0);
 		background-color: var(--brand);
-}
-
+	}
 </style>

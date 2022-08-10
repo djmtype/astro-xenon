@@ -5,11 +5,13 @@ date:
   updated: 2022-08-02
 ---
 
+import Callout from "@components/Callout.astro"
+
 ## Welcome to [Astro Xenon](https://astro-xenon.netlify.app)
 
 Xenon is an open source Astro theme for bloggers that aims to excel in performance with accessibility in mind. 
 
-It depends on a few other plugins from the community like [astro-imagetools](https://github.com/RafidMuhymin/astro-imagetools#readme) and [astro-icon](https://github.com/natemoo-re/astro-icon#readme). 
+It relies on a few other plugins from the community like [astro-imagetools](https://github.com/RafidMuhymin/astro-imagetools#readme) and [astro-icon](https://github.com/natemoo-re/astro-icon#readme). 
 
 ## ⛺ Setup
 1. Clone this project:  
@@ -19,7 +21,7 @@ git clone https://github.com/djmtype/astro-xenon.git
 2. Run `npm install` or use your favorite build tool. 
 3. Enjoy!
 
-## 🚀 Project Structure
+## 🏗 Project Structure
 
 Inside the Astro Xenon project, you'll see the following folders and files:
 
@@ -45,13 +47,21 @@ Inside the Astro Xenon project, you'll see the following folders and files:
 
 ## 📖 Settings / Instructions
 
-### General Info / Menu 
-General site info and main navigation items can be managed via `src/data/site.json`
+### General Site Settings 
+For easier access, general site settings can be managed via `src/data/site.json`. 
+
+These settings include: 
+- Global site information
+- Main navigation links
+- Social profile links
+- Number of posts displayed on the Home page
+- Pagination size on the Blog landing page
 
 ### RSS Feed
 RSS has been pre-configured based on any markdown file placed within `src/pages/blog`. Be sure to configure your site's feed information in `src/pages/feed.xml.js`. 
 
-Postscript, adjust the `site` property value found in `astro.config.mjs` 
+**Postscript**: Adjust the `site` property value found in `astro.config.mjs`. 
+
 
 ### Styling 
 This theme utilizes <abbr title="Just In Time">JIT</abbr>  [Open-Props](https://open-props.style/) in a big way. 
@@ -73,7 +83,7 @@ Any static assets, like images, can be placed in the `public/` directory.
 
 Feel free to check [Astro's documentation](https://docs.astro.build) or jump into Astro's [Discord server](https://astro.build/chat).
 
-## 🧞 Commands
+## 🧞‍♂️ Commands
 
 All commands are run from the root of the project, from a terminal:
 

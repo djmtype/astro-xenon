@@ -108,10 +108,13 @@ import Button from "@components/Button.astro"
 			border-color: var(--brand);
 			background-color: var(--surface-0);
 		}
-		&::placeholder {
-			color: var(--muted);
-		}
 	}
+
+	input:not([type="radio"])::placeholder, textarea::placeholder, select::placeholder {
+    color: var(--muted);
+		font-style: italic;
+	}
+
 
 	fieldset {
 		appearance: none;

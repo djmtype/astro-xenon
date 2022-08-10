@@ -30,7 +30,6 @@
 :where(a[href]) {
   color: var(--link);
 	font-weight: var(--font-weight-5);
-	display: inline-block;
   &:visited {
     color: var(--link-visited);
   }
@@ -53,7 +52,9 @@
 	text-decoration: none;
 }
 
-
+:where(a[href*="//"]) {
+	display: inline-block;
+}
 
 :where(a[href*="//"])::after
 {

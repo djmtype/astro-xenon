@@ -12,7 +12,7 @@ const { title } = Astro.props
 		<h1 class='main-title'>{title}</h1>
 	</div>
 	<div class='main-body'>
-		<div class='main-content'>
+		<div class='main-content section-md'>
 			<slot />
 		</div>
 	</div>
@@ -62,9 +62,9 @@ const { title } = Astro.props
 			);
 		background-blend-mode: soft-light;
 		
-		background-repeat: no-repeat, no-repeat;
+		background-repeat: repeat, no-repeat;
 		background-attachment: static;
-		background-size: cover, cover;
+		background-size: auto 50%, cover;
 
 		@media (--mouse) {
 			background-image: var(--page-bg-image),

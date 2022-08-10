@@ -12,7 +12,6 @@
 	justify-content: center;
 	box-shadow: var(--shadow-1);
 	align-items: center;
-	/* column-gap: 1ch; */
 }
 
 .btn:has(.btn-icon) {
@@ -90,7 +89,7 @@
 }
 
 .btn-icon {
-	width: 1.125em;
+	width: 1.0em;
 	height: auto;
 }
 

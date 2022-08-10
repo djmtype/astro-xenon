@@ -1,48 +1,23 @@
-<span class="site-brand-logo">Xe</span>
+<span class='site-brand-logo'></span>
 
 <style>
 	.site-brand-logo {
-    aspect-ratio: 1/1;
-  width: 7rem;
-  font-family: var(--font-heading);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
-  justify-self: center;
-  background: var(--gradient-brand);
-  background-size: 100%;
-  font-weight: var(--font-weight-7);
-  font-size: var(--font-size-8);
-  /* padding: 0 var(--size-4); */
-  border-radius: var(--radius-rounded);
-  letter-spacing: var(--font-letterspacing-tight);
-  color: var(--surface-1);
-  position: relative;
-  transition: background-size 250ms ease-in-out;
-  
+		mask-image: url(/images/logo.svg);
+		mask-size: contain;
+		mask-position: 50% 50%;
+		mask-repeat: no-repeat;
+		aspect-ratio: 1;
+		height: 100%;
+		width: clamp(5rem, 10vw, 7rem);
+		display: inline-block;
+		justify-self: center;
+		background: var(--gradient-brand);
+		background-size: 100%;
+		position: relative;
+		transition: background-size 250ms ease-in-out;
+	}
 
-}
-
-.site-brand-logo:hover {
-  background-size: 400%;
-}
-
-.site-brand-logo:before {
-  content: "";
-  position: absolute;
-  width: calc(100% - .5rem);
-  height: calc(100% - .5rem);
-  border: var(--border-size-2) solid var(--surface-1);
-  display: inline-block;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: calc(var(--radius-rounded) / 2);
-}
-
-.site-brand-logo {
-  color: var(--surface-1);
-}
+	.site-brand-logo:hover {
+		background-size: 1000%;
+	}
 </style>

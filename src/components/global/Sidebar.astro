@@ -1,8 +1,7 @@
 ---
 import site from "@data/site.json";
-// import Logo from "@components/global/Logo.astro";
-import Brand from "./Brand.astro";
-import ThemeToggle from "@components/global/ThemeToggle.astro";
+import Logo from "./Logo.astro";
+import SchemeToggle from "@components/global/SchemeToggle.astro";
 import Nav from "@components/global/Nav.astro";
 import Sponsor from "./Sponsor.astro";
 
@@ -12,7 +11,7 @@ import ResponsiveToggle from "./ResponsiveToggle.astro";
 <div class="sidebar">
   <header class="site-header" role="banner">
     <a href="/" class="site-brand">
-      <Brand />
+      <Logo />
       <span class="sr-only">{site.title}</span>
     </a>
 
@@ -21,7 +20,7 @@ import ResponsiveToggle from "./ResponsiveToggle.astro";
 
   <Nav />
 
-  <ThemeToggle />
+  <SchemeToggle />
   
   <Sponsor />
 </div>

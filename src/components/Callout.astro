@@ -31,55 +31,55 @@ const { className, title, type, icon } = Astro.props;
 	</div>
 </div>
 
-<style>
-:global(.callout) {
+<style is:global>
+.callout {
 	color: var(--muted);
 	background: var(--surface-0);
 	border-left: var(--border-size-3) solid currentColor;
 	padding: var(--gutter);
 	display: flex;
 	column-gap: var(--gutter);
+	align-items: center;
 
 }
 
-:global(.callout-icon) {
-	width: min(20%, 3.0rem);
+.callout-icon {
+	width: min(20%, 2.5rem);
 	height: auto;
 }
 
-:global(.callout-content) {
+.callout-content {
 	flex: 1;
 }
 
-:global(.callout:not([data-type]) p) {
+.callout p {
  color: var(--text-1);
 }
 
-:global([data-type="warning"]) {
+[data-type="warning"] {
 	color: var(--accent-red);
 	border-color: currentColor;
 	
 }
 
-:global([data-type="yeild"]) {
+[data-type="yeild"] {
 	color: var(--accent-yellow);
 	border-color: currentColor;
 	
 }
 
-:global([data-type="info"]) {
+[data-type="info"] {
 	color: var(--accent-blue);
 	border-color: currentColor;
-	
 }
 
-:global([data-type="success"]) {
+[data-type="success"] {
 	color: var(--accent-green);
 	border-color: currentColor;
 	
 }
 
-:global(.callout-title) {
+.callout-title {
 	font-size: var(--font-size-2);
 	font-weight: var(--font-weight-bold);
 }

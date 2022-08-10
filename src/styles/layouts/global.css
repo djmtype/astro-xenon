@@ -39,9 +39,8 @@ main {
 
 @media (--lg-n-above) {
 	.wrapper {
-		/* grid-template-rows: 1fr auto; */
-
-		grid-template-columns: minmax(min-content, 1fr) minmax(0, 3fr);
+		/* grid-template-columns: minmax(min-content, 1fr) minmax(0, 3fr); */
+		grid-template-columns: minmax(18.5rem, 1fr) minmax(0, 3fr);
 	}
 
 	.sidebar {

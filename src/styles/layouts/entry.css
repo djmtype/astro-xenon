@@ -1,11 +1,11 @@
-.entry-heading, .entry-body {
+.entry-heading, .entry-body, .entry-meta {
 	position: relative;
 	background: var(--surface-1);
 }
 
 @media (--md-n-above) {
 	.entry-heading,
-	.entry-content {
+	.entry-content, .entry-meta {
 		max-width: var(--size-span-sm);
 		padding-right: var(--gutter);
 	}
@@ -16,7 +16,7 @@
 	letter-spacing: var(--font-letterspacing-tight);
 }
 .entry-figure {
-	aspect-ratio: 16/9;
+	aspect-ratio: var(--ratio-golden);
 	position: sticky;
 	top: var(--gutter);
 	z-index: -1;
@@ -34,7 +34,7 @@
 @media (--xl-n-above) {
 	.entry {
 		display: grid;
-		grid-template-rows: auto auto auto;
+		/* grid-template-rows: auto auto auto; */
 	}
 
 	.entry-heading {
@@ -121,7 +121,7 @@
 .image-credit {
 	display: grid;
 	gap: var(--size-4);
-	grid-template-columns: min(20%, 4rem) auto;
+	grid-template-columns: min(20%, 3.75rem) auto;
 	font-size: var(--font-size-smaller);
 	& > div {
 		align-self: center;
