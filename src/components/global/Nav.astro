@@ -2,7 +2,9 @@
 import site from "@data/site.json"
 const { nav } = site
 
-const pathname = new URL(Astro.request.url).pathname
+
+const currentPage = Astro.url.pathname;
+
 ---
 
 <nav class="site-nav" id="main-navigation">
@@ -10,11 +12,11 @@ const pathname = new URL(Astro.request.url).pathname
 		{nav.map((i) => (
 			<li>
 				<a
-					class='nav-link'
-					aria-current={pathname === i.link ? "page" : undefined}
-					href={i.link}
+					href={`${i.link}`}
+					aria-current={`${currentPage === i.link ? 'page' : 'false'}`}
 					rel={i.target ? "nofollow noopener" : null}
-					target={i.target}>
+					target={i.target}
+					class='nav-link'>
 					{i.name}
 				</a>
 			</li>

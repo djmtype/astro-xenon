@@ -20,9 +20,10 @@ export async function getStaticPaths({ paginate }) {
 
 let title = "Blog"
 let description = "Posts for Xenon"
-// let canonicalURL = Astro.url;
+let canonicalURL = Astro.url;
 
-const { canonicalURL } = Astro
+// const { canonicalURL } = Astro
+
 const { page } = Astro.props
 ---
 

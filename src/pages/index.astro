@@ -25,7 +25,9 @@ posts = posts.sort(
 
 const image = posts[0].frontmatter.image.path
 
-const { content } = Astro.props
+const { currentPage, content } = Astro.props
+
+
 ---
 
 <DefaultLayout {title} {description} {layoutCss} {canonicalURL}>

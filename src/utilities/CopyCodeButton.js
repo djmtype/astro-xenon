@@ -6,7 +6,7 @@ blocks.forEach((block) => {
   // only add button if browser supports Clipboard API
   if (navigator.clipboard) {
     let button = document.createElement("button");
-		// button.className += 'btn btn-copy';
+		button.className += 'btn-copy';
     button.innerText = copyButtonLabel;
     button.addEventListener("click", copyCode);
     block.appendChild(button);

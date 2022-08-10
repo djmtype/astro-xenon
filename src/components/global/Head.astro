@@ -2,20 +2,33 @@
 import site from "@data/site.json";
 import '@styles/main.css';
 
+
+
+// import screenStyles from '@styles/main.css?url';
+
 export interface Props {
 	title: string;
 	description?: string;
 	permalink: string;
 	publishDate: string;
-	canonicalURL?: string | URL;
+	canonicalURL?: URL | string;
 	ogImage?: string;
 	ogImageAlt?: string;
+
+
 }
 
+
+
+// const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// const canonicalURL = Astro.url.pathname;
+
+// const canonicalURL = new URL(Astro.request.url).pathname
 const {
 	title,
 	description,
-	canonicalURL,
+canonicalURL,
 	ogImage = '/images/social.jpg',
 	ogImageAlt = 'Xenon website social image'
 } = Astro.props as Props;
@@ -24,8 +37,7 @@ const ogImageSrc = new URL(ogImage, Astro.site);
 
 const siteOrigin = new URL(Astro.request.url).origin;
 
-// siteUrl and canonicalURL return the same result
-const siteUrl = new URL(Astro.request.url);
+
 ---
 
 <meta charset='utf-8' />
@@ -33,6 +45,12 @@ const siteUrl = new URL(Astro.request.url);
 <meta http-equiv='X-UA-Compatible' content='ie=edge' />
 <meta name="theme-color" content="Canvas">
 <meta name="color-scheme" content="dark light">
+
+<!-- <link rel="stylesheet" href={screenStyles} media="screen"> -->
+
+
+
+
 <!-- favicon -->
 <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 <link rel='icon' type='image/x-icon' href='/favicon.ico' />
@@ -56,6 +74,7 @@ const siteUrl = new URL(Astro.request.url);
 <link rel="canonical" href={canonicalURL} />
 
 <!-- open graph -->
+
 <meta property='og:title' content={title || site.title} />
 
 <meta property='og:description' content={description || site.description} />
