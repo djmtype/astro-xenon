@@ -9,7 +9,7 @@ import mdx from '@astrojs/mdx';
 
 import compress from "astro-compress";
 
-
+import critters from "astro-critters";
 // https://astro.build/config
 export default defineConfig({
 	site: "https://astro-xenon.netlify.app",
@@ -42,6 +42,11 @@ export default defineConfig({
   integrations: [
     sitemap(),
     mdx(),
+    critters({
+      logLevel: "error",
+      reduceInlineStyles: false,
+      compress: false
+}),
     compress({
       img: false,
       css: false,

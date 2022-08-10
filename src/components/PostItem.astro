@@ -1,5 +1,5 @@
 ---
-import { Img } from "astro-imagetools/components"
+import { Picture } from "astro-imagetools/components"
 import Label from "@components/Label.astro"
 import dayjs from "dayjs"
 
@@ -19,7 +19,7 @@ const { url, title, image, alt, label, datePublished, description } =
 
 <article class={image ? "post post-has-img" : "post"}>
 	<figure class="post-figure">
-		<Img
+		<Picture
 			src={image}
 			layout="fill"
 			alt={alt ? `${alt}` : ` `}
