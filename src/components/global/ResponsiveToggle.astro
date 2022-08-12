@@ -73,7 +73,7 @@ import Button from "@components/Button.astro"
 	})
 </script>
 
-<style>
+<style is:global>
 	.responsive-toggle.btn {
 		font-size: var(--font-size-2);
 	}
@@ -86,5 +86,9 @@ import Button from "@components/Button.astro"
 	.responsive-toggle[aria-expanded="true"] {
 		color: var(--surface-0);
 		background-color: var(--brand);
+	}
+
+	.no-js .responsive-toggle.btn {
+		display: none;
 	}
 </style>

@@ -80,6 +80,10 @@ const currentPage = Astro.url.pathname;
 		}
 	}
 
+	:global(.no-js nav) {
+		display: block;
+	}
+
 	nav.show {
 		display: block;
 	}
@@ -115,4 +119,6 @@ const currentPage = Astro.url.pathname;
 			font-size: unset;
 		}
 	}
+
+
 </style>

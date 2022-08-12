@@ -1,14 +1,18 @@
-@import "common/_fonts.css";
-@import "common/_reset.css";
+/* @import 'open-props/postcss/normalize'; */
 
+@import "common/_fonts.css";
+
+@import "common/_reset.css";
 @import "schemes/_light.css";
 @import "schemes/_dark.css";
 
+@import "common/_base.css";
+
 @import "common/_variables.css";
-/* @import "common/_scrollbar.css"; */
+
+@import "common/_scrollbar.css";
 @import "common/_syntax.css";
 
-@import "common/_base.css";
 @import "layouts/global.css";
 
 @import "utilities/_accessibility.css";

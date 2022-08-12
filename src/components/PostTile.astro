@@ -18,7 +18,7 @@ const { url, title, image, alt, label, loading } = Astro.props;
 <div class={image ? "tile tile-has-img" : "tile"}>
   <figure class="tile-thumb">
 
-      <Picture src={image} loading={loading} layout="fill" alt={alt ? `${alt}` : ` `} />
+      <Picture src={image} loading={loading} layout="fill" alt={alt ? `${alt}` : ` `} quality={60}  breakpoints={{ count: 4, minWidth: 480, maxWidth: 800 }} />
   </figure>
   <div class="tile-content">
     <h2 class="tile-title">
