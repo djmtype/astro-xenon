@@ -5,7 +5,7 @@ date:
   published: 2022-07-03
   updated:
 image:
-  path: "/images/scott-webb-F3GcvZwZhuQ-unsplash.jpeg"
+  path: "/public/images/scott-webb-F3GcvZwZhuQ-unsplash.jpeg"
   alt: "green and brown abstract painting"
   credit: Photo by <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Scott Webb</a> on <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   origin: "https://unsplash.com/photos/F3GcvZwZhuQ"

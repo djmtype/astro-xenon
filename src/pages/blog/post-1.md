@@ -5,7 +5,7 @@ date:
   published: 2022-06-02
   updated:
 image:
-  path: "/images/scott-webb-isp5-i3Mx2k-unsplash.jpeg"
+  path: "/public/images/scott-webb-isp5-i3Mx2k-unsplash.jpeg"
   alt: "green red and white abstract painting"
   credit: Photo by <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Scott Webb</a> on <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   origin: "https://unsplash.com/photos/isp5-i3Mx2k"

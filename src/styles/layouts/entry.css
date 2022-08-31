@@ -101,6 +101,14 @@
 	}
 }
 
+.prose p:has(img:only-child) {
+	max-width: 100%;
+	margin-top: var(--size-6);
+	& + * {
+		margin-top: var(--size-6);
+	}
+}
+
 /* .prose.flow {
 	--flow: 1.25em;	
 } */

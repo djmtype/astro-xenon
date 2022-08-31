@@ -5,7 +5,7 @@ date:
   published: 2022-07-04
   updated:
 image:
-  path: "/images/scott-webb-dnBYmV_gdhk-unsplash.jpeg"
+  path: "/public/images/scott-webb-dnBYmV_gdhk-unsplash.jpeg"
   alt: "pink blue and green abstract painting"
   credit: Photo by <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Scott Webb</a> on <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   origin: "https://unsplash.com/photos/dnBYmV_gdhk"

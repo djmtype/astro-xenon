@@ -21,7 +21,8 @@
       "@svg/*": ["public/images/svgs/*"],
       "@data/*": ["src/data/*"],
       "@utilities/*": ["src/utilities/*"],
-      "@demo/*": ["src/demo/*"]
+      "@demo/*": ["src/demo/*"],
+      "@images/*": ["src/images/*"]
     }
   }
 }

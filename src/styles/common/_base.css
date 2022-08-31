@@ -1,24 +1,17 @@
-
-
-
-
 :where(html) {
 	font-size: clamp(1rem, 0.25vw + 0.9rem, 1.2rem);
 	accent-color: var(--brand);
-  caret-color: var(--brand-2);
+	caret-color: var(--brand-2);
 }
 
-
-
-
-
-:where(body) {
+ :where(body) {
 	font-family: var(--font-sans);
 	font-size: var(--font-size-1);
 	line-height: var(--font-lineheight-3);
 	color: var(--text-1);
-  background-color: var(--surface-1);
+	/* background-color: var(--surface-1); */
 }
+
 
 ::selection {
 	color: var(--selection-text);
@@ -26,39 +19,37 @@
 	-webkit-text-fill-color: var(--selection-text);
 }
 
-
 :where(a[href]) {
-  color: var(--link);
+	color: var(--link);
 	font-weight: var(--font-weight-5);
-  &:visited {
-    color: var(--link-visited);
-  }
-	&:hover, &:focus-within {
+	&:visited {
+		color: var(--link-visited);
+	}
+	&:hover,
+	&:focus-within {
 		color: var(--link-hover);
 	}
-
 }
-
 
 :where(h1, h2, h3, h4, h5) {
 	& :where(a) {
-	text-decoration: none;
-	font-weight: unset;
+		text-decoration: none;
+		font-weight: unset;
 	}
 }
-
 
 :where(a:hover, a:focus-within) {
 	text-decoration: none;
 }
 
-:where(a[href*="//"]) {
+:where(a[href*="//"])
+{
 	display: inline-block;
 }
 
 :where(a[href*="//"])::after
 {
-	margin-inline-start: .25ch;
+	margin-inline-start: 0.25ch;
 	font-weight: inherit;
 	content: "\2197";
 	color: currentColor;
@@ -68,10 +59,9 @@
 	font-size: var(--font-size-smaller);
 }
 
-:focus-visible { 
-  outline-color: var(--link); 
+:focus-visible {
+	outline-color: var(--link);
 }
-
 
 h1 {
 	font-size: var(--font-size-6);
@@ -114,11 +104,9 @@ hr {
 table {
 	border: var(--border-size-1) solid var(--separator-surface);
 	border-collapse: collapse;
-  max-width: 100%;
+	max-width: 100%;
 	width: 100%;
 }
-
-
 
 th,
 td {
@@ -150,11 +138,9 @@ mark {
 	padding: 0.15em;
 }
 
-
-
-del {
+/* del {
 	text-decoration-color: var(--accent-red);
-}
+} */
 
 sup {
 	position: relative;
@@ -162,3 +148,22 @@ sup {
 	font-size: var(--font-size-0);
 }
 
+
+:target {
+	outline-color: var(--link);
+	outline-width: initial;
+	outline-style: solid;
+}
+
+:where(:not(:active):target) {
+	outline-offset: 5px;
+}
+
+@media (--motionOK) {
+  :where(:target) {
+    transition: outline-offset 145ms var(--ease-2);
+  }
+  :where(:not(:active):target) {
+    transition-duration: .25s;
+  }
+}

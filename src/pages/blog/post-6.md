@@ -5,7 +5,7 @@ date:
   published: 2022-07-05
   updated:
 image:
-  path: "/images/scott-webb-bOzaJ-RAdXc-unsplash.jpeg"
+  path: "/public/images/scott-webb-bOzaJ-RAdXc-unsplash.jpeg"
   alt: "red and black abstract painting"
   credit: Photo by <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Scott Webb</a> on <a href="https://unsplash.com/@scottwebb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   origin: "https://unsplash.com/photos/bOzaJ-RAdXc"

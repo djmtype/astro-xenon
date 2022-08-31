@@ -1,0 +1,27 @@
+:where(ul[role="list"], ol[role="list"]) {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	
+}
+
+
+:where(ul[role="list"] li), :where(ol[role="list"] li) {
+	padding-inline-start: unset;
+}
+
+:where(p, ul, ol, dl, h6) {
+  font-size: unset;
+}
+
+pre {
+	max-inline-size: 100%;
+}
+
+sup a {
+	margin-inline: unset;
+}
+
+:where(blockquote) {
+	max-inline-size: unset;
+}

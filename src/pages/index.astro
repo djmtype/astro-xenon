@@ -23,7 +23,7 @@ posts = posts.sort(
 		new Date(a.frontmatter.date.published).valueOf()
 )
 
-const image = posts[0].frontmatter.image.path
+// const image = posts[0].frontmatter.image.path
 
 const { currentPage, content } = Astro.props
 
@@ -46,7 +46,7 @@ const { currentPage, content } = Astro.props
               image={post.frontmatter.image.path}
               alt={post.frontmatter.image.alt}
               label={post.frontmatter.category}
-          />
+          />  
       ))}
 	</DashboardGrid>
 </DefaultLayout>
