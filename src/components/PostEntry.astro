@@ -1,6 +1,6 @@
 ---
 import "@styles/layouts/entry.css"
-import { Picture } from "astro-imagetools/components"
+import { Img } from "astro-imagetools/components"
 
 import dayjs from "dayjs"
 
@@ -38,9 +38,10 @@ const {
 
 <article class='entry'>
 	<figure class='entry-figure' id='entry-figure'>
-		<Picture
+		<Img
 			src={image}
-			quality={50}
+			format='webp'
+			quality={60}
 			width={1200}
 			height={675}
 			layout='fill'
@@ -84,10 +85,12 @@ const {
 			{imageCredit ? (
 				<footer class='entry-footer font-size-smaller'>
 					<div class='image-credit'>
-						<Picture
+						<Img
 							src={image}
-							width={60}
-							height={60}
+							width={80}
+							height={80}
+							quality={50}
+							format='webp'
 							alt={alt ? `Thumbnail of ${alt}` : ` `}
 						/>
 

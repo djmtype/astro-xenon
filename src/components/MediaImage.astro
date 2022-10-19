@@ -1,0 +1,29 @@
+---
+import { Img } from "astro-imagetools/components"
+
+export interface Props {
+	src: string
+	alt: string
+	width?: string
+	height?: string
+	caption?: string
+}
+
+const { src, alt, width, height, caption } = Astro.props as Props
+---
+
+<figure>
+	<Img src={`/images/${src}`} alt={alt} width={width} height={height} format='webp' breakpoints={[480, 768, 900]} quality={60} />
+	{
+		(() => {
+			if (caption !== undefined) return <figcaption set:html={caption} />
+		})()
+	}
+</figure>
+
+<style>
+	figcaption {
+		font-size: var(--font-size-smaller);
+		color: var(--text-2);
+	}
+</style>

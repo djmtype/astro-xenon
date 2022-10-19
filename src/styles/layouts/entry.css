@@ -32,6 +32,8 @@
 	width: 100%;
 }
 
+
+
 @media (--xl-n-above) {
 	.entry {
 		display: grid;
@@ -165,6 +167,12 @@
 	background-color: var(--surface-0);
 	padding: var(--size-1);
 	border-radius: var(--radius-rounded);
+	display: inline-flex;
+	line-height: var(--font-lineheight-1);
+	align-items: center;
+	justify-content: center;
+	margin-inline-start: var(--size-1);
+
 }
 
 [aria-describedby="footnote-label"] {

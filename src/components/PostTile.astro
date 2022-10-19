@@ -1,5 +1,5 @@
 ---
-import { Picture } from "astro-imagetools/components";
+import { Img } from "astro-imagetools/components";
 // import { Picture } from '@astrojs/image/components';
 import Label from "./Label.astro";
 
@@ -20,11 +20,7 @@ const { url, title, image, alt, label, loading } = Astro.props;
 <div class={image ? "tile tile-has-img" : "tile"}>
   <figure class="tile-thumb">
 
-    <!-- <Picture src={image} alt={alt ? `${alt}` : ` `} widths={[200, 400, 800]} aspectRatio="4:3" sizes="(max-width: 800px) 100vw, 800px" /> -->
-
-    <!-- <img src={image} alt={alt ? `${alt}` : ` `} loading={loading}/> -->
-
-      <Picture src={image} loading={loading} layout="fill" alt={alt ? `${alt}` : ` `} quality={60}  breakpoints={{ count: 4, minWidth: 480, maxWidth: 800 }} />
+      <Img src={image} loading={loading} layout="fill" alt={alt ? `${alt}` : ` `} quality={50} format="webp" breakpoints={{ count: 4, minWidth: 480, maxWidth: 800 }} />
   </figure>
   <div class="tile-content">
     <h2 class="tile-title">
