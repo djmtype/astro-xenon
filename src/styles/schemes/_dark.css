@@ -1,7 +1,7 @@
 @media (--OSdark) {
   :where(html) {
     color-scheme: dark;
-    --page-bg-image: url(/images/page-header-dark.svg);
+    --page-bg-image: url('/images/page-header-dark.svg');
 
     --accent-yellow: var(--yellow-4);
 		--accent-orange: var(--orange-4);

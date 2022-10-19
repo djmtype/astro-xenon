@@ -1,17 +1,17 @@
 /* syntax color */
 
 :root {
-	--shiki-color-text: var(--text-1);
-	--shiki-color-background: var(--surface-0);
-	--shiki-token-constant: var(--accent-green);
-	--shiki-token-string: var(--accent-x);
-	--shiki-token-comment: var(--muted);
-	--shiki-token-keyword: var(--accent-red);
-	--shiki-token-parameter: var(--accent-x);
-	--shiki-token-function: var(--brand);
-	--shiki-token-string-expression: var(--brand-2);
-	--shiki-token-punctuation: var(--text-1);
-	--shiki-token-link: var(--accent-x);
+	--astro-code-color-text: var(--text-1);
+	--astro-code-color-background: var(--surface-0);
+	--astro-code-token-constant: var(--accent-green);
+	--astro-code-token-string: var(--accent-x);
+	--astro-code-token-comment: var(--muted);
+	--astro-code-token-keyword: var(--accent-red);
+	--astro-code-token-parameter: var(--accent-x);
+	--astro-code-token-function: var(--brand);
+	--astro-code-token-string-expression: var(--brand-2);
+	--astro-code-token-punctuation: var(--text-1);
+	--astro-code-token-link: var(--accent-x);
 }
 
 code {

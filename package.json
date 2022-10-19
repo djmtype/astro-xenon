@@ -10,25 +10,25 @@
   },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
-    "astro": "^1.0.8",
+    "astro": "^1.5.1",
     "postcss-jit-props": "^1.0.7",
-    "prettier-plugin-astro": "^0.5.3"
+    "prettier-plugin-astro": "^0.6.0"
   },
   "dependencies": {
-    "@astrojs/image": "^0.3.6",
-    "@astrojs/mdx": "^0.10.1",
-    "@astrojs/rss": "^1.0.0",
-    "astro-compress": "^1.0.5",
-    "astro-critters": "^1.0.2",
+    "@astrojs/image": "^0.10.0",
+    "@astrojs/mdx": "^0.11.4",
+    "@astrojs/rss": "^1.0.2",
+    "astro-compress": "^1.0.12",
+    "astro-critters": "^1.0.5",
     "astro-icon": "^0.7.3",
-    "astro-imagetools": "^0.6.10",
-    "autoprefixer": "^10.4.8",
+    "astro-imagetools": "^0.6.11",
+    "autoprefixer": "^10.4.12",
     "dayjs": "^1.11.5",
-    "open-props": "1.4.14",
-    "postcss": "^8.4.16",
+    "open-props": "1.4.16",
+    "postcss": "^8.4.18",
     "postcss-custom-media": "^8.0.2",
-    "postcss-import": "^14.1.0",
-    "postcss-preset-env": "^7.8.0"
+    "postcss-import": "^15.0.0",
+    "postcss-preset-env": "^7.8.2"
   },
   "browserslist": [
     "last 1 safari version",

@@ -22,6 +22,9 @@ export default defineConfig({
 	},
 	markdown: {
 		drafts: true,
+		
+		extendDefaultPlugins: true,
+	
 		// Can be 'shiki' (default), 'prism' or false to disable highlighting
 		syntaxHighlight: "shiki",
 		shikiConfig: {

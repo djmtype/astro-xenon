@@ -136,6 +136,10 @@
 	}
 }
 
+.image-credit img {
+	width: 100%;
+}
+
 .entry hr {
 	margin-top: var(--size-6);
 }
