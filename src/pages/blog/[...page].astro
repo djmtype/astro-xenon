@@ -7,7 +7,7 @@ import PostItem from "@components/PostItem.astro"
 import site from "@data/site.json"
 
 export async function getStaticPaths({ paginate }) {
-	const allPosts = await Astro.glob("./*.md")
+	const allPosts = await Astro.glob("./*.mdx")
 	const sortedPosts = allPosts.sort(
 		(a, b) =>
 			new Date(b.frontmatter.date.published).valueOf() -

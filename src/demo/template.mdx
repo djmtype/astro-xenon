@@ -1,8 +1,7 @@
 ---
 title: Demo Markdown Content
 ---
-import { Image } from '@astrojs/image/components';
-import socialImage from '../../public/images/social.png';
+import Figure from '../components/Figure.astro';
 
 ## Heading Level Two
 
@@ -11,9 +10,7 @@ a hoc *habebat in fugis*. Numquam tandem, et ramis, *conclamat sua ventis*
 novissimus caestibus intonsis: munera ab domos. Vocis virga ius ecce arcet
 crinem dextram, citra stetit fugit tempore coeperat sic eras vulgata misit.
 
-<Image src={import("../../public/images/scott-webb-isp5-i3Mx2k-unsplash.jpeg")} width={768} aspectRatio="16:9" alt="descriptive text" />
-
-
+<Figure caption="Painting by Scott on Unsplash"  src="scott-webb-isp5-i3Mx2k-unsplash.jpeg" alt="paint swirl pattern"></Figure>
 
 ```jsx
 {posts.map(async (post) => {

@@ -9,6 +9,8 @@ a hoc *habebat in fugis*. Numquam tandem, et ramis, *conclamat sua ventis*
 novissimus caestibus intonsis: munera ab domos. Vocis virga ius ecce arcet
 crinem dextram, citra stetit fugit tempore coeperat sic eras vulgata misit.
 
+![alt me](/images/scott-webb-bOzaJ-RAdXc-unsplash.jpeg)
+
 ```jsx
 {posts.map(async (post) => {
   const firstParagraph = parse(await post.compiledContent())
