@@ -50,3 +50,9 @@
 		opacity: .7;
 	}
 }
+
+.dashboard .tile:hover, .dashboard .tile:focus-within {
+	& [class*="thumb"] {
+		opacity: 1.0;
+	}
+}
