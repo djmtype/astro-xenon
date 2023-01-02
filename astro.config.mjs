@@ -5,6 +5,7 @@ import { astroImageTools } from "astro-imagetools"
 import mdx from "@astrojs/mdx"
 import compress from "astro-compress"
 import critters from "astro-critters"
+import {remarkAstroLocalImages} from './remark-plugins/remark-astro-markdown-local-images.mjs'
 
 
 // https://astro.build/config
@@ -22,6 +23,8 @@ export default defineConfig({
 	},
 	markdown: {
 		drafts: true,
+		remarkPlugins: [remarkAstroLocalImages()], // <- Important
+    extendDefaultPlugins: true,
 	
 		
 	//	extendDefaultPlugins: true,
@@ -47,6 +50,7 @@ export default defineConfig({
 		compress({
 			img: false,
 			css: false, 
+			js: false
 			// css: true,
 			// html: true,
 			// js: true,

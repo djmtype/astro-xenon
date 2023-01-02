@@ -1,0 +1,43 @@
+---
+import DefaultLayout from "@layouts/DefaultLayout.astro"
+import PageLayout from "@layouts/PageLayout.astro"
+import "@styles/layouts/entry.css"
+import dayjs from "dayjs"
+
+
+// import * as About from "../demo/about.md"
+
+// import { default as About } from '../demo/about.mdx'
+
+const About = await import('../demo/about.mdx')
+
+
+
+
+let title = "About"
+let description = "About Xenon for Astro"
+let canonicalURL = Astro.url
+
+
+---
+
+<DefaultLayout {title} {description} {canonicalURL}>
+	<PageLayout title={About.frontmatter.title}>
+
+
+		<div class='entry-meta'>
+			<dl class='entry-date entry-meta-list'>
+				<dt class='entry-meta-key'>Date Updated</dt>
+				<dd class='entry-meta-value'>
+					{dayjs(About.frontmatter.date.updated).format("DD MMMM YYYY")}
+				</dd>
+			</dl>
+		</div>
+		
+		<div class='entry-content prose flow margin-top-lg'>
+			
+<About.default />
+
+		</div>
+	</PageLayout>
+</DefaultLayout>

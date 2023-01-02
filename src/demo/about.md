@@ -4,13 +4,12 @@ date:
   published: 2022-07-07
   updated: 2022-08-02
 ---
-import MediaImage from "../components/MediaImage.astro";
-
-<MediaImage src="social.jpg" alt="image" />
-
-![A random remote image](https://picsum.photos/1024/768)
 
 ## Welcome to [Astro Xenon](https://astro-xenon.netlify.app)
+
+
+![Poster Card](/images/scott-webb-ApYVKHHTLqE-unsplash.jpeg)
+
 
 Xenon is an open source Astro theme for bloggers that aims to excel in performance with accessibility in mind. 
 
