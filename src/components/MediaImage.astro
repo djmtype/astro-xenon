@@ -7,13 +7,14 @@ export interface Props {
 	width?: string
 	height?: string
 	caption?: string
+	attrs?: any
 }
 
-const { src, alt, width, height, caption } = Astro.props as Props
+const { src, alt, width, height, caption, ...attrs } = Astro.props as Props
 ---
 
 <figure>
-	<Img src={`/images/${src}`} alt={alt} width={width} height={height} format='webp' breakpoints={[480, 768, 900]} quality={60} />
+	<Img src={`/images/${src}`} alt={alt} width={width} height={height} format='webp' breakpoints={[480, 768, 900]} quality={60} {...attrs} />
 	{
 		(() => {
 			if (caption !== undefined) return <figcaption set:html={caption} />
