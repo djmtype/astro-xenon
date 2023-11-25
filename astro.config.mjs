@@ -3,8 +3,8 @@ import image from '@astrojs/image'
 import sitemap from "@astrojs/sitemap"
 import { astroImageTools } from "astro-imagetools"
 import mdx from "@astrojs/mdx"
-import compress from "astro-compress"
-import critters from "astro-critters"
+// import compress from "astro-compress"
+// import critters from "astro-critters"
 import {remarkAstroLocalImages} from './remark-plugins/remark-astro-markdown-local-images.mjs'
 
 
@@ -36,25 +36,25 @@ export default defineConfig({
 		},
 	},
 	// trailingSlash: "never",
-	experimental: {
-		integrations: true,
-	},
+	// experimental: {
+	// 	integrations: true,
+	// },
 	integrations: [
 		sitemap(),
 		mdx(),
-		critters({
-			logLevel: "error",
-			reduceInlineStyles: false,
-			compress: false,
-		}),
-		compress({
-			img: false,
-			css: false, 
-			js: false
-			// css: true,
-			// html: true,
-			// js: true,
-		}),
+		// critters({
+		// 	logLevel: "error",
+		// 	reduceInlineStyles: false,
+		// 	compress: false,
+		// }),
+		// compress({
+		// 	// img: false,
+		// 	// css: false, 
+		// 	// js: false
+		// 	// css: true,
+		// 	// html: true,
+		// 	// js: true,
+		// }),
 		image(),
 		astroImageTools
 	],

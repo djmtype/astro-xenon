@@ -1,13 +1,13 @@
 ---
 import "@styles/components/_button.css"
-// import "/node_modules/open-props/src/extra/buttons.css"
+
 
 export interface Props {
 	className: string
 	href?: string
 	externalTarget?: boolean
 	id?: string
-	type?: string
+	type?: 'button' | 'submit' | 'reset' | undefined;
 	name?: string
 	title?: string
 	ariaLabel?: string
@@ -20,26 +20,37 @@ const { id, className, href, externalTarget, type, name, ariaExpanded, ariaLabel
 ---
 
 {(() => {
-	if (href && externalTarget)
-		return (
-			<a id={id} target='_blank' rel='noopener' href={href} class={className}>
-				<slot />
-			</a>
-		)
-	if (href)
-		return (
-			<a id={id} href={href} class={className}>
-				<slot />
-			</a>
-		)
-	else
-		return (
-			<button id={id} class={className} type={type} name={name} aria-expanded={ariaExpanded} aria-label={ariaLabel}>
-				<slot />
-			</button>
-		)
+  if (href && externalTarget) {
+    return (
+      <a
+        id={id}
+        target="_blank"
+        rel="noopener"
+        href={href}
+        class={className}
+      >
+        <slot />
+      </a>
+    );
+  }
+  if (href) {
+    return (
+      <a id={id} href={href} class={className}>
+        <slot />
+      </a>
+    );
+  }
+  return (
+    <button
+      id={id}
+      class={className}
+      type={type || 'button'}
+      name={name}
+      aria-expanded={ariaExpanded}
+      aria-label={ariaLabel}
+    >
+      <slot />
+    </button>
+  );
 })()}
 
-<style>
-
-</style>
